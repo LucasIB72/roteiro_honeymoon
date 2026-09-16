@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Roteiros da lua de mel Europa 2026 — Roma e Paris.">
+<title>Lua de Mel Europa 2026</title>
+<style>
+:root{
+  --bg:#f5f1eb;
+  --paper:#fffdf9;
+  --ink:#2d2926;
+  --muted:#776f68;
+  --line:#e2d8cf;
+  --wine:#8b3c56;
+  --terracotta:#a85c3c;
+  --shadow:0 16px 45px rgba(58,42,33,.10);
+}
+*{box-sizing:border-box}
+html,body{margin:0;min-height:100%;background:var(--bg);color:var(--ink);font-family:system-ui,-apple-system,"Segoe UI",sans-serif}
+body{
+  background:
+    radial-gradient(circle at 15% 10%, rgba(168,92,60,.09), transparent 28%),
+    radial-gradient(circle at 85% 0%, rgba(139,60,86,.09), transparent 28%),
+    var(--bg);
+}
+a{text-decoration:none;color:inherit}
+.hero{
+  padding:72px 20px 52px;
+  text-align:center;
+}
+.hero .kicker{
+  font-size:.78rem;
+  font-weight:850;
+  letter-spacing:.16em;
+  text-transform:uppercase;
+  color:var(--muted);
+}
+.hero h1{
+  margin:.5rem 0 .75rem;
+  font:700 clamp(2.5rem,7vw,5rem)/1 Georgia,serif;
+}
+.hero p{
+  max-width:720px;
+  margin:0 auto;
+  color:var(--muted);
+  font-size:1.08rem;
+}
+.wrap{
+  width:min(1050px,calc(100% - 28px));
+  margin:0 auto;
+  padding-bottom:60px;
+}
+.cards{
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:18px;
+}
+.card{
+  position:relative;
+  overflow:hidden;
+  min-height:330px;
+  border:1px solid var(--line);
+  border-radius:24px;
+  background:var(--paper);
+  box-shadow:var(--shadow);
+  display:flex;
+  flex-direction:column;
+}
+.card::before{
+  content:"";
+  position:absolute;
+  inset:0 0 auto 0;
+  height:9px;
+}
+.card.roma::before{background:linear-gradient(90deg,#2f6f4e,#f2f2f2,#b4473d)}
+.card.paris::before{background:linear-gradient(90deg,#2e5c91,#f2f2f2,#b94149)}
+.card-content{
+  padding:30px 28px 26px;
+  display:flex;
+  flex-direction:column;
+  height:100%;
+}
+.flag{
+  font-size:2.35rem;
+  margin-bottom:12px;
+}
+.city{
+  font:700 2.25rem/1 Georgia,serif;
+  margin:0 0 6px;
+}
+.date{
+  display:inline-block;
+  color:var(--muted);
+  font-weight:750;
+  margin-bottom:16px;
+}
+.desc{
+  color:var(--muted);
+  line-height:1.65;
+  margin:0 0 25px;
+  flex:1;
+}
+.meta{
+  display:flex;
+  gap:8px;
+  flex-wrap:wrap;
+  margin-bottom:18px;
+}
+.chip{
+  font-size:.78rem;
+  font-weight:800;
+  padding:6px 9px;
+  border-radius:999px;
+  background:#f2ebe5;
+  color:#654f44;
+}
+.paris .chip{
+  background:#f2e7eb;
+  color:#6b4050;
+}
+.btn{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:12px;
+  min-height:52px;
+  padding:12px 16px;
+  border-radius:13px;
+  color:#fff;
+  font-weight:850;
+  transition:transform .15s ease, box-shadow .15s ease;
+}
+.roma .btn{background:var(--terracotta)}
+.paris .btn{background:var(--wine)}
+.btn:hover{
+  transform:translateY(-2px);
+  box-shadow:0 10px 22px rgba(0,0,0,.10);
+}
+.arrow{font-size:1.2rem}
+.footer{
+  text-align:center;
+  color:var(--muted);
+  font-size:.88rem;
+  padding:35px 10px 0;
+}
+@media(max-width:720px){
+  .hero{padding:46px 16px 34px}
+  .hero h1{font-size:3rem}
+  .cards{grid-template-columns:1fr}
+  .card{min-height:290px}
+  .card-content{padding:25px 22px 22px}
+}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="kicker">Europa • Lua de mel • 2026</div>
+  <h1>Nossa viagem ❤️</h1>
+  <p>Escolha o destino para abrir o roteiro completo.</p>
+</header>
+
+<main class="wrap">
+  <section class="cards">
+
+    <article class="card roma">
+      <div class="card-content">
+        <div class="flag">🇮🇹</div>
+        <h2 class="city">Roma</h2>
+        <div class="date">04 a 10 de novembro de 2026</div>
+        <p class="desc">
+          Roma Antiga, Vaticano, centro histórico, Trastevere,
+          Pompeia e a saída rumo ao norte da Itália.
+        </p>
+        <div class="meta">
+          <span class="chip">Roma</span>
+          <span class="chip">Vaticano</span>
+          <span class="chip">Pompeia</span>
+        </div>
+        <a class="btn" href="./roma/">
+          <span>Abrir roteiro de Roma</span>
+          <span class="arrow">→</span>
+        </a>
+      </div>
+    </article>
+
+    <article class="card paris">
+      <div class="card-content">
+        <div class="flag">🇫🇷</div>
+        <h2 class="city">Paris</h2>
+        <div class="date">15 a 21 de novembro de 2026</div>
+        <p class="desc">
+          Torre Eiffel, Louvre, Versailles, Montmartre,
+          Invalides, Sena e os principais bairros de Paris.
+        </p>
+        <div class="meta">
+          <span class="chip">Paris</span>
+          <span class="chip">Versailles</span>
+          <span class="chip">Sena</span>
+        </div>
+        <a class="btn" href="./paris/">
+          <span>Abrir roteiro de Paris</span>
+          <span class="arrow">→</span>
+        </a>
+      </div>
+    </article>
+
+  </section>
+
+  <div class="footer">
+    Lua de Mel Europa 2026
+  </div>
+</main>
+
+</body>
+</html>
