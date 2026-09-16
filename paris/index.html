@@ -1,0 +1,1072 @@
+<!DOCTYPE html>
+
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<title>Lua de Mel em Paris — Roteiro 15–21/11/2026 — ver06</title>
+<style>
+:root {
+  --bg:#f4f0ea; --paper:#fffdfa; --ink:#282321; --muted:#746a64;
+  --wine:#8b3c56; --rose:#ead7dd; --blue:#335a7a; --blueSoft:#eaf1f6;
+  --gold:#b9853e; --food:#7b5a39; --foodSoft:#f7eee4; --green:#426652;
+  --line:#ddd3ca; --shadow:0 12px 36px rgba(55,38,31,.09);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font:15.5px/1.6 system-ui,-apple-system,"Segoe UI",sans-serif}
+a{color:var(--wine);text-decoration:none} a:hover{text-decoration:underline}
+.hero{padding:78px 20px 56px;background:linear-gradient(135deg,#432d36,#8b3c56 62%,#bd7d71);color:white}
+.hero-inner,.wrap{max-width:1120px;margin:auto}
+.kicker{font-size:.8rem;font-weight:800;letter-spacing:.16em;text-transform:uppercase;opacity:.86}
+h1{font:700 clamp(2.55rem,7vw,5.2rem)/1 Georgia,serif;margin:.35rem 0 1rem}
+.hero p{max-width:850px;font-size:1.1rem;margin:.3rem 0}
+.ver{display:inline-block;margin-top:18px;padding:7px 12px;border:1px solid rgba(255,255,255,.45);border-radius:999px;font-weight:700}
+.wrap{padding:0 18px 60px}
+.summary-cards{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:-28px;position:relative}
+.summary-card{background:var(--paper);border:1px solid rgba(139,60,86,.10);border-radius:18px;padding:18px;box-shadow:var(--shadow)}
+.summary-card b{display:block;font-size:1rem;margin-bottom:3px}
+.summary-card .big{font:700 1.55rem Georgia,serif;color:var(--wine)}
+.note{margin:28px 0;padding:17px 20px;border-left:5px solid var(--gold);background:#fff9ee;border-radius:12px}
+.alert{border-left-color:#b04b4b;background:#fff3f3}
+nav{background:var(--paper);border:1px solid var(--line);padding:14px 16px;border-radius:14px;margin:26px 0}
+nav a{font-weight:700;margin-right:14px;display:inline-block;padding:4px 0}
+section{padding:32px 0;border-top:1px solid rgba(116,106,100,.22)}
+section:first-of-type{border-top:0}
+h2{font:700 2rem Georgia,serif;margin:0 0 8px}
+.lead{color:var(--muted);max-width:900px}
+.table-wrap{overflow:auto;background:var(--paper);border:1px solid var(--line);border-radius:16px;box-shadow:var(--shadow)}
+table{width:100%;border-collapse:collapse;min-width:720px}
+th,td{padding:13px 15px;text-align:left;border-bottom:1px solid var(--line);vertical-align:top}
+th{background:#f1e6e9;text-transform:uppercase;font-size:.78rem;letter-spacing:.05em}
+tr:last-child td{border-bottom:0}
+.day{margin-top:28px}
+.day-head{display:flex;gap:16px;align-items:flex-start;margin-bottom:20px}
+.date{min-width:78px;background:var(--wine);color:#fff;border-radius:16px;padding:11px;text-align:center;font-weight:800;line-height:1}
+.date strong{display:block;font:700 2rem Georgia,serif}
+.day h3{font:700 1.8rem Georgia,serif;margin:0 0 3px}
+.day-sub{color:var(--muted)}
+.timeline{margin-left:18px;padding-left:28px;border-left:2px solid var(--line)}
+.event{position:relative;background:var(--paper);border:1px solid var(--line);border-radius:16px;padding:18px;margin:0 0 13px;box-shadow:0 5px 20px rgba(55,38,31,.04)}
+.event:before{content:"";position:absolute;width:13px;height:13px;border-radius:50%;background:var(--wine);left:-36px;top:23px;border:4px solid var(--bg)}
+.event-top{display:flex;justify-content:space-between;gap:12px;align-items:center}
+.time{font-weight:800;color:var(--wine)}
+.tag{font-size:.74rem;text-transform:uppercase;letter-spacing:.05em;font-weight:850;background:var(--rose);color:var(--wine);padding:4px 8px;border-radius:999px}
+.tag.food{background:var(--foodSoft);color:var(--food)}
+.event h4{font-size:1.14rem;margin:5px 0 6px}
+.event p{margin:5px 0}
+.ticket{display:inline-block;margin:3px 0 8px;background:#eef5ef;color:var(--green);font-weight:800;border-radius:9px;padding:6px 10px}
+.move{display:grid;grid-template-columns:28px 1fr;gap:8px;margin:4px 0 13px;padding:10px 13px;background:var(--blueSoft);border-left:4px solid var(--blue);border-radius:10px}
+.move-icon{font-size:1.2rem;color:var(--blue);font-weight:900}
+.move-meta{font-size:.84rem;color:var(--muted);font-weight:650}
+.move-text{margin-top:2px}
+.mode{display:inline-block;background:#dbe8f1;color:#254d6a;border-radius:999px;padding:2px 7px;font-size:.76rem;font-weight:850;margin-right:4px}
+.restaurant-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:11px;margin-top:12px}
+.restaurant{border:1px solid #e5d8ce;background:#fffaf4;border-radius:13px;padding:13px}
+.rest-head{display:flex;justify-content:space-between;gap:12px}
+.restaurant h5{font-size:.98rem;margin:0}
+.rating{font-size:.81rem;color:#a36d1f;font-weight:800;margin-top:3px}
+.rating span{color:var(--muted);font-weight:500}
+.price{white-space:nowrap;font-size:.86rem;background:#efe2d5;color:var(--food);font-weight:850;padding:4px 8px;border-radius:9px;height:max-content}
+.restaurant p{font-size:.9rem;margin:8px 0 4px}
+.meta{font-size:.78rem;color:var(--muted)}
+.mapbtn{font-size:.8rem;font-weight:750;display:inline-block;margin-top:8px}
+.grid2{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+.info{background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:16px}
+.info h4{margin:0 0 5px}
+.source-list li{margin-bottom:7px}
+.footer{text-align:center;color:var(--muted);padding:38px 0 10px}
+.small{font-size:.84rem;color:var(--muted)}
+@media(max-width:800px){
+ .summary-cards{grid-template-columns:1fr 1fr}
+ .restaurant-grid,.grid2{grid-template-columns:1fr}
+ .timeline{margin-left:8px;padding-left:22px}
+ .event:before{left:-30px}
+}
+@media(max-width:520px){.summary-cards{grid-template-columns:1fr}}
+@media print{
+ body{background:white} .hero{background:white;color:var(--ink);padding:25px 0;border-bottom:2px solid var(--wine)}
+ .summary-cards{margin-top:10px} nav{display:none} .summary-card,.event,.table-wrap{box-shadow:none}
+ .event,.restaurant,.move{break-inside:avoid} .wrap{max-width:100%;padding:0 8mm}
+}
+
+
+/* ver04 — Versailles + Panthéon + Invalides */
+.attraction{padding:0;overflow:hidden}
+.attraction .event-top,.attraction>h4,.attraction>.ticket{margin-left:18px;margin-right:18px}
+.attraction .event-top{padding-top:18px}
+.attraction>h4{margin-top:5px}
+.attraction>.ticket{margin-bottom:12px}
+.attraction-media{display:grid;grid-template-columns:minmax(220px,32%) 1fr;border-top:1px solid var(--line);background:#fff}
+.attraction-photo{position:relative;min-height:230px;background:linear-gradient(135deg,#e8dfe0,#c8b5ba);overflow:hidden}
+.attraction-photo img{width:100%;height:100%;min-height:230px;object-fit:cover;display:block;opacity:0;transition:opacity .25s ease}
+.attraction-photo img.loaded{opacity:1}
+.photo-fallback{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;text-align:center;padding:20px;color:#6b5b60;font-weight:750}
+.photo-credit{position:absolute;left:7px;bottom:7px;background:rgba(28,23,24,.76);color:white;font-size:.67rem;padding:4px 7px;border-radius:7px;display:none}
+.attraction-copy{padding:16px 18px 18px}
+.attraction-copy p{margin:7px 0}
+.attraction-copy .label{font-weight:850;color:var(--wine)}
+.hours-box{display:flex;gap:8px;align-items:flex-start;margin:0 0 11px;padding:9px 11px;background:#f1f5f7;border:1px solid #dbe5ea;border-radius:10px;color:#324d5c;font-size:.88rem}
+.hours-box strong{white-space:nowrap}
+.expect-box{margin-top:10px;padding:10px 12px;background:#fbf4f6;border-left:4px solid var(--wine);border-radius:8px}
+.plan-note{margin-top:10px;padding-top:9px;border-top:1px dashed var(--line);color:var(--muted);font-size:.9rem}
+.status-warning{margin-top:10px;padding:9px 11px;border-radius:9px;background:#fff0ef;color:#8e3a35;font-weight:750;font-size:.87rem;border:1px solid #efcfcc}
+.restaurant .hours-line{display:flex;align-items:flex-start;gap:6px;margin-top:8px;padding:7px 8px;border-radius:8px;background:#f3eee8;color:#684e36;font-size:.79rem}
+.restaurant .hours-line b{white-space:nowrap}
+.photo-note{margin-top:12px;font-size:.82rem;color:var(--muted)}
+@media(max-width:720px){
+ .attraction-media{grid-template-columns:1fr}
+ .attraction-photo,.attraction-photo img{min-height:210px;max-height:300px}
+}
+@media print{
+ .attraction-photo{min-height:150px}
+ .attraction-photo img{min-height:150px}
+}
+
+/* ver06 — imagens online e otimização mobile */
+html,body{max-width:100%;overflow-x:hidden}
+img{max-width:100%}
+a,button{-webkit-tap-highlight-color:transparent}
+.source-list a,.meta,.restaurant p,.move-text,.attraction-copy,.note{overflow-wrap:anywhere}
+.table-wrap{-webkit-overflow-scrolling:touch;scrollbar-width:thin}
+
+@media(max-width:768px){
+ body{font-size:16px;line-height:1.58}
+ .hero{padding:46px 16px 34px}
+ .hero-inner,.wrap{width:100%;max-width:none}
+ .hero h1{font-size:clamp(2.55rem,13vw,4rem);line-height:.98;margin-top:.45rem}
+ .hero p{font-size:1rem;line-height:1.5}
+ .kicker{font-size:.72rem;letter-spacing:.13em}
+ .ver{font-size:.8rem;line-height:1.35;padding:7px 10px;margin-top:14px}
+ .wrap{padding:0 12px 42px}
+ .summary-cards{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin-top:-20px}
+ .summary-card{padding:14px;border-radius:14px;min-width:0}
+ .summary-card .big{font-size:1.35rem}
+ .note{margin:18px 0;padding:14px 14px 14px 16px;border-radius:10px}
+ nav{position:sticky;top:0;z-index:25;display:flex;gap:6px;overflow-x:auto;white-space:nowrap;margin:18px -12px 22px;padding:9px 12px;border-left:0;border-right:0;border-radius:0;box-shadow:0 5px 18px rgba(55,38,31,.08);-webkit-overflow-scrolling:touch;scrollbar-width:none}
+ nav::-webkit-scrollbar{display:none}
+ nav a{flex:0 0 auto;margin:0;padding:8px 10px;border-radius:9px;background:#f7eff2;font-size:.88rem;text-decoration:none}
+ section{padding:24px 0}
+ h2{font-size:1.72rem;line-height:1.15}
+ .lead{font-size:.95rem}
+ .table-wrap{border-radius:12px;margin:0}
+ table{min-width:620px;font-size:.88rem}
+ th,td{padding:11px 12px}
+ .day{margin-top:22px}
+ .day-head{gap:11px;margin-bottom:16px}
+ .date{min-width:64px;border-radius:13px;padding:9px 7px}
+ .date strong{font-size:1.65rem}
+ .day h3{font-size:1.48rem;line-height:1.16}
+ .day-sub{font-size:.9rem;line-height:1.4}
+ .timeline{margin-left:4px;padding-left:17px}
+ .event{border-radius:13px;padding:15px;margin-bottom:11px}
+ .event:before{width:11px;height:11px;left:-25px;top:21px;border-width:3px}
+ .event-top{align-items:flex-start;flex-wrap:wrap;gap:6px 10px}
+ .time{font-size:.94rem}
+ .tag{font-size:.68rem}
+ .event h4{font-size:1.08rem;line-height:1.3}
+ .ticket{font-size:.88rem;max-width:100%}
+ .move{grid-template-columns:22px minmax(0,1fr);gap:6px;padding:10px 10px;margin-bottom:11px}
+ .move-icon{font-size:1rem}
+ .move-meta{font-size:.8rem}
+ .move-text{font-size:.91rem}
+ .mode{font-size:.71rem;margin-bottom:3px}
+ .restaurant-grid,.grid2{grid-template-columns:1fr;gap:9px}
+ .restaurant{padding:13px;min-width:0}
+ .restaurant h5{font-size:1rem;line-height:1.3}
+ .rating{font-size:.8rem}
+ .restaurant p{font-size:.9rem}
+ .meta{font-size:.78rem}
+ .mapbtn{display:flex;align-items:center;justify-content:center;width:100%;min-height:44px;margin-top:10px;padding:9px 12px;border-radius:9px;background:#f0e4e8;text-align:center;text-decoration:none}
+ .info{padding:14px}
+ .source-list{padding-left:20px}
+ .footer{padding:28px 4px 8px;font-size:.9rem}
+
+ .attraction{padding:0}
+ .attraction .event-top,.attraction>h4,.attraction>.ticket{margin-left:14px;margin-right:14px}
+ .attraction .event-top{padding-top:14px}
+ .attraction-media{grid-template-columns:1fr}
+ .attraction-photo{width:100%;min-height:0;aspect-ratio:16/9}
+ .attraction-photo img{width:100%;height:100%;min-height:0;max-height:none;aspect-ratio:16/9;object-fit:cover}
+ .photo-fallback{font-size:.88rem;padding:16px}
+ .photo-credit{left:6px;bottom:6px;font-size:.61rem;max-width:calc(100% - 12px)}
+ .attraction-copy{padding:14px}
+ .hours-box{display:block;padding:9px 10px;font-size:.84rem;line-height:1.45}
+ .hours-box strong{white-space:normal}
+ .expect-box{padding:9px 10px}
+ .plan-note{font-size:.87rem}
+ .status-warning{font-size:.84rem}
+ .restaurant .hours-line{display:block;line-height:1.45}
+ .restaurant .hours-line b{white-space:normal}
+}
+
+@media(max-width:520px){
+ .summary-cards{grid-template-columns:1fr}
+ .summary-card{display:grid;grid-template-columns:1fr;gap:1px}
+ .hero{padding-top:38px}
+ h2{font-size:1.58rem}
+ .day-head{align-items:flex-start}
+ .date{min-width:58px}
+ .day h3{font-size:1.34rem}
+ .rest-head{flex-direction:column;align-items:flex-start;gap:7px}
+ .price{white-space:normal;align-self:flex-start;font-size:.82rem}
+ .timeline{padding-left:15px}
+ .event:before{left:-23px}
+ .attraction .event-top,.attraction>h4,.attraction>.ticket{margin-left:12px;margin-right:12px}
+ .attraction-copy{padding:12px}
+ .note{font-size:.92rem}
+ table{min-width:560px}
+}
+
+@media(max-width:380px){
+ body{font-size:15px}
+ .wrap{padding-left:9px;padding-right:9px}
+ nav{margin-left:-9px;margin-right:-9px;padding-left:9px;padding-right:9px}
+ .hero{padding-left:13px;padding-right:13px}
+ .day-head{gap:8px}
+ .date{min-width:54px;padding:8px 5px}
+ .day h3{font-size:1.25rem}
+ .timeline{margin-left:1px;padding-left:13px}
+ .event:before{left:-21px}
+ .event{padding:12px}
+ .move{padding:9px 8px}
+}
+</style>
+</head>
+<body>
+<header class="hero">
+<div class="hero-inner">
+<div class="kicker">Lua de mel • Paris • Novembro de 2026</div>
+<h1>Paris a dois</h1>
+<p>Roteiro detalhado de 15/11/2026 a 21/11/2026, hospedados na Hôtellerie L’Enclos Rey. Inclui ingressos, notas Google e orçamento de refeições, distâncias, linhas de transporte, horários de funcionamento e cartões ilustrados das atrações.</p>
+<span class="ver">Versão ver06 • Museum Pass + Navigo Week • imagens online + mobile • revisado em 08/09/2026</span>
+</div>
+</header>
+<main class="wrap">
+<div class="summary-cards">
+<div class="summary-card"><b>📍 Hotel</b><span class="big">15º arr.</span><div>98bis Rue du Théâtre</div></div>
+<div class="summary-card"><b>🎟️ Paris Museum Pass</b><span class="big">€105</span><div>4 dias / 96 h por pessoa</div></div>
+<div class="summary-card"><b>🚇 Navigo Week 1–5</b><span class="big">€32,40</span><div>por pessoa • seg–dom</div></div>
+<div class="summary-card"><b>❤️ Passes + atrações</b><span class="big">€384,20</span><div>casal • sem alimentação e domingo</div></div>
+</div>
+<div class="note"><b>Estratégia de passes:</b> comprar o <b>Paris Museum Pass de 4 dias / 96 h (€105 por pessoa)</b> e ativá-lo na Sainte-Chapelle em 16/11. Ele cobre Sainte-Chapelle, Panthéon, Château de Versailles, Louvre, Tumba de Napoleão/Invalides e Arco do Triunfo. Esses seis ingressos custariam cerca de €125 por pessoa separadamente, gerando economia de aproximadamente <b>€20 por pessoa / €40 o casal</b>. Torre Eiffel e cruzeiro no Sena continuam pagos à parte.</div><div class="note"><b>🚇 Transporte padrão:</b> usar o <b>Navigo Week zonas 1–5 (€32,40 por pessoa)</b> de segunda 16/11 até sábado 21/11. O passe é válido na semana fixa de segunda a domingo e cobre metrô, RER, trem, ônibus e tram dentro das zonas, incluindo o RER C para Versailles. O <b>domingo 15/11 fica fora</b> e deve ser pago separadamente. Se a saída de Paris no sábado usar uma rota aeroportuária incluída no Navigo, ela também fica coberta.</div>
+<div class="note alert"><b>⚠️ Transporte e sazonalidade:</b> em 17/11 o RER C para Versailles tem obra apenas a partir das 23:00, portanto não afeta o passeio diurno. Em novembro, os jardins de Versailles são gratuitos, mas as fontes ficam desligadas, bosquets fechados e algumas estátuas podem estar protegidas para o inverno. A Linha 8 continua sem atender République até 22/04/2027.</div>
+<nav>
+<a href="#resumo">Resumo</a><a href="#15">15/11</a><a href="#16">16/11</a><a href="#17">17/11</a>
+<a href="#18">18/11</a><a href="#19">19/11</a><a href="#20">20/11</a>
+<a href="#custos">Custos</a><a href="#fontes">Fontes</a>
+</nav>
+<section id="resumo">
+<h2>Visão geral</h2>
+<p class="lead">Os deslocamentos são aproximados e servem para planejamento. O tempo real muda conforme entrada escolhida nas atrações, filas, obras, clima e restaurante selecionado.</p><div class="photo-note">📷 As fotos das atrações são carregadas online da Wikipedia/Wikimedia. É necessário ter conexão para visualizá-las; o restante do roteiro continua disponível mesmo se uma foto não carregar.</div>
+<div class="table-wrap"><table>
+<thead><tr><th>Data</th><th>Região</th><th>Principal atração paga</th><th>Perfil do dia</th></tr></thead>
+<tbody>
+<tr><td>15/11 • Dom</td><td>Eiffel / Trocadéro</td><td>—</td><td>Chegada tranquila + Paris iluminada</td></tr>
+<tr><td>16/11 • Seg</td><td>Île de la Cité / Latin / Saint-Germain</td><td>Museum Pass: Sainte-Chapelle + Panthéon</td><td>Arquitetura, história e bairros</td></tr>
+<tr><td>17/11 • Ter</td><td>Versailles / Opéra</td><td>Museum Pass: Versailles</td><td>Château + jardins + Paris à noite</td></tr>
+<tr><td>18/11 • Qua</td><td>Louvre / Tuileries / Invalides / Champs</td><td>Museum Pass: Louvre + Invalides + Arco</td><td>Dia monumental + Napoleão</td></tr>
+<tr><td>19/11 • Qui</td><td>Montmartre / Marais / Canal</td><td>Opcional: cúpula Sacré-Cœur €8</td><td>Bairros, mirante e Paris local</td></tr>
+<tr><td>20/11 • Sex</td><td>Eiffel / Rue Cler / Pont Alexandre III / Sena</td><td>Torre €36,70 + cruzeiro €18</td><td>Último dia mais leve e romântico</td></tr>
+</tbody></table></div>
+</section>
+<section class="day" id="15">
+<div class="day-head"><div class="date"><strong>15</strong>NOV</div><div><h3>Domingo • Chegada + Torre Eiffel + Trocadéro</h3><div class="day-sub">Sem ingresso com hora marcada no dia da chegada.</div></div></div>
+<div class="timeline">
+<article class="event meal">
+<div class="event-top"><span class="time">14:00–16:00</span><span class="tag food">Refeição</span></div>
+<h4>Almoço tardio</h4>
+<p>Boas opções próximas ao hotel para comer assim que chegarem.</p>
+<div class="restaurant-grid">
+<article class="restaurant">
+<div class="rest-head">
+<div>
+<h5>Buns – Smash Burgers &amp; Fried Chicken Paris 15</h5>
+<div class="rating">Google 4.7/5 <span>(898 avaliações)</span></div>
+</div>
+<div class="price">≈ €16/pessoa</div>
+</div>
+<p>Smash burger / frango; combo na faixa de €15,90.</p>
+<div class="meta"><b>Faixa:</b> €15–18  •  <b>Fonte do orçamento:</b> Cardápio/guia 2026</div>
+<div class="hours-line">🕒 <b>Funcionamento:</b> Domingo: 11:00–22:00</div><a class="mapbtn" href="https://www.google.com/maps/search/?api=1&amp;query=1+Rue+L%C3%A9on+S%C3%A9ch%C3%A9%2C+75015+Paris" rel="noopener" target="_blank">Abrir no Google Maps ↗</a>
+</article>
+<article class="restaurant">
+<div class="rest-head">
+<div>
+<h5>Le Relais du 15ème</h5>
+<div class="rating">Google 4.7/5 <span>(5,930 avaliações)</span></div>
+</div>
+<div class="price">≈ €25/pessoa</div>
+</div>
+<p>Italiano, pizza, massas e burgers.</p>
+<div class="meta"><b>Faixa:</b> €20–30  •  <b>Fonte do orçamento:</b> Faixa de preço Google</div>
+<div class="hours-line">🕒 <b>Funcionamento:</b> Domingo: 11:30–22:30</div><a class="mapbtn" href="https://www.google.com/maps/search/?api=1&amp;query=78+Avenue+%C3%89mile+Zola%2C+75015+Paris" rel="noopener" target="_blank">Abrir no Google Maps ↗</a>
+</article>
+</div>
+</article>
+<div class="move">
+<div class="move-icon">↳</div>
+<div>
+<b>Hotel → Champ-de-Mars</b>
+<div class="move-meta">≈ 1,4 km</div>
+<div class="move-text"><span class="mode">🚶 A pé</span> Caminhada de aproximadamente 18–20 min.</div>
+</div>
+</div>
+<article class="event attraction">
+<div class="event-top"><span class="time">17:00–18:00</span><span class="tag">Atração</span></div>
+<h4>Champ-de-Mars + primeira vista da Torre Eiffel</h4>
+<div class="ticket">Grátis</div>
+<div class="attraction-media"><div class="attraction-photo"><img alt="Foto ilustrativa — Champ-de-Mars + primeira vista da Torre Eiffel" data-wiki="Champ de Mars" loading="lazy" referrerpolicy="no-referrer"/><div class="photo-fallback">Carregando foto da atração…</div><a class="photo-credit" rel="noopener" target="_blank">Foto: Wikipedia/Wikimedia ↗</a></div><div class="attraction-copy"><div class="hours-box">🕒 <strong>Funcionamento:</strong> Parc du Champ-de-Mars: aberto 24 h por dia.</div><p><span class="label">O que é: </span>Grande parque público aos pés da Torre Eiffel, criado a partir do antigo campo de manobras da École Militaire e hoje um dos principais espaços abertos de Paris.</p><div class="expect-box"><span class="label">O que esperar ver: </span>Gramados, alamedas e a perspectiva clássica da Torre Eiffel. Nesse horário, a graça é acompanhar a mudança da luz do fim da tarde para a iluminação noturna da torre.</div><div class="plan-note"><b>No roteiro: </b>Aproveitar o fim de tarde e a primeira iluminação. Não subir à Torre hoje.</div></div></div></article>
+<div class="move">
+<div class="move-icon">↳</div>
+<div>
+<b>Champ-de-Mars → base da Torre Eiffel</b>
+<div class="move-meta">≈ 0,5 km</div>
+<div class="move-text"><span class="mode">🚶 A pé</span> Cerca de 7 min.</div>
+</div>
+</div>
+<article class="event attraction">
+<div class="event-top"><span class="time">18:00–19:30</span><span class="tag">Atração</span></div>
+<h4>Pont d’Iéna + Jardins du Trocadéro</h4>
+<div class="ticket">Grátis</div>
+<div class="attraction-media"><div class="attraction-photo"><img alt="Foto ilustrativa — Pont d’Iéna + Jardins du Trocadéro" data-credit-page="https://commons.wikimedia.org/wiki/File:Tour_eiffel_paris-eiffel_tower.jpg" data-direct-image="https://commons.wikimedia.org/wiki/Special:Redirect/file/Tour_eiffel_paris-eiffel_tower.jpg?width=900" data-wiki="Trocadéro" loading="lazy" referrerpolicy="no-referrer"/><div class="photo-fallback">Carregando foto da atração…</div><a class="photo-credit" rel="noopener" target="_blank">Foto: Wikipedia/Wikimedia ↗</a></div><div class="attraction-copy"><div class="hours-box">🕒 <strong>Funcionamento:</strong> Jardins du Trocadéro: aberto 24 h por dia; Pont d’Iéna: via pública.</div><p><span class="label">O que é: </span>O Pont d’Iéna liga diretamente a Torre Eiffel ao Trocadéro. Do outro lado do Sena ficam os jardins, fontes e a grande esplanada diante do Palais de Chaillot.</p><div class="expect-box"><span class="label">O que esperar ver: </span>Uma das vistas frontais mais famosas da Torre Eiffel, boas perspectivas para fotos, fontes e o conjunto monumental do Trocadéro iluminado.</div><div class="plan-note"><b>No roteiro: </b>Atravessar o Sena e subir até a esplanada para a vista frontal clássica.</div></div></div></article>
+<div class="move">
+<div class="move-icon">↳</div>
+<div>
+<b>Trocadéro → hotel</b>
+<div class="move-meta">≈ ≈ 3,1 km de rota • ≈ 20–25 min</div>
+<div class="move-text"><span class="mode">🚇 Metrô</span> Linha 6, direção Nation: Trocadéro → Dupleix. Depois caminhar ≈ 0,8 km até o hotel. Este deslocamento de domingo deve ser pago à parte; o Navigo Week começa na segunda-feira.</div>
+</div>
+</div>
+<article class="event meal">
+<div class="event-top"><span class="time">20:00</span><span class="tag food">Refeição</span></div>
+<h4>Jantar</h4>
+<div class="restaurant-grid">
+<article class="restaurant">
+<div class="rest-head">
+<div>
+<h5>Fratelli Castellano</h5>
+<div class="rating">Google 4.8/5 <span>(1,639 avaliações)</span></div>
+</div>
+<div class="price">≈ €19/pessoa</div>
+</div>
+<p>Pizzas atuais em torno de €14–18; bebida simples à parte.</p>
+<div class="meta"><b>Faixa:</b> €17–22  •  <b>Fonte do orçamento:</b> Cardápio 2026</div>
+<div class="hours-line">🕒 <b>Funcionamento:</b> Domingo: 12:00–14:30 e 19:00–22:30</div><a class="mapbtn" href="https://www.google.com/maps/search/?api=1&amp;query=43+Rue+Fondary%2C+75015+Paris" rel="noopener" target="_blank">Abrir no Google Maps ↗</a>
+</article>
+<article class="restaurant">
+<div class="rest-head">
+<div>
+<h5>Le Relais du 15ème</h5>
+<div class="rating">Google 4.7/5 <span>(5,930 avaliações)</span></div>
+</div>
+<div class="price">≈ €25/pessoa</div>
+</div>
+<p>Italiano, pizza, massas e burgers.</p>
+<div class="meta"><b>Faixa:</b> €20–30  •  <b>Fonte do orçamento:</b> Faixa de preço Google</div>
+<div class="hours-line">🕒 <b>Funcionamento:</b> Domingo: 11:30–22:30</div><a class="mapbtn" href="https://www.google.com/maps/search/?api=1&amp;query=78+Avenue+%C3%89mile+Zola%2C+75015+Paris" rel="noopener" target="_blank">Abrir no Google Maps ↗</a>
+</article>
+</div>
+</article>
+</div>
+</section>
+<section class="day" id="16"><div class="day-head"><div class="date"><strong>16</strong>NOV</div><div><h3>Segunda • Notre-Dame + Sainte-Chapelle + Panthéon + Quartier Latin</h3><div class="day-sub">Panthéon agora entra de verdade no roteiro, sem sacrificar o Luxembourg ou Saint-Germain.</div></div></div><div class="timeline"><article class="event meal"><div class="event-top"><span class="time">07:45</span><span class="tag food">Refeição</span></div><h4>Café da manhã</h4><div class="restaurant-grid"><article class="restaurant">
+<div class="rest-head">
+<div>
+<h5>Boulangerie Pâtisserie</h5>
+<div class="rating">Google 4.8/5 <span>(621 avaliações)</span></div>
+</div>
+<div class="price">≈ €7/pessoa</div>
+</div>
+<p>Café + viennoiserie/sanduíche simples.</p>
+<div class="meta"><b>Faixa:</b> €5–10  •  <b>Fonte do orçamento:</b> Estimativa para café de padaria</div>
+<div class="hours-line">🕒 <b>Funcionamento:</b> Segunda: Google indica 07:30–20:00; há fonte setorial indicando fechamento semanal na segunda — reconfirmar</div><a class="mapbtn" href="https://www.google.com/maps/search/?api=1&amp;query=100+Rue+du+Th%C3%A9%C3%A2tre%2C+75015+Paris" rel="noopener" target="_blank">Abrir no Google Maps ↗</a>
+</article><article class="restaurant">
+<div class="rest-head">
+<div>
+<h5>Boulangerie Loquer</h5>
+<div class="rating">Google 4.8/5 <span>(243 avaliações)</span></div>
+</div>
+<div class="price">≈ €7/pessoa</div>
+</div>
+<p>Café da manhã simples de padaria.</p>
+<div class="meta"><b>Faixa:</b> €5–10  •  <b>Fonte do orçamento:</b> Faixa Google €1–10</div>
+<div class="hours-line">🕒 <b>Funcionamento:</b> Segunda: 07:00–20:00</div><a class="mapbtn" href="https://www.google.com/maps/search/?api=1&amp;query=65+Rue+des+Entrepreneurs%2C+75015+Paris" rel="noopener" target="_blank">Abrir no Google Maps ↗</a>
+</article></div></article><div class="move"><div class="move-icon">↳</div><div><b>Hotel → Notre-Dame</b><div class="move-meta">≈ ≈ 5,5 km de rota • ≈ 30–35 min</div><div class="move-text"><span class="mode">🚇 Metrô</span> Caminhar ≈ 0,2 km até Avenue Émile Zola → Linha 10 direção Gare d’Austerlitz → Cluny–La Sorbonne → caminhar ≈ 0,65 km.</div></div></div><article class="event attraction">
+<div class="event-top"><span class="time">09:15–10:15</span><span class="tag">Atração</span></div>
+<h4>Notre-Dame de Paris</h4>
+<div class="ticket">Grátis</div>
+<div class="attraction-media"><div class="attraction-photo"><img alt="Foto ilustrativa — Notre-Dame de Paris" data-wiki="Notre-Dame de Paris" loading="lazy" referrerpolicy="no-referrer"/><div class="photo-fallback">Carregando foto da atração…</div><a class="photo-credit" rel="noopener" target="_blank">Foto: Wikipedia/Wikimedia ↗</a></div><div class="attraction-copy"><div class="hours-box">🕒 <strong>Funcionamento:</strong> Segunda-feira: 07:50–19:00. Última entrada cerca de 30 min antes do fechamento.</div><p><span class="label">O que é: </span>Catedral gótica iniciada no século XII e um dos grandes símbolos históricos de Paris. Reabriu ao público após a restauração decorrente do incêndio de 2019.</p><div class="expect-box"><span class="label">O que esperar ver: </span>A nave restaurada, vitrais, rosáceas, capelas laterais, esculturas e a luminosidade do interior renovado. O percurso de visita é gratuito.</div><div class="plan-note"><b>No roteiro: </b>Entrada gratuita; a reserva de horário também é gratuita e pode reduzir a fila.</div></div></div></article><div class="move"><div class="move-icon">↳</div><div><b>Notre-Dame → Sainte-Chapelle</b><div class="move-meta">≈ 0,6 km</div><div class="move-text"><span class="mode">🚶 A pé</span> Aproximadamente 8 min pela Île de la Cité.</div></div></div><article class="event attraction">
+<div class="event-top"><span class="time">10:30–11:20</span><span class="tag">Atração</span></div>
+<h4>Sainte-Chapelle</h4>
+<div class="ticket">Incluído no Paris Museum Pass • avulso €22 não-EEE / €16 EEE</div>
+<div class="attraction-media"><div class="attraction-photo"><img alt="Foto ilustrativa — Sainte-Chapelle" data-wiki="Sainte-Chapelle" loading="lazy" referrerpolicy="no-referrer"/><div class="photo-fallback">Carregando foto da atração…</div><a class="photo-credit" rel="noopener" target="_blank">Foto: Wikipedia/Wikimedia ↗</a></div><div class="attraction-copy"><div class="hours-box">🕒 <strong>Funcionamento:</strong> Em novembro: 09:00–17:00. Último acesso às 16:30.</div><p><span class="label">O que é: </span>Capela real do século XIII construída por Luís IX no antigo palácio real da Île de la Cité para abrigar importantes relíquias cristãs.</p><div class="expect-box"><span class="label">O que esperar ver: </span>O grande destaque é a capela superior, praticamente envolvida por vitrais medievais extremamente altos e coloridos. Em dias claros, a luz atravessando os vitrais é o ponto alto da visita.</div><div class="plan-note"><b>No roteiro: </b>Primeira utilização do Paris Museum Pass; ativação prevista por volta de 10:30 em 16/11. A validade de 96 h começa nesta entrada. Manter a reserva de horário exigida.</div></div></div></article><div class="move"><div class="move-icon">↳</div><div><b>Sainte-Chapelle → almoço</b><div class="move-meta">≈ 0,4–1,1 km</div><div class="move-text"><span class="mode">🚶 A pé</span> La Crème de Paris fica a ≈ 0,45 km; Monica fica a ≈ 1,1 km.</div></div></div><article class="event meal"><div class="event-top"><span class="time">11:45–12:45</span><span class="tag food">Refeição</span></div><h4>Almoço</h4><div class="restaurant-grid"><article class="restaurant">
+<div class="rest-head">
+<div>
+<h5>La Crème de Paris Notre-Dame</h5>
+<div class="rating">Google 4.8/5 <span>(20,201 avaliações)</span></div>
+</div>
+<div class="price">≈ €17/pessoa</div>
+</div>
+<p>Crêpes salgadas em torno de €15; doces €6–14.</p>
+<div class="meta"><b>Faixa:</b> €15–20  •  <b>Fonte do orçamento:</b> Cardápio 2026</div>
+<div class="hours-line">🕒 <b>Funcionamento:</b> Segunda: 08:00–00:00</div><a class="mapbtn" href="https://www.google.com/maps/search/?api=1&amp;query=1+Quai+Saint-Michel%2C+75005+Paris" rel="noopener" target="_blank">Abrir no Google Maps ↗</a>
+</article><article class="restaurant">
+<div class="rest-head">
+<div>
+<h5>Monica – Pizzeria Saint Germain</h5>
+<div class="rating">Google 4.9/5 <span>(117 avaliações)</span></div>
+</div>
+<div class="price">≈ €25/pessoa</div>
+</div>
+<p>Pizza e italiano.</p>
+<div class="meta"><b>Faixa:</b> €20–30  •  <b>Fonte do orçamento:</b> Faixa de preço Google</div>
+<div class="hours-line">🕒 <b>Funcionamento:</b> Segunda: 09:00–02:00</div><a class="mapbtn" href="https://www.google.com/maps/search/?api=1&amp;query=1+Rue+Gozlin%2C+75006+Paris" rel="noopener" target="_blank">Abrir no Google Maps ↗</a>
+</article></div></article><div class="move"><div class="move-icon">↳</div><div><b>Almoço → Panthéon</b><div class="move-meta">≈ ≈ 1,0–1,4 km • ≈ 15–20 min</div><div class="move-text"><span class="mode">🚶 A pé</span> Subir pelo Quartier Latin passando pela região da Sorbonne.</div></div></div><article class="event attraction">
+<div class="event-top"><span class="time">13:10–14:15</span><span class="tag">Atração</span></div>
+<h4>Panthéon — visita interna</h4><div class="ticket">Incluído no Paris Museum Pass • avulso €13 em novembro</div>
+<div class="attraction-media"><div class="attraction-photo"><img alt="Foto ilustrativa — Panthéon — visita interna" data-wiki="Panthéon, Paris" loading="lazy" referrerpolicy="no-referrer"/><div class="photo-fallback">Carregando foto da atração…</div><a class="photo-credit" rel="noopener" target="_blank">Foto: Wikipedia/Wikimedia ↗</a></div><div class="attraction-copy">
+<div class="hours-box">🕒 <strong>Funcionamento:</strong> Em novembro: 10:00–18:00; último acesso 45 min antes.</div>
+<p><span class="label">O que é: </span>Monumento neoclássico originalmente concebido como igreja de Sainte-Geneviève e transformado em mausoléu cívico dedicado a grandes nomes da história francesa.</p>
+<div class="expect-box"><span class="label">O que esperar ver: </span>A nave monumental, o Pêndulo de Foucault e a cripta onde repousam personalidades como Voltaire, Rousseau, Victor Hugo, Émile Zola, Pierre e Marie Curie e Simone Veil.</div>
+<div class="plan-note"><b>No roteiro: </b>Entrada coberta pelo Museum Pass. A visita interna já está contabilizada no tempo do dia.</div>
+</div></div></article><div class="move"><div class="move-icon">↳</div><div><b>Panthéon → Jardin du Luxembourg</b><div class="move-meta">≈ 0,8 km</div><div class="move-text"><span class="mode">🚶 A pé</span> Cerca de 10–12 min.</div></div></div><article class="event attraction">
+<div class="event-top"><span class="time">14:30–15:30</span><span class="tag">Atração</span></div>
+<h4>Jardin du Luxembourg</h4>
+<div class="ticket">Grátis</div>
+<div class="attraction-media"><div class="attraction-photo"><img alt="Foto ilustrativa — Jardin du Luxembourg" data-wiki="Luxembourg Garden" loading="lazy" referrerpolicy="no-referrer"/><div class="photo-fallback">Carregando foto da atração…</div><a class="photo-credit" rel="noopener" target="_blank">Foto: Wikipedia/Wikimedia ↗</a></div><div class="attraction-copy"><div class="hours-box">🕒 <strong>Funcionamento:</strong> 16 a 30 de novembro: 08:00–16:45.</div><p><span class="label">O que é: </span>Jardim histórico criado no século XVII em torno do Palais du Luxembourg, atual sede do Senado francês.</p><div class="expect-box"><span class="label">O que esperar ver: </span>Alamedas arborizadas, esculturas, cadeiras verdes tradicionais, o grande bassin central, fontes e a fachada do palácio. É um ótimo ponto para desacelerar no meio do dia.</div><div class="plan-note"><b>No roteiro: </b>Pausa mais tranquila do dia.</div></div></div></article><div class="move"><div class="move-icon">↳</div><div><b>Luxembourg → Boulevard Saint-Germain</b><div class="move-meta">≈ ≈ 1,1 km</div><div class="move-text"><span class="mode">🚶 A pé</span> Caminhada de aproximadamente 15 min.</div></div></div><article class="event meal"><div class="event-top"><span class="time">15:50</span><span class="tag food">Refeição</span></div><h4>Lanche da tarde</h4><div class="restaurant-grid"><article class="restaurant">
+<div class="rest-head">
+<div>
+<h5>ANGIOLO</h5>
+<div class="rating">Google 4.8/5 <span>(939 avaliações)</span></div>
+</div>
+<div class="price">≈ €9/pessoa</div>
+</div>
+<p>Pote individual de gelato artesanal em torno de €8–9.</p>
+<div class="meta"><b>Faixa:</b> €8–10  •  <b>Fonte do orçamento:</b> Site/cardápio 2026</div>
+<div class="hours-line">🕒 <b>Funcionamento:</b> Segunda: 13:00–22:00</div><a class="mapbtn" href="https://www.google.com/maps/search/?api=1&amp;query=180A+Boulevard+Saint-Germain%2C+75006+Paris" rel="noopener" target="_blank">Abrir no Google Maps ↗</a>
+</article></div></article><article class="event attraction">
+<div class="event-top"><span class="time">16:20–18:30</span><span class="tag">Atração</span></div>
+<h4>Saint-Germain-des-Prés</h4>
+<div class="ticket">Grátis</div>
+<div class="attraction-media"><div class="attraction-photo"><img alt="Foto ilustrativa — Saint-Germain-des-Prés" data-wiki="Saint-Germain-des-Prés" loading="lazy" referrerpolicy="no-referrer"/><div class="photo-fallback">Carregando foto da atração…</div><a class="photo-credit" rel="noopener" target="_blank">Foto: Wikipedia/Wikimedia ↗</a></div><div class="attraction-copy"><div class="hours-box">🕒 <strong>Funcionamento:</strong> Bairro e ruas públicas: acesso 24 h; comércio e igrejas têm horários próprios.</div><p><span class="label">O que é: </span>Bairro histórico da margem esquerda associado a escritores, filósofos, editoras, cafés literários, galerias e à antiga abadia de Saint-Germain-des-Prés.</p><div class="expect-box"><span class="label">O que esperar ver: </span>Ruas elegantes, fachadas antigas, livrarias, galerias, confeitarias e uma atmosfera mais intimista que os grandes eixos turísticos.</div><div class="plan-note"><b>No roteiro: </b>Rue de Buci, Boulevard Saint-Germain e ruas laterais.</div></div></div></article><article class="event meal"><div class="event-top"><span class="time">19:00</span><span class="tag food">Refeição</span></div><h4>Jantar</h4><div class="restaurant-grid"><article class="restaurant">
+<div class="rest-head">
+<div>
+<h5>AGATA</h5>
+<div class="rating">Google 4.7/5 <span>(2,269 avaliações)</span></div>
+</div>
+<div class="price">≈ €25/pessoa</div>
+</div>
+<p>Pizzaria / italiano.</p>
+<div class="meta"><b>Faixa:</b> €20–30  •  <b>Fonte do orçamento:</b> Faixa de preço Google</div>
+<div class="hours-line">🕒 <b>Funcionamento:</b> Segunda: 12:00–15:00 e 19:00–23:00</div><a class="mapbtn" href="https://www.google.com/maps/search/?api=1&amp;query=168+Boulevard+Saint-Germain%2C+75006+Paris" rel="noopener" target="_blank">Abrir no Google Maps ↗</a>
+</article><article class="restaurant">
+<div class="rest-head">
+<div>
+<h5>JUNK Saint-Germain</h5>
+<div class="rating">Google 4.7/5 <span>(811 avaliações)</span></div>
+</div>
+<div class="price">≈ €15/pessoa</div>
+</div>
+<p>Hambúrguer.</p>
+<div class="meta"><b>Faixa:</b> €10–20  •  <b>Fonte do orçamento:</b> Faixa de preço Google</div>
+<div class="hours-line">🕒 <b>Funcionamento:</b> Segunda: 12:00–22:30</div><a class="mapbtn" href="https://www.google.com/maps/search/?api=1&amp;query=4+Rue+de+l%27Ancienne+Com%C3%A9die%2C+75006+Paris" rel="noopener" target="_blank">Abrir no Google Maps ↗</a>
+</article></div></article><div class="move"><div class="move-icon">↳</div><div><b>Odéon → hotel</b><div class="move-meta">≈ ≈ 5 km de rota • ≈ 25 min</div><div class="move-text"><span class="mode">🚇 Metrô</span> Linha 10 direção Boulogne–Pont de Saint-Cloud → Avenue Émile Zola → caminhar ≈ 0,2 km.</div></div></div></div></section>
+<section class="day" id="17"><div class="day-head"><div class="date"><strong>17</strong>NOV</div><div><h3>Terça • Palácio de Versailles + jardins + Opéra</h3><div class="day-sub">Versailles ocupa a maior parte do dia; o fim de tarde aproveita Opéra e o rooftop sem acrescentar outro grande deslocamento.</div></div></div><div class="timeline"><article class="event meal"><div class="event-top"><span class="time">06:45</span><span class="tag food">Refeição</span></div><h4>Café da manhã</h4><p>Hoje vale sair cedo: o melhor é estar na entrada do Château antes das 09:00.</p><div class="restaurant-grid"><article class="restaurant">
+<div class="rest-head">
+<div>
+<h5>Boulangerie Pâtisserie</h5>
+<div class="rating">Google 4.8/5 <span>(621 avaliações)</span></div>
+</div>
+<div class="price">≈ €7/pessoa</div>
+</div>
+<p>Café + viennoiserie/sanduíche simples.</p>
+<div class="meta"><b>Faixa:</b> €5–10  •  <b>Fonte do orçamento:</b> Estimativa para café de padaria</div>
+<div class="hours-line">🕒 <b>Funcionamento:</b> Terça: 07:30–20:00</div><a class="mapbtn" href="https://www.google.com/maps/search/?api=1&amp;query=100+Rue+du+Th%C3%A9%C3%A2tre%2C+75015+Paris" rel="noopener" target="_blank">Abrir no Google Maps ↗</a>
+</article><article class="restaurant">
+<div class="rest-head">
+<div>
+<h5>Boulangerie Loquer</h5>
+<div class="rating">Google 4.8/5 <span>(243 avaliações)</span></div>
+</div>
+<div class="price">≈ €7/pessoa</div>
+</div>
+<p>Café da manhã simples de padaria.</p>
+<div class="meta"><b>Faixa:</b> €5–10  •  <b>Fonte do orçamento:</b> Faixa Google €1–10</div>
+<div class="hours-line">🕒 <b>Funcionamento:</b> Terça: 07:00–20:00</div><a class="mapbtn" href="https://www.google.com/maps/search/?api=1&amp;query=65+Rue+des+Entrepreneurs%2C+75015+Paris" rel="noopener" target="_blank">Abrir no Google Maps ↗</a>
+</article></div></article><div class="move"><div class="move-icon">↳</div><div><b>Hotel → Champ de Mars–Tour Eiffel</b><div class="move-meta">≈ ≈ 1,3 km • ≈ 18 min</div><div class="move-text"><span class="mode">🚶 A pé</span> Caminhar até a estação do RER C.</div></div></div><div class="move"><div class="move-icon">↳</div><div><b>Champ de Mars–Tour Eiffel → Versailles Château Rive Gauche</b><div class="move-meta">≈ ≈ 20 km de linha • ≈ 30–35 min</div><div class="move-text"><span class="mode">🚆 RER C</span> Pegar o RER C direto para Versailles Château Rive Gauche. O trecho tem obra somente após 23:00 em 17/11, portanto o passeio diurno não é afetado.</div></div></div><div class="move"><div class="move-icon">↳</div><div><b>Versailles Château Rive Gauche → Château</b><div class="move-meta">≈ 0,8 km</div><div class="move-text"><span class="mode">🚶 A pé</span> Cerca de 10 min pela Avenue de Sceaux / Avenue de Paris.</div></div></div><article class="event attraction">
+<div class="event-top"><span class="time">09:00–11:30</span><span class="tag">Atração</span></div>
+<h4>Palácio de Versailles — Château</h4><div class="ticket">Incluído no Paris Museum Pass • avulso €25 padrão</div>
+<div class="attraction-media"><div class="attraction-photo"><img alt="Foto ilustrativa — Palácio de Versailles — Château" data-wiki="Palace of Versailles" loading="lazy" referrerpolicy="no-referrer"/><div class="photo-fallback">Carregando foto da atração…</div><a class="photo-credit" rel="noopener" target="_blank">Foto: Wikipedia/Wikimedia ↗</a></div><div class="attraction-copy">
+<div class="hours-box">🕒 <strong>Funcionamento:</strong> Baixa temporada: 09:00–17:30; última admissão 16:45. Fechado às segundas.</div>
+<p><span class="label">O que é: </span>Antiga residência real de Luís XIV, Luís XV e Luís XVI e um dos maiores símbolos da monarquia absolutista francesa. O complexo foi ampliado a partir de um pavilhão de caça e transformado no centro político da corte francesa.</p>
+<div class="expect-box"><span class="label">O que esperar ver: </span>Os Grandes Apartamentos, salões cerimoniais, decoração dourada, pinturas, mobiliário e principalmente a Galeria dos Espelhos, com seus espelhos, lustres e vista para os jardins.</div>
+<div class="plan-note"><b>No roteiro: </b>Entrada coberta pelo Museum Pass; reservar previamente o horário do Château mesmo usando o passe.</div>
+</div></div></article><div class="move"><div class="move-icon">↳</div><div><b>Château → Jardins de Versailles</b><div class="move-meta">≈ 0,2 km</div><div class="move-text"><span class="mode">🚶 A pé</span> A saída do circuito do palácio leva praticamente direto ao terraço dos jardins.</div></div></div><article class="event attraction">
+<div class="event-top"><span class="time">11:30–13:30</span><span class="tag">Atração</span></div>
+<h4>Jardins de Versailles</h4><div class="ticket">Grátis em novembro</div>
+<div class="attraction-media"><div class="attraction-photo"><img alt="Foto ilustrativa — Jardins de Versailles" data-wiki="Gardens of Versailles" loading="lazy" referrerpolicy="no-referrer"/><div class="photo-fallback">Carregando foto da atração…</div><a class="photo-credit" rel="noopener" target="_blank">Foto: Wikipedia/Wikimedia ↗</a></div><div class="attraction-copy">
+<div class="hours-box">🕒 <strong>Funcionamento:</strong> Baixa temporada: 08:00–18:00 todos os dias, salvo condições meteorológicas excepcionais.</div>
+<p><span class="label">O que é: </span>Jardins formais projetados sobretudo por André Le Nôtre para Luís XIV, organizados em eixos geométricos, parterres, esculturas, fontes e grandes perspectivas que prolongam visualmente o palácio.</p>
+<div class="expect-box"><span class="label">O que esperar ver: </span>Parterres, espelhos d’água, esculturas e a enorme perspectiva até o Grand Canal. Em novembro, as fontes ficam desligadas, os bosquets fechados e algumas estátuas podem estar cobertas para conservação.</div>
+<div class="plan-note"><b>No roteiro: </b>Dedicar aproximadamente 2 horas. O objetivo é conhecer bem os jardins principais; Trianon não é obrigatório neste roteiro.</div>
+</div></div></article><div class="move"><div class="move-icon">↳</div><div><b>Jardins / Place d’Armes → almoço em Versailles</b><div class="move-meta">≈ ≈ 0,7–1,1 km • ≈ 10–15 min</div><div class="move-text"><span class="mode">🚶 A pé</span> Sair pela frente do Château e seguir para Rue de Satory ou Rue Royale.</div></div></div><article class="event meal"><div class="event-top"><span class="time">13:45–14:40</span><span class="tag food">Refeição</span></div><h4>Almoço</h4><p>Blé Noir é a escolha principal pelo cardápio alinhado ao gosto de vocês; Aux Pains de la Ferme funciona como opção rápida.</p><div class="restaurant-grid"><article class="restaurant">
+<div class="rest-head"><div><h5>Blé Noir</h5><div class="rating">Google 4.7/5 <span>(5.168 avaliações)</span></div></div><div class="price">≈ €18/pessoa</div></div>
+<p>Galette salgada + crêpe; fórmula de almoço publicada por €17,90.</p>
+<div class="meta"><b>Faixa:</b> €17–22  •  <b>Fonte do orçamento:</b> Cardápio oficial</div>
+<div class="hours-line">🕒 <b>Funcionamento:</b> Terça: 12:00–21:30</div>
+<a class="mapbtn" href="https://www.google.com/maps/search/?api=1&amp;query=9+Rue+de+Satory%2C+78000+Versailles" rel="noopener" target="_blank">Abrir no Google Maps ↗</a>
+</article><article class="restaurant">
+<div class="rest-head"><div><h5>Aux Pains de la Ferme</h5><div class="rating">Google 4.7/5 <span>(1.143 avaliações)</span></div></div><div class="price">≈ €8–12/pessoa</div></div>
+<p>Boulangerie local com sanduíches, focaccias, quiches e pâtisseries; opção rápida e econômica.</p>
+<div class="meta"><b>Faixa:</b> €1–10  •  <b>Fonte do orçamento:</b> Google + guia 2026</div>
+<div class="hours-line">🕒 <b>Funcionamento:</b> Terça: 07:00–20:00</div>
+<a class="mapbtn" href="https://www.google.com/maps/search/?api=1&amp;query=9+Rue+Royale%2C+78000+Versailles" rel="noopener" target="_blank">Abrir no Google Maps ↗</a>
+</article></div></article><div class="move"><div class="move-icon">↳</div><div><b>Almoço → lanche</b><div class="move-meta">≈ ≈ 0,4–0,8 km</div><div class="move-text"><span class="mode">🚶 A pé</span> As confeitarias ficam no centro histórico de Versailles.</div></div></div><article class="event meal"><div class="event-top"><span class="time">14:45–15:10</span><span class="tag food">Refeição</span></div><h4>Lanche da tarde</h4><div class="restaurant-grid"><article class="restaurant">
+<div class="rest-head"><div><h5>Les Pâtisseries du Roy</h5><div class="rating">Google 4.8/5 <span>(302 avaliações)</span></div></div><div class="price">≈ €8/pessoa</div></div>
+<p>Pâtisseries individuais em torno de €4,80–5,50; completar com café.</p>
+<div class="meta"><b>Faixa:</b> €6–10  •  <b>Fonte do orçamento:</b> Cardápio oficial</div>
+<div class="hours-line">🕒 <b>Funcionamento:</b> Terça: 09:00–19:00</div>
+<a class="mapbtn" href="https://www.google.com/maps/search/?api=1&amp;query=8+Rue+de+la+Paroisse%2C+78000+Versailles" rel="noopener" target="_blank">Abrir no Google Maps ↗</a>
+</article><article class="restaurant">
+<div class="rest-head"><div><h5>Maison La Varenne</h5><div class="rating">Google 4.7/5 <span>(230 avaliações)</span></div></div><div class="price">≈ €8–10/pessoa</div></div>
+<p>Pâtisserie e salão de chá para uma pausa antes do retorno a Paris.</p>
+<div class="meta"><b>Faixa:</b> €6–12  •  <b>Fonte do orçamento:</b> Estimativa de pâtisserie</div>
+<div class="hours-line">🕒 <b>Funcionamento:</b> Terça: 10:00–19:30</div>
+<a class="mapbtn" href="https://www.google.com/maps/search/?api=1&amp;query=9+Rue+des+2+Portes%2C+78000+Versailles" rel="noopener" target="_blank">Abrir no Google Maps ↗</a>
+</article></div></article><div class="move"><div class="move-icon">↳</div><div><b>Centro de Versailles → Versailles Château Rive Gauche</b><div class="move-meta">≈ ≈ 0,7–1,0 km</div><div class="move-text"><span class="mode">🚶 A pé</span> Caminhar de volta à estação.</div></div></div><div class="move"><div class="move-icon">↳</div><div><b>Versailles → Opéra</b><div class="move-meta">≈ ≈ 22 km de rota • ≈ 50–60 min</div><div class="move-text"><span class="mode">🚆 RER C + 🚇 Linha 8</span> RER C Versailles Château Rive Gauche → Invalides; em Invalides trocar para Linha 8 direção Créteil–Pointe du Lac → Opéra.</div></div></div><article class="event attraction">
+<div class="event-top"><span class="time">16:30–16:50</span><span class="tag">Atração</span></div>
+<h4>Palais Garnier por fora</h4>
+<div class="ticket">Exterior grátis • visita interna opcional €25 não-EEE / €15 EEE</div>
+<div class="attraction-media"><div class="attraction-photo"><img alt="Foto ilustrativa — Palais Garnier por fora" data-wiki="Palais Garnier" loading="lazy" referrerpolicy="no-referrer"/><div class="photo-fallback">Carregando foto da atração…</div><a class="photo-credit" rel="noopener" target="_blank">Foto: Wikipedia/Wikimedia ↗</a></div><div class="attraction-copy"><div class="hours-box">🕒 <strong>Funcionamento:</strong> Exterior: acesso visual 24 h. Visitas internas, quando disponíveis: edifício normalmente 10:00–17:00, com entrada de visitantes até 16:00.</div><p><span class="label">O que é: </span>Ópera inaugurada em 1875 e obra-prima da arquitetura do Segundo Império, projetada por Charles Garnier.</p><div class="expect-box"><span class="label">O que esperar ver: </span>Fachada extremamente ornamentada, colunas, esculturas, dourados e a grande cúpula. Mesmo sem entrar, vale observar os detalhes do edifício e a movimentada Place de l’Opéra.</div><div class="plan-note"><b>No roteiro: </b>No roteiro-base, apenas a fachada e a região.</div></div></div></article><div class="move"><div class="move-icon">↳</div><div><b>Palais Garnier → Galeries Lafayette</b><div class="move-meta">≈ 0,4 km</div><div class="move-text"><span class="mode">🚶 A pé</span> Aproximadamente 5 min.</div></div></div><article class="event attraction">
+<div class="event-top"><span class="time">16:55–18:00</span><span class="tag">Atração</span></div>
+<h4>Galeries Lafayette + rooftop</h4>
+<div class="ticket">Grátis</div>
+<div class="attraction-media"><div class="attraction-photo"><img alt="Foto ilustrativa — Galeries Lafayette + rooftop" data-wiki="Galeries Lafayette" loading="lazy" referrerpolicy="no-referrer"/><div class="photo-fallback">Carregando foto da atração…</div><a class="photo-credit" rel="noopener" target="_blank">Foto: Wikipedia/Wikimedia ↗</a></div><div class="attraction-copy"><div class="hours-box">🕒 <strong>Funcionamento:</strong> Terça-feira: rooftop 10:00–20:00; loja principal 10:00–20:30. Terraço pode fechar por chuva ou vento forte.</div><p><span class="label">O que é: </span>Tradicional grand magasin parisiense, famoso pela cúpula Art Nouveau de vidro e pelo terraço panorâmico gratuito no último andar.</p><div class="expect-box"><span class="label">O que esperar ver: </span>A cúpula vista de dentro da loja e, no rooftop, um panorama urbano com Palais Garnier, Torre Eiffel, Sacré-Cœur e os telhados de Paris.</div><div class="plan-note"><b>No roteiro: </b>Terraço panorâmico gratuito e sem reserva, sujeito a clima.</div></div></div></article><div class="move"><div class="move-icon">↳</div><div><b>Galeries Lafayette → Opera 9</b><div class="move-meta">≈ ≈ 0,9 km</div><div class="move-text"><span class="mode">🚶 A pé</span> Cerca de 12 min.</div></div></div><article class="event meal"><div class="event-top"><span class="time">19:00</span><span class="tag food">Refeição</span></div><h4>Jantar</h4><div class="restaurant-grid"><article class="restaurant">
+<div class="rest-head">
+<div>
+<h5>Opera 9</h5>
+<div class="rating">Google 4.9/5 <span>(705 avaliações)</span></div>
+</div>
+<div class="price">≈ €34/pessoa</div>
+</div>
+<p>Italiano; TheFork indica preço médio de €34.</p>
+<div class="meta"><b>Faixa:</b> €25–40  •  <b>Fonte do orçamento:</b> TheFork 2026</div>
+<div class="hours-line">🕒 <b>Funcionamento:</b> Terça: 12:00–14:30 e 19:00–22:30</div><a class="mapbtn" href="https://www.google.com/maps/search/?api=1&amp;query=4+Bis+Rue+de+Ch%C3%A2teaudun%2C+75009+Paris" rel="noopener" target="_blank">Abrir no Google Maps ↗</a>
+</article></div></article><div class="move"><div class="move-icon">↳</div><div><b>Opéra → hotel</b><div class="move-meta">≈ ≈ 5,8 km de rota • ≈ 25–30 min</div><div class="move-text"><span class="mode">🚇 Metrô</span> Linha 8 direção Balard → Commerce → caminhar ≈ 0,5 km até o hotel.</div></div></div></div></section>
+<section class="day" id="18">
+<div class="day-head"><div class="date"><strong>18</strong>NOV</div><div><h3>Quarta • Louvre + Tuileries + Tumba de Napoleão + Arco do Triunfo</h3><div class="day-sub">Dia mais intenso, concentrando todas as últimas atrações do Museum Pass antes do encerramento das 96 horas.</div></div></div>
+<div class="timeline"><article class="event meal">
+<div class="event-top"><span class="time">07:30</span><span class="tag food">Refeição</span></div>
+<h4>Café da manhã</h4>
+<div class="restaurant-grid">
+<article class="restaurant">
+<div class="rest-head">
+<div>
+<h5>Boulangerie Pâtisserie</h5>
+<div class="rating">Google 4.8/5 <span>(621 avaliações)</span></div>
+</div>
+<div class="price">≈ €7/pessoa</div>
+</div>
+<p>Café + viennoiserie/sanduíche simples.</p>
+<div class="meta"><b>Faixa:</b> €5–10  •  <b>Fonte do orçamento:</b> Estimativa para café de padaria</div>
+<div class="hours-line">🕒 <b>Funcionamento:</b> Quarta: 07:30–20:00</div><a class="mapbtn" href="https://www.google.com/maps/search/?api=1&amp;query=100+Rue+du+Th%C3%A9%C3%A2tre%2C+75015+Paris" rel="noopener" target="_blank">Abrir no Google Maps ↗</a>
+</article>
+<article class="restaurant">
+<div class="rest-head">
+<div>
+<h5>Boulangerie Loquer</h5>
+<div class="rating">Google 4.8/5 <span>(243 avaliações)</span></div>
+</div>
+<div class="price">≈ €7/pessoa</div>
+</div>
+<p>Café da manhã simples de padaria.</p>
+<div class="meta"><b>Faixa:</b> €5–10  •  <b>Fonte do orçamento:</b> Faixa Google €1–10</div>
+<div class="hours-line">🕒 <b>Funcionamento:</b> Quarta: 07:00–20:00</div><a class="mapbtn" href="https://www.google.com/maps/search/?api=1&amp;query=65+Rue+des+Entrepreneurs%2C+75015+Paris" rel="noopener" target="_blank">Abrir no Google Maps ↗</a>
+</article>
+</div>
+</article><div class="move">
+<div class="move-icon">↳</div>
+<div>
+<b>Hotel → Louvre</b>
+<div class="move-meta">≈ ≈ 5,8 km de rota • ≈ 30 min</div>
+<div class="move-text"><span class="mode">🚇 Metrô</span> Commerce → Linha 8 direção Créteil–Pointe du Lac → Concorde → Linha 1 direção Château de Vincennes → Palais Royal–Musée du Louvre.</div>
+</div>
+</div><article class="event attraction">
+<div class="event-top"><span class="time">09:00–12:45</span><span class="tag">Atração</span></div>
+<h4>Museu do Louvre</h4>
+<div class="ticket">Incluído no Paris Museum Pass • avulso €32 não-EEE / €22 EEE</div>
+<div class="attraction-media"><div class="attraction-photo"><img alt="Foto ilustrativa — Museu do Louvre" data-wiki="Louvre" loading="lazy" referrerpolicy="no-referrer"/><div class="photo-fallback">Carregando foto da atração…</div><a class="photo-credit" rel="noopener" target="_blank">Foto: Wikipedia/Wikimedia ↗</a></div><div class="attraction-copy"><div class="hours-box">🕒 <strong>Funcionamento:</strong> Quarta-feira: 09:00–21:00. Última entrada 1 h antes do fechamento; salas começam a ser evacuadas 30 min antes.</div><p><span class="label">O que é: </span>Antigo palácio real transformado em um dos maiores museus do mundo, com coleções que atravessam civilizações e milênios de história.</p><div class="expect-box"><span class="label">O que esperar ver: </span>Além da pirâmide de vidro e dos salões históricos, o roteiro prioriza Mona Lisa, Vitória de Samotrácia, Vênus de Milo, Galeria de Apolo e apartamentos de Napoleão III.</div><div class="plan-note"><b>No roteiro: </b>Entrada coberta pelo Museum Pass; manter reserva de horário para 09:00. Saída planejada às 12:45 para comportar Invalides no mesmo dia.</div></div></div></article><div class="move">
+<div class="move-icon">↳</div>
+<div>
+<b>Louvre → almoço</b>
+<div class="move-meta">≈ ≈ 0,7 km ou 1,2 km</div>
+<div class="move-text"><span class="mode">🚶 A pé</span> Baguett’s Café ≈ 0,7 km; PEPPE ≈ 1,2 km.</div>
+</div>
+</div><article class="event meal">
+<div class="event-top"><span class="time">13:00–13:45</span><span class="tag food">Refeição</span></div>
+<h4>Almoço</h4>
+<div class="restaurant-grid">
+<article class="restaurant">
+<div class="rest-head">
+<div>
+<h5>Baguett's Café</h5>
+<div class="rating">Google 4.7/5 <span>(5,708 avaliações)</span></div>
+</div>
+<div class="price">≈ €25/pessoa</div>
+</div>
+<p>Brunch, baguetes, bagels e pratos rápidos.</p>
+<div class="meta"><b>Faixa:</b> €20–30  •  <b>Fonte do orçamento:</b> Faixa de preço Google</div>
+<div class="hours-line">🕒 <b>Funcionamento:</b> Quarta: 08:30–17:00</div><a class="mapbtn" href="https://www.google.com/maps/search/?api=1&amp;query=33+Rue+de+Richelieu%2C+75001+Paris" rel="noopener" target="_blank">Abrir no Google Maps ↗</a>
+</article>
+<article class="restaurant">
+<div class="rest-head">
+<div>
+<h5>PEPPE PIZZERIA Étienne Marcel</h5>
+<div class="rating">Google 4.8/5 <span>(8,466 avaliações)</span></div>
+</div>
+<div class="price">≈ €25/pessoa</div>
+</div>
+<p>Pizza napolitana.</p>
+<div class="meta"><b>Faixa:</b> €20–30  •  <b>Fonte do orçamento:</b> Faixa de preço Google</div>
+<div class="hours-line">🕒 <b>Funcionamento:</b> Quarta: 12:00–14:30 e 19:00–22:30</div><a class="mapbtn" href="https://www.google.com/maps/search/?api=1&amp;query=11+Rue+%C3%89tienne+Marcel%2C+75001+Paris" rel="noopener" target="_blank">Abrir no Google Maps ↗</a>
+</article>
+</div>
+</article><div class="move">
+<div class="move-icon">↳</div>
+<div>
+<b>Almoço → Palais Royal</b>
+<div class="move-meta">≈ ≈ 0,3–0,9 km</div>
+<div class="move-text"><span class="mode">🚶 A pé</span> Depende da opção de almoço escolhida.</div>
+</div>
+</div><article class="event attraction">
+<div class="event-top"><span class="time">13:50–14:20</span><span class="tag">Atração</span></div>
+<h4>Palais Royal</h4>
+<div class="ticket">Grátis</div>
+<div class="attraction-media"><div class="attraction-photo"><img alt="Foto ilustrativa — Palais Royal" data-wiki="Palais-Royal" loading="lazy" referrerpolicy="no-referrer"/><div class="photo-fallback">Carregando foto da atração…</div><a class="photo-credit" rel="noopener" target="_blank">Foto: Wikipedia/Wikimedia ↗</a></div><div class="attraction-copy"><div class="hours-box">🕒 <strong>Funcionamento:</strong> Outubro a março: jardins abertos diariamente das 08:00 às 20:30.</div><p><span class="label">O que é: </span>Conjunto palaciano do século XVII com pátios, arcadas e jardins no coração de Paris, vizinho ao Louvre.</p><div class="expect-box"><span class="label">O que esperar ver: </span>As famosas Colonnes de Buren no pátio, galerias históricas, jardins geométricos e um ambiente muito mais calmo que o entorno imediato do Louvre.</div><div class="plan-note"><b>No roteiro: </b>Pátio, colunas e jardins.</div></div></div></article><div class="move">
+<div class="move-icon">↳</div>
+<div>
+<b>Palais Royal → lanche</b>
+<div class="move-meta">≈ ≈ 0,5–1,0 km</div>
+<div class="move-text"><span class="mode">🚶 A pé</span> La Petite Manis fica mais próxima; Happy Caffé fica na Rue de Rivoli.</div>
+</div>
+</div><article class="event meal">
+<div class="event-top"><span class="time">14:20–14:35</span><span class="tag food">Refeição</span></div>
+<h4>Lanche da tarde</h4><p>Neste dia, prefira um lanche rápido ou para levar, porque a tarde concentra Invalides e o Arco do Triunfo.</p>
+<div class="restaurant-grid">
+<article class="restaurant">
+<div class="rest-head">
+<div>
+<h5>La Petite Manis</h5>
+<div class="rating">Google 4.8/5 <span>(387 avaliações)</span></div>
+</div>
+<div class="price">≈ €8/pessoa</div>
+</div>
+<p>Viennoiseries €2,50–4; somar café para lanche completo.</p>
+<div class="meta"><b>Faixa:</b> €6–10  •  <b>Fonte do orçamento:</b> Guia/cardápio 2026</div>
+<div class="hours-line">🕒 <b>Funcionamento:</b> Quarta: 08:30–17:00</div><a class="mapbtn" href="https://www.google.com/maps/search/?api=1&amp;query=136+Rue+Saint-Honor%C3%A9%2C+75001+Paris" rel="noopener" target="_blank">Abrir no Google Maps ↗</a>
+</article>
+<article class="restaurant">
+<div class="rest-head">
+<div>
+<h5>Happy Caffé</h5>
+<div class="rating">Google 4.9/5 <span>(11,160 avaliações)</span></div>
+</div>
+<div class="price">≈ €10/pessoa</div>
+</div>
+<p>Crêpes doces €6–14; café €2,50–5.</p>
+<div class="meta"><b>Faixa:</b> €8–14  •  <b>Fonte do orçamento:</b> Cardápio oficial</div>
+<div class="hours-line">🕒 <b>Funcionamento:</b> Quarta: 07:30–22:30</div><a class="mapbtn" href="https://www.google.com/maps/search/?api=1&amp;query=214+Rue+de+Rivoli%2C+75001+Paris" rel="noopener" target="_blank">Abrir no Google Maps ↗</a>
+</article>
+</div>
+</article><div class="move">
+<div class="move-icon">↳</div>
+<div>
+<b>Lanche → Jardin des Tuileries</b>
+<div class="move-meta">≈ ≈ 0,6–1,0 km</div>
+<div class="move-text"><span class="mode">🚶 A pé</span> Seguir para o eixo Louvre–Tuileries.</div>
+</div>
+</div><article class="event attraction">
+<div class="event-top"><span class="time">14:35–15:10</span><span class="tag">Atração</span></div>
+<h4>Jardin des Tuileries</h4>
+<div class="ticket">Grátis</div>
+<div class="attraction-media"><div class="attraction-photo"><img alt="Foto ilustrativa — Jardin des Tuileries" data-wiki="Tuileries Garden" loading="lazy" referrerpolicy="no-referrer"/><div class="photo-fallback">Carregando foto da atração…</div><a class="photo-credit" rel="noopener" target="_blank">Foto: Wikipedia/Wikimedia ↗</a></div><div class="attraction-copy"><div class="hours-box">🕒 <strong>Funcionamento:</strong> Novembro: 07:30–19:30. O esvaziamento do jardim começa cerca de 30 min antes do fechamento.</div><p><span class="label">O que é: </span>Jardim formal entre o Louvre e a Place de la Concorde, originalmente ligado ao Palácio das Tulherias e redesenhado por André Le Nôtre.</p><div class="expect-box"><span class="label">O que esperar ver: </span>Grandes eixos de perspectiva, lagos, esculturas, cadeiras junto à água e uma caminhada muito bonita em direção ao Obelisco da Concorde.</div><div class="plan-note"><b>No roteiro: </b>Caminhada mais objetiva até a Place de la Concorde, preservando tempo para a Tumba de Napoleão.</div></div></div></article><div class="move"><div class="move-icon">↳</div><div><b>Concorde → Invalides / Dôme</b><div class="move-meta">≈ ≈ 2,0 km de rota • 15–20 min</div><div class="move-text"><span class="mode">🚇 Linha 8 + 🚶</span> Em Concorde, pegar a Linha 8 direção Balard → descer em Invalides → caminhar pela Esplanade até a entrada do Dôme.</div></div></div><article class="event attraction">
+<div class="event-top"><span class="time">15:30–16:40</span><span class="tag">Atração</span></div>
+<h4>Les Invalides + Tumba de Napoleão I</h4><div class="ticket">Incluído no Paris Museum Pass • avulso €17</div>
+<div class="attraction-media"><div class="attraction-photo"><img alt="Foto ilustrativa — Les Invalides + Tumba de Napoleão I" data-wiki="Les Invalides" loading="lazy" referrerpolicy="no-referrer"/><div class="photo-fallback">Carregando foto da atração…</div><a class="photo-credit" rel="noopener" target="_blank">Foto: Wikipedia/Wikimedia ↗</a></div><div class="attraction-copy">
+<div class="hours-box">🕒 <strong>Funcionamento:</strong> 10:00–18:00 todos os dias; bilheteria fecha 30 min antes.</div>
+<p><span class="label">O que é: </span>Complexo criado por Luís XIV para veteranos de guerra. A Igreja do Dôme, reconhecida pela grande cúpula dourada, abriga desde 1861 a tumba monumental de Napoleão I.</p>
+<div class="expect-box"><span class="label">O que esperar ver: </span>O interior da cúpula, o enorme sarcófago de Napoleão em quartzito vermelho, a cripta circular, esculturas e memoriais militares. O mesmo ingresso inclui o Musée de l’Armée, mas o roteiro foca no Dôme e na tumba para caber no dia.</div>
+<div class="plan-note"><b>No roteiro: </b>Entrada coberta pelo Museum Pass. Foco no Dôme, sarcófago e conjunto funerário de Napoleão; não tentar visitar todo o Musée de l’Armée.</div>
+</div></div></article><div class="move"><div class="move-icon">↳</div><div><b>Invalides → Pont Alexandre III</b><div class="move-meta">≈ ≈ 0,7 km • 9 min</div><div class="move-text"><span class="mode">🚶 A pé</span> Sair pelo eixo da Esplanade e seguir até a ponte.</div></div></div><article class="event attraction">
+<div class="event-top"><span class="time">16:40–17:00</span><span class="tag">Atração</span></div>
+<h4>Pont Alexandre III</h4>
+<div class="ticket">Grátis</div>
+<div class="attraction-media"><div class="attraction-photo"><img alt="Foto ilustrativa — Pont Alexandre III" data-wiki="Pont Alexandre III" loading="lazy" referrerpolicy="no-referrer"/><div class="photo-fallback">Carregando foto da atração…</div><a class="photo-credit" rel="noopener" target="_blank">Foto: Wikipedia/Wikimedia ↗</a></div><div class="attraction-copy"><div class="hours-box">🕒 <strong>Funcionamento:</strong> Ponte e espaço público: acesso 24 h.</div><p><span class="label">O que é: </span>Ponte monumental inaugurada para a Exposição Universal de 1900, ligando a região dos Invalides ao Grand e Petit Palais.</p><div class="expect-box"><span class="label">O que esperar ver: </span>Lampiões Art Nouveau, esculturas, ornamentos dourados e belas vistas do Sena, da Torre Eiffel e da cúpula dos Invalides.</div><div class="plan-note"><b>No roteiro: </b>Parada curta para fotos na transição para o anoitecer.</div></div></div></article><div class="move"><div class="move-icon">↳</div><div><b>Pont Alexandre III → Arco do Triunfo pela Champs-Élysées</b><div class="move-meta">≈ ≈ 2,3 km • 30–35 min</div><div class="move-text"><span class="mode">🚶 A pé</span> Seguir em direção à Champs-Élysées e caminhar pelo eixo da avenida até o Arco. Se estiverem cansados ou chover, usar Franklin D. Roosevelt → Linha 1 direção La Défense → Charles de Gaulle–Étoile.</div></div></div><article class="event attraction">
+<div class="event-top"><span class="time">17:40–19:00</span><span class="tag">Atração</span></div>
+<h4>Arco do Triunfo</h4>
+<div class="ticket">Incluído no Paris Museum Pass • avulso €16 em novembro</div>
+<div class="attraction-media"><div class="attraction-photo"><img alt="Foto ilustrativa — Arco do Triunfo" data-wiki="Arc de Triomphe" loading="lazy" referrerpolicy="no-referrer"/><div class="photo-fallback">Carregando foto da atração…</div><a class="photo-credit" rel="noopener" target="_blank">Foto: Wikipedia/Wikimedia ↗</a></div><div class="attraction-copy"><div class="hours-box">🕒 <strong>Funcionamento:</strong> Quarta-feira em novembro: 10:00–22:30. Última entrada 45 min antes do fechamento.</div><p><span class="label">O que é: </span>Arco monumental encomendado por Napoleão para celebrar os exércitos franceses, no centro da Place Charles-de-Gaulle.</p><div class="expect-box"><span class="label">O que esperar ver: </span>Relevos e inscrições monumentais, Túmulo do Soldado Desconhecido e, no topo, uma das melhores vistas urbanas de Paris, com as avenidas irradiando em todas as direções.</div><div class="plan-note"><b>No roteiro: </b>Entrada coberta pelo Museum Pass. Esse horário já pega Paris completamente iluminada.</div></div></div></article><div class="move">
+<div class="move-icon">↳</div>
+<div>
+<b>Arco do Triunfo → La Cantina Chic</b>
+<div class="move-meta">≈ ≈ 0,5 km</div>
+<div class="move-text"><span class="mode">🚶 A pé</span> Cerca de 7 min.</div>
+</div>
+</div><article class="event meal">
+<div class="event-top"><span class="time">19:15</span><span class="tag food">Refeição</span></div>
+<h4>Jantar</h4>
+<div class="restaurant-grid">
+<article class="restaurant">
+<div class="rest-head">
+<div>
+<h5>La Cantina Chic</h5>
+<div class="rating">Google 4.8/5 <span>(544 avaliações)</span></div>
+</div>
+<div class="price">≈ €25/pessoa</div>
+</div>
+<p>Italiano / bistrô.</p>
+<div class="meta"><b>Faixa:</b> €20–30  •  <b>Fonte do orçamento:</b> Faixa de preço Google</div>
+<div class="hours-line">🕒 <b>Funcionamento:</b> Quarta: 12:00–14:00 e 19:00–21:30</div><a class="mapbtn" href="https://www.google.com/maps/search/?api=1&amp;query=14+Rue+de+l%27%C3%89toile%2C+75017+Paris" rel="noopener" target="_blank">Abrir no Google Maps ↗</a>
+</article>
+</div>
+</article><div class="move">
+<div class="move-icon">↳</div>
+<div>
+<b>Charles de Gaulle–Étoile → hotel</b>
+<div class="move-meta">≈ ≈ 5 km de rota • ≈ 30 min</div>
+<div class="move-text"><span class="mode">🚇 Metrô</span> Linha 6 direção Nation → Dupleix → caminhar ≈ 0,8 km.</div>
+</div>
+</div></div>
+</section>
+<section class="day" id="19"><div class="day-head"><div class="date"><strong>19</strong>NOV</div><div><h3>Quinta • Montmartre + Sacré-Cœur + Marais + Canal Saint-Martin</h3><div class="day-sub">Montmartre foi movido para este dia; Bastille e Marais ficam mais enxutos para manter o ritmo viável.</div></div></div><div class="timeline"><article class="event meal"><div class="event-top"><span class="time">07:30</span><span class="tag food">Refeição</span></div><h4>Café da manhã</h4><div class="restaurant-grid"><article class="restaurant">
+<div class="rest-head">
+<div>
+<h5>Boulangerie Pâtisserie</h5>
+<div class="rating">Google 4.8/5 <span>(621 avaliações)</span></div>
+</div>
+<div class="price">≈ €7/pessoa</div>
+</div>
+<p>Café + viennoiserie/sanduíche simples.</p>
+<div class="meta"><b>Faixa:</b> €5–10  •  <b>Fonte do orçamento:</b> Estimativa para café de padaria</div>
+<div class="hours-line">🕒 <b>Funcionamento:</b> Quinta: 07:30–20:00</div><a class="mapbtn" href="https://www.google.com/maps/search/?api=1&amp;query=100+Rue+du+Th%C3%A9%C3%A2tre%2C+75015+Paris" rel="noopener" target="_blank">Abrir no Google Maps ↗</a>
+</article><article class="restaurant">
+<div class="rest-head">
+<div>
+<h5>Boulangerie Loquer</h5>
+<div class="rating">Google 4.8/5 <span>(243 avaliações)</span></div>
+</div>
+<div class="price">≈ €7/pessoa</div>
+</div>
+<p>Café da manhã simples de padaria.</p>
+<div class="meta"><b>Faixa:</b> €5–10  •  <b>Fonte do orçamento:</b> Faixa Google €1–10</div>
+<div class="hours-line">🕒 <b>Funcionamento:</b> Quinta: 07:00–20:00</div><a class="mapbtn" href="https://www.google.com/maps/search/?api=1&amp;query=65+Rue+des+Entrepreneurs%2C+75015+Paris" rel="noopener" target="_blank">Abrir no Google Maps ↗</a>
+</article></div></article><div class="move"><div class="move-icon">↳</div><div><b>Hotel → Abbesses</b><div class="move-meta">≈ ≈ 7 km de rota • ≈ 35 min</div><div class="move-text"><span class="mode">🚇 Metrô</span> Commerce → Linha 8 direção Créteil–Pointe du Lac → Concorde → Linha 12 direção Mairie d’Aubervilliers → Abbesses.</div></div></div><article class="event attraction">
+<div class="event-top"><span class="time">09:00–09:15</span><span class="tag">Atração</span></div>
+<h4>Mur des Je t’aime</h4>
+<div class="ticket">Grátis</div>
+<div class="attraction-media"><div class="attraction-photo"><img alt="Foto ilustrativa — Mur des Je t’aime" data-wiki="Wall of Love" loading="lazy" referrerpolicy="no-referrer"/><div class="photo-fallback">Carregando foto da atração…</div><a class="photo-credit" rel="noopener" target="_blank">Foto: Wikipedia/Wikimedia ↗</a></div><div class="attraction-copy"><div class="hours-box">🕒 <strong>Funcionamento:</strong> Square Jehan Rictus: horário sazonal. A página municipal exibe atualmente período diurno; reconfirmar para 17/11.</div><p><span class="label">O que é: </span>Obra criada por Frédéric Baron e Claire Kito com a expressão “eu te amo” escrita centenas de vezes em mais de 250 línguas, instalada no pequeno Square Jehan Rictus.</p><div class="expect-box"><span class="label">O que esperar ver: </span>Um painel azul formado por azulejos com 311 inscrições de “eu te amo”, bastante simbólico para uma viagem de lua de mel.</div><div class="status-warning">⚠️ ATENÇÃO: em 07/09/2026, a Ville de Paris informa que o Mur des Je t’aime está inacessível por razões de segurança. Reconfirmar poucos dias antes da visita.</div><div class="plan-note"><b>No roteiro: </b>Parada rápida e perfeita para a lua de mel.</div></div></div></article><article class="event attraction">
+<div class="event-top"><span class="time">09:15–10:30</span><span class="tag">Atração</span></div>
+<h4>Montmartre — ruas e mirantes</h4><div class="ticket">Grátis</div>
+<div class="attraction-media"><div class="attraction-photo"><img alt="Foto ilustrativa — Montmartre — ruas e mirantes" data-wiki="Montmartre" loading="lazy" referrerpolicy="no-referrer"/><div class="photo-fallback">Carregando foto da atração…</div><a class="photo-credit" rel="noopener" target="_blank">Foto: Wikipedia/Wikimedia ↗</a></div><div class="attraction-copy">
+<div class="hours-box">🕒 <strong>Funcionamento:</strong> Ruas e espaços públicos: acesso livre; comércio tem horários próprios.</div>
+<p><span class="label">O que é: </span>Bairro histórico construído sobre uma colina no norte de Paris, conhecido por suas ruas inclinadas, escadarias, ateliês, cafés e ligação com artistas dos séculos XIX e XX.</p>
+<div class="expect-box"><span class="label">O que esperar ver: </span>Ruas estreitas, fachadas antigas, pequenas praças, escadarias, perspectivas da cidade e a atmosfera de “vila” que distingue Montmartre do centro monumental.</div>
+<div class="plan-note"><b>No roteiro: </b>Fazer o trajeto Abbesses → Rue Lepic / ruas menores → Place du Tertre → Sacré-Cœur.</div>
+</div></div></article><article class="event attraction">
+<div class="event-top"><span class="time">10:30–11:30</span><span class="tag">Atração</span></div>
+<h4>Basílica do Sacré-Cœur</h4>
+<div class="ticket">Basílica grátis • cúpula opcional €8</div>
+<div class="attraction-media"><div class="attraction-photo"><img alt="Foto ilustrativa — Basílica do Sacré-Cœur" data-wiki="Sacré-Cœur, Paris" loading="lazy" referrerpolicy="no-referrer"/><div class="photo-fallback">Carregando foto da atração…</div><a class="photo-credit" rel="noopener" target="_blank">Foto: Wikipedia/Wikimedia ↗</a></div><div class="attraction-copy"><div class="hours-box">🕒 <strong>Funcionamento:</strong> Basílica: 06:30–22:30 todos os dias. Cúpula: atualmente 10:30–21:45, sujeita a sazonalidade, clima e manutenção.</div><p><span class="label">O que é: </span>Basílica de pedra branca construída no ponto mais alto de Montmartre, reconhecível por suas grandes cúpulas e pela posição dominante sobre Paris.</p><div class="expect-box"><span class="label">O que esperar ver: </span>Interior monumental, mosaico do Cristo em Majestade, ambiente de culto e uma ampla vista da cidade a partir das escadarias. A cúpula opcional oferece panorama de 360° após quase 300 degraus.</div><div class="plan-note"><b>No roteiro: </b>A entrada na basílica é gratuita. A cúpula exige quase 300 degraus; só incluir se estiverem dispostos.</div></div></div></article><div class="move"><div class="move-icon">↳</div><div><b>Sacré-Cœur → almoço</b><div class="move-meta">≈ 0,5–0,7 km</div><div class="move-text"><span class="mode">🚶 A pé</span> Descer em direção a Rue des Martyrs / Dancourt.</div></div></div><article class="event meal"><div class="event-top"><span class="time">11:45–12:45</span><span class="tag food">Refeição</span></div><h4>Almoço</h4><div class="restaurant-grid"><article class="restaurant">
+<div class="rest-head">
+<div>
+<h5>Maison Pinsa</h5>
+<div class="rating">Google 4.8/5 <span>(2,668 avaliações)</span></div>
+</div>
+<div class="price">≈ €25/pessoa</div>
+</div>
+<p>Pinsa/pizza italiana.</p>
+<div class="meta"><b>Faixa:</b> €20–30  •  <b>Fonte do orçamento:</b> Faixa de preço Google</div>
+<div class="hours-line">🕒 <b>Funcionamento:</b> Quinta: 12:00–14:30 e 18:30–22:00</div><a class="mapbtn" href="https://www.google.com/maps/search/?api=1&amp;query=94+Rue+des+Martyrs%2C+75018+Paris" rel="noopener" target="_blank">Abrir no Google Maps ↗</a>
+</article><article class="restaurant">
+<div class="rest-head">
+<div>
+<h5>Crêperie de Montmartre</h5>
+<div class="rating">Google 4.8/5 <span>(143 avaliações)</span></div>
+</div>
+<div class="price">≈ €15/pessoa</div>
+</div>
+<p>Creperia rápida; orçamento estimado por refeição.</p>
+<div class="meta"><b>Faixa:</b> €12–18  •  <b>Fonte do orçamento:</b> Estimativa; cardápio completo não publicado</div>
+<div class="hours-line">🕒 <b>Funcionamento:</b> Quinta: 11:00–23:00</div><a class="mapbtn" href="https://www.google.com/maps/search/?api=1&amp;query=3+Rue+Dancourt%2C+75018+Paris" rel="noopener" target="_blank">Abrir no Google Maps ↗</a>
+</article></div></article><div class="move"><div class="move-icon">↳</div><div><b>Montmartre → Saint-Paul / Marais</b><div class="move-meta">≈ ≈ 7 km de rota • ≈ 35–40 min</div><div class="move-text"><span class="mode">🚇 Metrô</span> Recomendação: caminhar até Pigalle → Linha 12 direção Mairie d’Issy → Concorde → Linha 1 direção Château de Vincennes → Saint-Paul.</div></div></div><article class="event attraction">
+<div class="event-top"><span class="time">13:35–14:05</span><span class="tag">Atração</span></div>
+<h4>Place des Vosges</h4>
+<div class="ticket">Grátis</div>
+<div class="attraction-media"><div class="attraction-photo"><img alt="Foto ilustrativa — Place des Vosges" data-wiki="Place des Vosges" loading="lazy" referrerpolicy="no-referrer"/><div class="photo-fallback">Carregando foto da atração…</div><a class="photo-credit" rel="noopener" target="_blank">Foto: Wikipedia/Wikimedia ↗</a></div><div class="attraction-copy"><div class="hours-box">🕒 <strong>Funcionamento:</strong> Praça externa: acesso livre. O jardim central Square Louis XIII segue horário sazonal municipal; a visita às 10:45 ocorre dentro do período diurno normal.</div><p><span class="label">O que é: </span>Uma das praças planejadas mais antigas de Paris, criada no início do século XVII e cercada por fachadas simétricas de tijolos vermelhos e pedra.</p><div class="expect-box"><span class="label">O que esperar ver: </span>Arcadas elegantes, o jardim central com árvores e bancos, fachadas históricas e um dos cenários mais harmoniosos do Marais.</div><div class="plan-note"><b>No roteiro: </b>Uma das praças mais bonitas de Paris.</div></div></div></article><article class="event attraction">
+<div class="event-top"><span class="time">14:05–15:20</span><span class="tag">Atração</span></div>
+<h4>Le Marais — ruas históricas</h4><div class="ticket">Grátis</div>
+<div class="attraction-media"><div class="attraction-photo"><img alt="Foto ilustrativa — Le Marais — ruas históricas" data-wiki="Le Marais" loading="lazy" referrerpolicy="no-referrer"/><div class="photo-fallback">Carregando foto da atração…</div><a class="photo-credit" rel="noopener" target="_blank">Foto: Wikipedia/Wikimedia ↗</a></div><div class="attraction-copy">
+<div class="hours-box">🕒 <strong>Funcionamento:</strong> Ruas públicas: acesso livre; lojas e galerias têm horários próprios.</div>
+<p><span class="label">O que é: </span>Bairro histórico preservado entre os 3º e 4º arrondissements, conhecido por hôtels particuliers, ruas medievais, boutiques, cafés, comunidade judaica histórica e vida local intensa.</p>
+<div class="expect-box"><span class="label">O que esperar ver: </span>Rue des Francs-Bourgeois, Rue des Rosiers, Rue Vieille du Temple, fachadas antigas, lojas independentes e uma mistura de arquitetura aristocrática com comércio de bairro.</div>
+<div class="plan-note"><b>No roteiro: </b>Percorrer o Marais sem pressa, seguindo em direção à Rue de Bretagne.</div>
+</div></div></article><article class="event attraction">
+<div class="event-top"><span class="time">15:20–15:50</span><span class="tag">Atração</span></div>
+<h4>Rue de Bretagne + Marché des Enfants Rouges</h4>
+<div class="ticket">Grátis</div>
+<div class="attraction-media"><div class="attraction-photo"><img alt="Foto ilustrativa — Rue de Bretagne + Marché des Enfants Rouges" data-wiki="Marché des Enfants Rouges" loading="lazy" referrerpolicy="no-referrer"/><div class="photo-fallback">Carregando foto da atração…</div><a class="photo-credit" rel="noopener" target="_blank">Foto: Wikipedia/Wikimedia ↗</a></div><div class="attraction-copy"><div class="hours-box">🕒 <strong>Funcionamento:</strong> Quinta-feira: 08:30–21:30.</div><p><span class="label">O que é: </span>A Rue de Bretagne é um eixo muito agradável do Haut-Marais. Nela fica o Marché des Enfants Rouges, fundado em 1615 e considerado o mercado coberto de alimentos mais antigo de Paris.</p><div class="expect-box"><span class="label">O que esperar ver: </span>Bancas de produtos frescos, pequenos restaurantes, moradores fazendo compras e uma atmosfera mais cotidiana do que monumental.</div><div class="plan-note"><b>No roteiro: </b>Passeio pelas pequenas lojas e entorno do mercado.</div></div></div></article><article class="event meal"><div class="event-top"><span class="time">15:50</span><span class="tag food">Refeição</span></div><h4>Lanche da tarde</h4><div class="restaurant-grid"><article class="restaurant">
+<div class="rest-head">
+<div>
+<h5>Petite Ile Boulangerie</h5>
+<div class="rating">Google 4.7/5 <span>(511 avaliações)</span></div>
+</div>
+<div class="price">≈ €7/pessoa</div>
+</div>
+<p>Padaria/confeitaria.</p>
+<div class="meta"><b>Faixa:</b> €5–10  •  <b>Fonte do orçamento:</b> Faixa Google €1–10</div>
+<div class="hours-line">🕒 <b>Funcionamento:</b> Quinta: 08:00–18:00</div><a class="mapbtn" href="https://www.google.com/maps/search/?api=1&amp;query=8+Rue+des+Filles+du+Calvaire%2C+75003+Paris" rel="noopener" target="_blank">Abrir no Google Maps ↗</a>
+</article><article class="restaurant">
+<div class="rest-head">
+<div>
+<h5>Creem Coffee Shop – Bastille / Marais</h5>
+<div class="rating">Google 4.7/5 <span>(172 avaliações)</span></div>
+</div>
+<div class="price">≈ €8/pessoa</div>
+</div>
+<p>Café, sanduíches e pâtisserie.</p>
+<div class="meta"><b>Faixa:</b> €6–10  •  <b>Fonte do orçamento:</b> Faixa Google €1–10</div>
+<div class="hours-line">🕒 <b>Funcionamento:</b> Quinta: 08:30–18:30</div><a class="mapbtn" href="https://www.google.com/maps/search/?api=1&amp;query=16+Rue+Saint-Antoine%2C+75004+Paris" rel="noopener" target="_blank">Abrir no Google Maps ↗</a>
+</article></div></article><div class="move"><div class="move-icon">↳</div><div><b>Marais → Canal Saint-Martin</b><div class="move-meta">≈ ≈ 1,2 km</div><div class="move-text"><span class="mode">🚶 A pé</span> Cerca de 15–18 min.</div></div></div><article class="event attraction">
+<div class="event-top"><span class="time">16:20–17:40</span><span class="tag">Atração</span></div>
+<h4>Canal Saint-Martin</h4>
+<div class="ticket">Grátis</div>
+<div class="attraction-media"><div class="attraction-photo"><img alt="Foto ilustrativa — Canal Saint-Martin" data-wiki="Canal Saint-Martin" loading="lazy" referrerpolicy="no-referrer"/><div class="photo-fallback">Carregando foto da atração…</div><a class="photo-credit" rel="noopener" target="_blank">Foto: Wikipedia/Wikimedia ↗</a></div><div class="attraction-copy"><div class="hours-box">🕒 <strong>Funcionamento:</strong> Margens e vias públicas: acesso livre 24 h.</div><p><span class="label">O que é: </span>Canal do início do século XIX que corta bairros do leste parisiense com eclusas, pontes metálicas e trechos arborizados.</p><div class="expect-box"><span class="label">O que esperar ver: </span>Passarelas curvas, água, eclusas, cafés e moradores caminhando ou sentados às margens — uma Paris mais residencial e relaxada.</div><div class="plan-note"><b>No roteiro: </b>Caminhar pelo Quai de Valmy e observar a vida local.</div></div></div></article><div class="move"><div class="move-icon">↳</div><div><b>Canal → Bastille</b><div class="move-meta">≈ ≈ 2,0 km</div><div class="move-text"><span class="mode">🚶 / 🚇</span> Opção principal: caminhar ≈ 25 min pelo Boulevard Richard-Lenoir. Se chover, Linha 5 em République direção Place d’Italie → Bastille.</div></div></div><article class="event meal"><div class="event-top"><span class="time">18:45–19:00</span><span class="tag food">Refeição</span></div><h4>Jantar</h4><div class="restaurant-grid"><article class="restaurant">
+<div class="rest-head">
+<div>
+<h5>Verace Bastille</h5>
+<div class="rating">Google 4.8/5 <span>(478 avaliações)</span></div>
+</div>
+<div class="price">≈ €19/pessoa</div>
+</div>
+<p>Pizzas €13–20; bebidas simples ~€2,50–4.</p>
+<div class="meta"><b>Faixa:</b> €16–22  •  <b>Fonte do orçamento:</b> Cardápio oficial/2026</div>
+<div class="hours-line">🕒 <b>Funcionamento:</b> Quinta: 12:00–15:00 e 19:00–23:00</div><a class="mapbtn" href="https://www.google.com/maps/search/?api=1&amp;query=10%E2%80%9312+Rue+Saint-Sabin%2C+75011+Paris" rel="noopener" target="_blank">Abrir no Google Maps ↗</a>
+</article><article class="restaurant">
+<div class="rest-head">
+<div>
+<h5>CHANCEUX Bastille</h5>
+<div class="rating">Google 4.8/5 <span>(218 avaliações)</span></div>
+</div>
+<div class="price">≈ €15/pessoa</div>
+</div>
+<p>Sanduíches, café e refeição casual.</p>
+<div class="meta"><b>Faixa:</b> €10–20  •  <b>Fonte do orçamento:</b> Faixa de preço Google</div>
+<div class="hours-line">🕒 <b>Funcionamento:</b> Quinta: 08:30–22:00</div><a class="mapbtn" href="https://www.google.com/maps/search/?api=1&amp;query=67+Rue+Saint-Sabin%2C+75011+Paris" rel="noopener" target="_blank">Abrir no Google Maps ↗</a>
+</article></div></article><div class="move"><div class="move-icon">↳</div><div><b>Bastille → hotel</b><div class="move-meta">≈ ≈ 7 km de rota • ≈ 35 min</div><div class="move-text"><span class="mode">🚇 Metrô</span> Linha 8 direção Balard → Commerce → caminhar ≈ 0,5 km.</div></div></div></div></section>
+<section class="day" id="20"><div class="day-head"><div class="date"><strong>20</strong>NOV</div><div><h3>Sexta • Torre Eiffel + Rue Cler + Pont Alexandre III + Sena</h3><div class="day-sub">Último dia completo agora fica mais leve e romântico, sem visita interna aos Invalides.</div></div></div><div class="timeline"><article class="event meal"><div class="event-top"><span class="time">07:45</span><span class="tag food">Refeição</span></div><h4>Café da manhã</h4><div class="restaurant-grid"><article class="restaurant">
+<div class="rest-head">
+<div>
+<h5>Boulangerie Pâtisserie</h5>
+<div class="rating">Google 4.8/5 <span>(621 avaliações)</span></div>
+</div>
+<div class="price">≈ €7/pessoa</div>
+</div>
+<p>Café + viennoiserie/sanduíche simples.</p>
+<div class="meta"><b>Faixa:</b> €5–10  •  <b>Fonte do orçamento:</b> Estimativa para café de padaria</div>
+<div class="hours-line">🕒 <b>Funcionamento:</b> Sexta: 07:30–20:00</div><a class="mapbtn" href="https://www.google.com/maps/search/?api=1&amp;query=100+Rue+du+Th%C3%A9%C3%A2tre%2C+75015+Paris" rel="noopener" target="_blank">Abrir no Google Maps ↗</a>
+</article><article class="restaurant">
+<div class="rest-head">
+<div>
+<h5>Boulangerie Loquer</h5>
+<div class="rating">Google 4.8/5 <span>(243 avaliações)</span></div>
+</div>
+<div class="price">≈ €7/pessoa</div>
+</div>
+<p>Café da manhã simples de padaria.</p>
+<div class="meta"><b>Faixa:</b> €5–10  •  <b>Fonte do orçamento:</b> Faixa Google €1–10</div>
+<div class="hours-line">🕒 <b>Funcionamento:</b> Sexta: 07:00–20:00</div><a class="mapbtn" href="https://www.google.com/maps/search/?api=1&amp;query=65+Rue+des+Entrepreneurs%2C+75015+Paris" rel="noopener" target="_blank">Abrir no Google Maps ↗</a>
+</article></div></article><div class="move"><div class="move-icon">↳</div><div><b>Hotel → Torre Eiffel</b><div class="move-meta">≈ ≈ 1,6 km</div><div class="move-text"><span class="mode">🚶 A pé</span> Cerca de 20–22 min.</div></div></div><article class="event attraction">
+<div class="event-top"><span class="time">09:30–11:30</span><span class="tag">Atração</span></div>
+<h4>Torre Eiffel — topo por elevador</h4>
+<div class="ticket">€36,70 adulto</div>
+<div class="attraction-media"><div class="attraction-photo"><img alt="Foto ilustrativa — Torre Eiffel — topo por elevador" data-wiki="Eiffel Tower" loading="lazy" referrerpolicy="no-referrer"/><div class="photo-fallback">Carregando foto da atração…</div><a class="photo-credit" rel="noopener" target="_blank">Foto: Wikipedia/Wikimedia ↗</a></div><div class="attraction-copy"><div class="hours-box">🕒 <strong>Funcionamento:</strong> 20/11/2026: horário oficial detalhado ainda não publicado em 07/09/2026. Horário normal atualmente exibido: 09:30–23:00. Reconfirmar quando a data abrir no calendário oficial.</div><p><span class="label">O que é: </span>Torre de treliça metálica construída para a Exposição Universal de 1889 e hoje o monumento mais reconhecível de Paris.</p><div class="expect-box"><span class="label">O que esperar ver: </span>Subida de elevador, vistas progressivamente mais amplas no 2º piso e, no cume a 276 m, panorama de toda Paris. Em novembro, espere vento e sensação térmica mais baixa no topo.</div><div class="plan-note"><b>No roteiro: </b>Reservar o topo por elevador assim que a data estiver disponível.</div></div></div></article><div class="move"><div class="move-icon">↳</div><div><b>Torre Eiffel → Champ-de-Mars</b><div class="move-meta">≈ ≈ 0,4 km</div><div class="move-text"><span class="mode">🚶 A pé</span> Pequena pausa após a descida.</div></div></div><article class="event attraction">
+<div class="event-top"><span class="time">11:30–12:00</span><span class="tag">Atração</span></div>
+<h4>Champ-de-Mars</h4>
+<div class="ticket">Grátis</div>
+<div class="attraction-media"><div class="attraction-photo"><img alt="Foto ilustrativa — Champ-de-Mars" data-wiki="Champ de Mars" loading="lazy" referrerpolicy="no-referrer"/><div class="photo-fallback">Carregando foto da atração…</div><a class="photo-credit" rel="noopener" target="_blank">Foto: Wikipedia/Wikimedia ↗</a></div><div class="attraction-copy"><div class="hours-box">🕒 <strong>Funcionamento:</strong> Parc du Champ-de-Mars: aberto 24 h por dia.</div><p><span class="label">O que é: </span>Grande área verde imediatamente abaixo da Torre Eiffel, ideal para rever o monumento de outra perspectiva após a descida.</p><div class="expect-box"><span class="label">O que esperar ver: </span>Alamedas, gramados e enquadramentos amplos da torre. Aqui o objetivo é uma pausa curta, sem atividade formal.</div><div class="plan-note"><b>No roteiro: </b>Passeio curto antes do almoço.</div></div></div></article><div class="move"><div class="move-icon">↳</div><div><b>Champ-de-Mars → almoço / Rue Cler</b><div class="move-meta">≈ ≈ 1,0–1,3 km</div><div class="move-text"><span class="mode">🚶 A pé</span> Popu ou Kozy ficam no eixo École Militaire / Rue Cler.</div></div></div><article class="event meal"><div class="event-top"><span class="time">12:15–13:00</span><span class="tag food">Refeição</span></div><h4>Almoço</h4><div class="restaurant-grid"><article class="restaurant">
+<div class="rest-head">
+<div>
+<h5>Popu Bistro à Pizza</h5>
+<div class="rating">Google 4.8/5 <span>(1,499 avaliações)</span></div>
+</div>
+<div class="price">≈ €25/pessoa</div>
+</div>
+<p>Pizza / bistrô.</p>
+<div class="meta"><b>Faixa:</b> €20–30  •  <b>Fonte do orçamento:</b> Faixa de preço Google</div>
+<div class="hours-line">🕒 <b>Funcionamento:</b> Sexta: 10:00–23:00</div><a class="mapbtn" href="https://www.google.com/maps/search/?api=1&amp;query=12+Rue+du+Champ+de+Mars%2C+75007+Paris" rel="noopener" target="_blank">Abrir no Google Maps ↗</a>
+</article><article class="restaurant">
+<div class="rest-head">
+<div>
+<h5>Kozy École Militaire</h5>
+<div class="rating">Google 4.9/5 <span>(803 avaliações)</span></div>
+</div>
+<div class="price">≈ €15/pessoa</div>
+</div>
+<p>Brunch e café na Rue Cler.</p>
+<div class="meta"><b>Faixa:</b> €10–20  •  <b>Fonte do orçamento:</b> Faixa de preço Google</div>
+<div class="hours-line">🕒 <b>Funcionamento:</b> Sexta: 08:00–18:00</div><a class="mapbtn" href="https://www.google.com/maps/search/?api=1&amp;query=55+Rue+Cler%2C+75007+Paris" rel="noopener" target="_blank">Abrir no Google Maps ↗</a>
+</article></div></article><article class="event attraction">
+<div class="event-top"><span class="time">13:15–14:00</span><span class="tag">Atração</span></div>
+<h4>Rue Cler</h4>
+<div class="ticket">Grátis</div>
+<div class="attraction-media"><div class="attraction-photo"><img alt="Foto ilustrativa — Rue Cler" data-credit-page="https://commons.wikimedia.org/wiki/File:Rue_Cler_Paris.jpg" data-direct-image="https://commons.wikimedia.org/wiki/Special:Redirect/file/Rue_Cler_Paris.jpg?width=900" data-wiki="Rue Cler" loading="lazy" referrerpolicy="no-referrer"/><div class="photo-fallback">Carregando foto da atração…</div><a class="photo-credit" rel="noopener" target="_blank">Foto: Wikipedia/Wikimedia ↗</a></div><div class="attraction-copy"><div class="hours-box">🕒 <strong>Funcionamento:</strong> Rua pública: acesso 24 h. Lojas, boulangeries e comerciantes têm horários individuais; início da tarde é um bom período para passear.</div><p><span class="label">O que é: </span>Rua comercial de bairro no 7º arrondissement conhecida por lojas de alimentos, cafés, floristas, queijarias, boulangeries e pequenos comerciantes.</p><div class="expect-box"><span class="label">O que esperar ver: </span>Uma experiência de rua parisiense mais cotidiana, com vitrines de produtos frescos e boas oportunidades para comprar um lanche ou lembrança gastronômica.</div><div class="plan-note"><b>No roteiro: </b>Passeio sem pressa antes do lanche, agora com mais folga porque Invalides foi transferido para 18/11.</div></div></div></article><article class="event meal"><div class="event-top"><span class="time">14:00–14:30</span><span class="tag food">Refeição</span></div><h4>Lanche da tarde</h4><div class="restaurant-grid"><article class="restaurant">
+<div class="rest-head">
+<div>
+<h5>La Pâtisserie Matthieu Pauline</h5>
+<div class="rating">Google 4.9/5 <span>(97 avaliações)</span></div>
+</div>
+<div class="price">≈ €10–12/pessoa</div>
+</div>
+<p>Pâtisseries individuais ~€5–7,90; cesta média divulgada €16.</p>
+<div class="meta"><b>Faixa:</b> €8–16  •  <b>Fonte do orçamento:</b> Guia especializado</div>
+<div class="hours-line">🕒 <b>Funcionamento:</b> Sexta: 08:00–19:30</div><a class="mapbtn" href="https://www.google.com/maps/search/?api=1&amp;query=24+Rue+Cler%2C+75007+Paris" rel="noopener" target="_blank">Abrir no Google Maps ↗</a>
+</article><article class="restaurant">
+<div class="rest-head">
+<div>
+<h5>Pâtisserie de la Bourdonnais – Eiffel</h5>
+<div class="rating">Google 4.7/5 <span>(346 avaliações)</span></div>
+</div>
+<div class="price">≈ €15/pessoa</div>
+</div>
+<p>Café, doces e lanches.</p>
+<div class="meta"><b>Faixa:</b> €10–20  •  <b>Fonte do orçamento:</b> Faixa de preço Google</div>
+<div class="hours-line">🕒 <b>Funcionamento:</b> Sexta: 08:00–19:00</div><a class="mapbtn" href="https://www.google.com/maps/search/?api=1&amp;query=54+Avenue+de+la+Bourdonnais%2C+75007+Paris" rel="noopener" target="_blank">Abrir no Google Maps ↗</a>
+</article></div></article><div class="move"><div class="move-icon">↳</div><div><b>Rue Cler → Pont Alexandre III via Esplanade des Invalides</b><div class="move-meta">≈ ≈ 1,5 km • 20 min</div><div class="move-text"><span class="mode">🚶 A pé</span> Caminhar em direção aos Invalides, atravessar a Esplanade e seguir até o Pont Alexandre III. O Dôme será apenas visto por fora hoje, pois a visita interna já ocorreu em 18/11.</div></div></div><article class="event attraction">
+<div class="event-top"><span class="time">14:50–15:20</span><span class="tag">Atração</span></div>
+<h4>Pont Alexandre III</h4>
+<div class="ticket">Grátis</div>
+<div class="attraction-media"><div class="attraction-photo"><img alt="Foto ilustrativa — Pont Alexandre III" data-wiki="Pont Alexandre III" loading="lazy" referrerpolicy="no-referrer"/><div class="photo-fallback">Carregando foto da atração…</div><a class="photo-credit" rel="noopener" target="_blank">Foto: Wikipedia/Wikimedia ↗</a></div><div class="attraction-copy"><div class="hours-box">🕒 <strong>Funcionamento:</strong> Ponte e espaço público: acesso 24 h.</div><p><span class="label">O que é: </span>Ponte monumental inaugurada para a Exposição Universal de 1900, ligando a região dos Invalides ao Grand e Petit Palais.</p><div class="expect-box"><span class="label">O que esperar ver: </span>Lampiões Art Nouveau, esculturas, ornamentos dourados e belas vistas do Sena, da Torre Eiffel e da cúpula dos Invalides.</div><div class="plan-note"><b>No roteiro: </b>Parada com bastante tempo para fotos e vistas do Sena, da Torre Eiffel e da cúpula dos Invalides.</div></div></div></article><div class="move"><div class="move-icon">↳</div><div><b>Pont Alexandre III → margens do Sena / Torre Eiffel</b><div class="move-meta">≈ ≈ 1,8 km • 25–30 min</div><div class="move-text"><span class="mode">🚶 A pé</span> Seguir pela margem do Sena em direção à Torre Eiffel, com paradas para fotos.</div></div></div><article class="event attraction">
+<div class="event-top"><span class="time">15:20–17:15</span><span class="tag">Atração</span></div>
+<h4>Margens do Sena + tempo livre junto à Torre</h4><div class="ticket">Grátis</div>
+<div class="attraction-media"><div class="attraction-photo"><img alt="Foto ilustrativa — Margens do Sena + tempo livre junto à Torre" data-wiki="Seine in Paris" loading="lazy" referrerpolicy="no-referrer"/><div class="photo-fallback">Carregando foto da atração…</div><a class="photo-credit" rel="noopener" target="_blank">Foto: Wikipedia/Wikimedia ↗</a></div><div class="attraction-copy"><div class="hours-box">🕒 <strong>Funcionamento:</strong> Margens e espaços públicos: acesso livre 24 h.</div><p><span class="label">O que é: </span>Trecho central do rio Sena, declarado Patrimônio Mundial, que concentra algumas das perspectivas urbanas mais famosas de Paris.</p><div class="expect-box"><span class="label">O que esperar ver: </span>Caminho junto à água, pontes históricas, fachadas monumentais e vistas alternadas da Torre Eiffel. Este bloco funciona também como margem para descansar, tomar um café ou compensar pequenos atrasos do dia.</div><div class="plan-note"><b>No roteiro: </b>Manter este período propositalmente flexível antes do cruzeiro, sem acrescentar outra atração com hora marcada.</div></div></div></article><div class="move"><div class="move-icon">↳</div><div><b>Margens do Sena → embarque Bateaux Parisiens</b><div class="move-meta">≈ ≈ 0,4–0,6 km</div><div class="move-text"><span class="mode">🚶 A pé</span> Estar na região de embarque com antecedência, idealmente por volta de 17:30–17:40.</div></div></div><article class="event attraction">
+<div class="event-top"><span class="time">18:00–19:00</span><span class="tag">Atração</span></div>
+<h4>Cruzeiro noturno no Sena — Bateaux Parisiens</h4>
+<div class="ticket">€18 online • tarifa cheia indicada €20</div>
+<div class="attraction-media"><div class="attraction-photo"><img alt="Foto ilustrativa — Cruzeiro noturno no Sena — Bateaux Parisiens" data-wiki="Seine" loading="lazy" referrerpolicy="no-referrer"/><div class="photo-fallback">Carregando foto da atração…</div><a class="photo-credit" rel="noopener" target="_blank">Foto: Wikipedia/Wikimedia ↗</a></div><div class="attraction-copy"><div class="hours-box">🕒 <strong>Funcionamento:</strong> De outubro a março: saídas da Torre Eiffel aproximadamente das 10:30 às 22:00, em geral a cada hora e com algumas partidas intermediárias.</div><p><span class="label">O que é: </span>Passeio de aproximadamente 1 hora pelo Sena, partindo aos pés da Torre Eiffel e percorrendo o centro histórico até a região da Île Saint-Louis antes de retornar.</p><div class="expect-box"><span class="label">O que esperar ver: </span>Pontes iluminadas, Louvre, Notre-Dame, fachadas históricas das margens e a Torre Eiffel vista da água. À noite, o passeio funciona como um encerramento panorâmico da viagem.</div><div class="plan-note"><b>No roteiro: </b>Cruzeiro turístico de 1 hora, sem jantar.</div></div></div></article><div class="move"><div class="move-icon">↳</div><div><b>Torre / embarque → Bir-Hakeim</b><div class="move-meta">≈ ≈ 0,9 km</div><div class="move-text"><span class="mode">🚶 A pé</span> Cerca de 12 min.</div></div></div><div class="move"><div class="move-icon">↳</div><div><b>Bir-Hakeim → La Motte-Picquet–Grenelle</b><div class="move-meta">≈ ≈ 1,5 km de linha</div><div class="move-text"><span class="mode">🚇 Metrô</span> Linha 6 direção Nation: Bir-Hakeim → Dupleix → La Motte-Picquet–Grenelle.</div></div></div><article class="event meal"><div class="event-top"><span class="time">19:45–20:00</span><span class="tag food">Refeição</span></div><h4>Último jantar em Paris</h4><div class="restaurant-grid"><article class="restaurant">
+<div class="rest-head">
+<div>
+<h5>Fratelli Castellano</h5>
+<div class="rating">Google 4.8/5 <span>(1,639 avaliações)</span></div>
+</div>
+<div class="price">≈ €19/pessoa</div>
+</div>
+<p>Pizzas atuais em torno de €14–18; bebida simples à parte.</p>
+<div class="meta"><b>Faixa:</b> €17–22  •  <b>Fonte do orçamento:</b> Cardápio 2026</div>
+<div class="hours-line">🕒 <b>Funcionamento:</b> Sexta: 12:00–14:30 e 19:00–22:30</div><a class="mapbtn" href="https://www.google.com/maps/search/?api=1&amp;query=43+Rue+Fondary%2C+75015+Paris" rel="noopener" target="_blank">Abrir no Google Maps ↗</a>
+</article><article class="restaurant">
+<div class="rest-head">
+<div>
+<h5>Le Relais du 15ème</h5>
+<div class="rating">Google 4.7/5 <span>(5,930 avaliações)</span></div>
+</div>
+<div class="price">≈ €25/pessoa</div>
+</div>
+<p>Italiano, pizza, massas e burgers.</p>
+<div class="meta"><b>Faixa:</b> €20–30  •  <b>Fonte do orçamento:</b> Faixa de preço Google</div>
+<div class="hours-line">🕒 <b>Funcionamento:</b> Sexta: 11:30–22:30</div><a class="mapbtn" href="https://www.google.com/maps/search/?api=1&amp;query=78+Avenue+%C3%89mile+Zola%2C+75015+Paris" rel="noopener" target="_blank">Abrir no Google Maps ↗</a>
+</article></div></article><div class="move"><div class="move-icon">↳</div><div><b>Jantar → hotel</b><div class="move-meta">≈ ≈ 0,3–0,6 km</div><div class="move-text"><span class="mode">🚶 A pé</span> Retorno curto e tranquilo após o último jantar.</div></div></div></div></section>
+<section id="custos">
+<h2>Resumo de custos</h2>
+<div class="grid2"><div class="info"><h4>🎟️ Paris Museum Pass — estratégia escolhida</h4><ul>
+<li>4 dias / 96 horas: <b>€105 por pessoa</b></li>
+<li>Ativação planejada: <b>16/11, Sainte-Chapelle, ~10:30</b></li>
+<li>Cobre: Sainte-Chapelle, Panthéon, Versailles, Louvre, Invalides/Tumba de Napoleão e Arco do Triunfo.</li>
+<li>Ingressos avulsos equivalentes: <b>≈ €125 por pessoa</b></li>
+</ul><b>Economia estimada: €20 por pessoa • €40 o casal</b><p class="small">O passe permite uma entrada em cada local e não elimina reservas obrigatórias de horário.</p></div><div class="info"><h4>🎫 Atrações fora do Museum Pass</h4><ul>
+<li>Torre Eiffel, topo por elevador: <b>€36,70</b></li>
+<li>Cruzeiro Bateaux Parisiens: <b>€18 online</b></li>
+</ul><b>Total fora do passe: €54,70 por pessoa • €109,40 o casal</b><p class="small">Cúpula do Sacré-Cœur (€8) e visita interna ao Palais Garnier permanecem opcionais e não entram no total-base.</p></div><div class="info"><h4>🚇 Navigo Week zonas 1–5</h4><ul>
+<li>Preço 2026: <b>€32,40 por pessoa</b></li>
+<li>Validade: <b>segunda 16/11 a domingo 22/11</b></li>
+<li>Cobre metrô, RER, trem, ônibus e tram nas zonas 1–5, incluindo Versailles.</li>
+</ul><b>Total do casal: €64,80</b><p class="small">O domingo 15/11 deve ser pago separadamente. O passe semanal também pode cobrir o deslocamento de saída ao aeroporto no sábado, conforme a rota utilizada.</p></div><div class="info"><h4>❤️ Total dos passes + atrações planejadas</h4><ul>
+<li>Museum Pass: €105,00</li><li>Navigo Week: €32,40</li><li>Torre Eiffel + cruzeiro: €54,70</li></ul>
+<b>€192,10 por pessoa • €384,20 o casal</b><p class="small">Não inclui alimentação, transporte do domingo 15/11, eventual transporte de chegada do aeroporto, nem atrações opcionais.</p></div><div class="info"><h4>➕ Opcionais</h4><ul><li>Cúpula do Sacré-Cœur: <b>€8/pessoa</b></li><li>Visita interna ao Palais Garnier: <b>€25/pessoa não-EEE</b></li></ul><p class="small">Os jardins de Versailles são gratuitos em novembro. Trocadéro, Marais, Canal Saint-Martin, rooftop da Galeries Lafayette e demais atrações marcadas como gratuitas não exigem ingresso.</p></div><div class="info"><h4>🍽️ Alimentação</h4><p>Com as escolhas deste roteiro, um dia típico fica aproximadamente entre <b>€45 e €75 por pessoa</b> em alimentação, variando conforme restaurante, sobremesas e bebidas.</p><p class="small">Estimativa sem álcool e sem considerar refeições de aeroporto.</p></div></div>
+</section>
+<section id="fontes">
+<h2>Fontes e data da checagem</h2>
+<p class="lead">Passes e transporte revisados em 08/09/2026; horários, restaurantes e demais dados permanecem baseados nas checagens do roteiro. Recomenda-se reconferir reservas e eventuais obras na semana da viagem.</p>
+<ul class="source-list"><li><a href="https://www.parismuseumpass.fr/en/pass" rel="noopener" target="_blank">Paris Museum Pass — preço, 96 h e funcionamento oficial</a></li><li><a href="https://www.iledefrance-mobilites.fr/pt/titres-et-tarifs/detail/forfait-navigo-semaine" rel="noopener" target="_blank">Île-de-France Mobilités — Navigo Week 2026</a></li>
+<li><a href="https://www.toureiffel.paris/pt/tarifas-horarios" target="_blank">Torre Eiffel — tarifas oficiais</a></li>
+<li><a href="https://www.louvre.fr/en/visit/hours-admission" target="_blank">Louvre — ingressos e horários</a></li>
+<li><a href="https://www.sainte-chapelle.fr/en/visite/informations-pratiques" target="_blank">Sainte-Chapelle — preços e horários</a></li>
+<li><a href="https://www.notredamedeparis.fr/en/visit/reservation-free/" target="_blank">Notre-Dame — reserva gratuita</a></li>
+<li><a href="https://www.sacre-coeur-montmartre.com/en/info-and-visits/the-dome-tour/" target="_blank">Sacré-Cœur — cúpula</a></li>
+<li><a href="https://www.paris-arc-de-triomphe.fr/en/visit/informations-pratiques" target="_blank">Arco do Triunfo — tarifas</a></li>
+<li><a href="https://www.bateauxparisiens.com/en/cruise-tours/guided-tour.html" target="_blank">Bateaux Parisiens — cruzeiro turístico</a></li>
+<li><a href="https://haussmann.galerieslafayette.com/en/the-terrace-at-galeries-lafayette/" target="_blank">Galeries Lafayette — rooftop gratuito</a></li>
+<li><a href="https://www.operadeparis.fr/en/visits/visit-and-explore/ticket-rates-documents" target="_blank">Palais Garnier — visita interna</a></li>
+<li><a href="https://www.iledefrance-mobilites.fr/en/tarifs-titre-de-transport-en-commun-2026" target="_blank">Île-de-France Mobilités — tarifas 2026</a></li>
+<li><a href="https://www.ratp.fr/en/vos-lignes/metro/8" target="_blank">RATP — Linha 8 e obra em République</a></li>
+<li><a href="https://www.ratp.fr/en/discover/coulisses/network-modernisation/metro-line-6-works" target="_blank">RATP — obras Linha 6</a></li>
+<li><a href="https://www.notredamedeparis.fr/en/qa/" rel="noopener" target="_blank">Notre-Dame — horários oficiais</a></li><li><a href="https://jardin.senat.fr/en/practical-information/opening-hours.html" rel="noopener" target="_blank">Jardin du Luxembourg — horários sazonais</a></li><li><a href="https://www.paris.fr/lieux/parc-du-champ-de-mars-1807" rel="noopener" target="_blank">Ville de Paris — Champ-de-Mars</a></li><li><a href="https://www.paris.fr/lieux/jardins-du-trocadero-1789" rel="noopener" target="_blank">Ville de Paris — Jardins du Trocadéro</a></li><li><a href="https://www.paris.fr/lieux/square-jehan-rictus-2658" rel="noopener" target="_blank">Ville de Paris — Square Jehan Rictus / Mur des Je t’aime</a></li><li><a href="https://www.sacre-coeur-montmartre.com/en/info-and-visits/practical-information/opening-hours-and-access/" rel="noopener" target="_blank">Sacré-Cœur — horários da basílica e cúpula</a></li><li><a href="https://parisjetaime.com/eng/culture/passage-jouffroy-p1581" rel="noopener" target="_blank">Passage Jouffroy — horários</a></li><li><a href="https://parisjetaime.com/eng/culture/passage-des-panoramas-p1582" rel="noopener" target="_blank">Passage des Panoramas — horários</a></li><li><a href="https://www.operadeparis.fr/en/visits/visit-and-explore/visit-the-palais-garnier" rel="noopener" target="_blank">Palais Garnier — horários de visita</a></li><li><a href="https://haussmann.galerieslafayette.com/en/the-terrace-at-galeries-lafayette/" rel="noopener" target="_blank">Galeries Lafayette — rooftop</a></li><li><a href="https://parisjetaime.com/eng/culture/domaine-national-du-palais-royal-p991" rel="noopener" target="_blank">Palais Royal — horários do jardim</a></li><li><a href="https://www.paris.fr/lieux/marche-couvert-des-enfants-rouges-5461" rel="noopener" target="_blank">Marché des Enfants Rouges — horários</a></li><li><a href="https://www.monuments-nationaux.fr/en/groups-tourism-professionals/what-is-advance-ticketing/rates-2026" rel="noopener" target="_blank">Centre des monuments nationaux — tarifas 2026 do Panthéon</a></li><li><a href="https://www.paris-pantheon.fr/en/visit/practical-information" rel="noopener" target="_blank">Panthéon — horários e informações práticas</a></li><li><a href="https://www.musee-armee.fr/en/your-visit/opening-times-and-prices-1.html" rel="noopener" target="_blank">Musée de l’Armée / Invalides — preços e horários</a></li><li><a href="https://en.chateauversailles.fr/2026-ticketing" rel="noopener" target="_blank">Versailles — tarifas 2026</a></li><li><a href="https://en.chateauversailles.fr/plan-your-visit/practical-information" rel="noopener" target="_blank">Versailles — horários de baixa temporada</a></li><li><a href="https://en.chateauversailles.fr/gardens-and-fountains" rel="noopener" target="_blank">Versailles — jardins e funcionamento sazonal</a></li><li><a href="https://monrercetlignev.transilien.com/events/categorie/paris-versailles-chateau-rive-gauche/2026-11/" rel="noopener" target="_blank">RER C — obras programadas em novembro de 2026</a></li><li><a href="https://www.ble-noir-restaurant-versailles.fr/la-carte-ble-noir-restaurant-versailles" rel="noopener" target="_blank">Blé Noir — cardápio e horário</a></li><li><a href="https://lespatisseriesduroyversailles.fr/" rel="noopener" target="_blank">Les Pâtisseries du Roy — cardápio</a></li></ul>
+<div class="note"><b>Restaurantes:</b> notas Google e horários foram consultados em 07/09/2026. Os horários exibidos em cada cartão correspondem ao dia específico do roteiro. Como estabelecimentos podem alterar expediente, feriados, férias ou serviço entre almoço e jantar, reconfirmar na semana da viagem. Os valores médios continuam sendo estimativas práticas, não preços garantidos.</div>
+</section>
+<div class="footer">
+<b>Paris • Lua de Mel • 15–21 de novembro de 2026</b><br/>
+<span>Arquivo: roteiro_lua_de_mel_paris_2026_ver06.html</span><br/>
+<span class="small">As fotos das atrações são carregadas online da Wikipedia/Wikimedia. O texto do roteiro continua acessível mesmo se alguma imagem não carregar.</span>
+</div>
+</main>
+<script>
+(function(){
+  const imgs = Array.from(document.querySelectorAll('.attraction-photo img[data-wiki]'));
+
+  async function resolveImage(img){
+    if(img.dataset.resolvedSrc) return img.dataset.resolvedSrc;
+    if(img.dataset.directImage){
+      img.dataset.resolvedSrc = img.dataset.directImage;
+      return img.dataset.directImage;
+    }
+    const title = img.dataset.wiki;
+    const endpoint = 'https://en.wikipedia.org/api/rest_v1/page/summary/' + encodeURIComponent(title.replace(/ /g,'_'));
+    const res = await fetch(endpoint, {headers:{'Accept':'application/json'}});
+    if(!res.ok) throw new Error('Wikipedia HTTP ' + res.status);
+    const data = await res.json();
+    const src = (data.thumbnail && data.thumbnail.source) || (data.originalimage && data.originalimage.source);
+    if(!src) throw new Error('Sem foto disponível');
+    img.dataset.resolvedSrc = src;
+    if(!img.dataset.creditPage && data.content_urls && data.content_urls.desktop){
+      img.dataset.creditPage = data.content_urls.desktop.page;
+    }
+    return src;
+  }
+
+  async function loadOne(img){
+    const card = img.closest('.attraction-photo');
+    const fallback = card ? card.querySelector('.photo-fallback') : null;
+    const credit = card ? card.querySelector('.photo-credit') : null;
+    try{
+      const src = await resolveImage(img);
+      img.onload = function(){
+        img.classList.add('loaded');
+        if(fallback) fallback.style.display = 'none';
+        if(credit){
+          credit.style.display = 'block';
+          credit.href = img.dataset.creditPage || 'https://commons.wikimedia.org/';
+        }
+      };
+      img.onerror = function(){
+        if(fallback) fallback.textContent = 'Foto não carregada — verifique a conexão.';
+      };
+      img.src = src;
+    }catch(e){
+      if(fallback) fallback.textContent = 'Foto não carregada — verifique a conexão.';
+    }
+  }
+
+  imgs.forEach(loadOne);
+})();
+</script></body>
+</html>
