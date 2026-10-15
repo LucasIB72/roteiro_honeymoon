@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="Roteiros da lua de mel Europa 2026 — Roma e Paris.">
+<meta name="description" content="Roteiros da lua de mel Europa 2026 — Roma, estrada pela Itália até Mônaco e Paris.">
 <title>Lua de Mel Europa 2026</title>
 <style>
 :root{
@@ -53,7 +53,7 @@ a{text-decoration:none;color:inherit}
 }
 .cards{
   display:grid;
-  grid-template-columns:repeat(2,minmax(0,1fr));
+  grid-template-columns:repeat(3,minmax(0,1fr));
   gap:18px;
 }
 .card{
@@ -75,6 +75,7 @@ a{text-decoration:none;color:inherit}
 }
 .card.roma::before{background:linear-gradient(90deg,#2f6f4e,#f2f2f2,#b4473d)}
 .card.paris::before{background:linear-gradient(90deg,#2e5c91,#f2f2f2,#b94149)}
+.card.estrada::before{background:linear-gradient(90deg,#2f6f4e,#f2f2f2,#c8323f)}
 .card-content{
   padding:30px 28px 26px;
   display:flex;
@@ -119,6 +120,10 @@ a{text-decoration:none;color:inherit}
   background:#f2e7eb;
   color:#6b4050;
 }
+.estrada .chip{
+  background:#f4ebe3;
+  color:#6e4a37;
+}
 .btn{
   display:flex;
   align-items:center;
@@ -133,6 +138,7 @@ a{text-decoration:none;color:inherit}
 }
 .roma .btn{background:var(--terracotta)}
 .paris .btn{background:var(--wine)}
+.estrada .btn{background:#8b573f}
 .btn:hover{
   transform:translateY(-2px);
   box-shadow:0 10px 22px rgba(0,0,0,.10);
@@ -143,6 +149,9 @@ a{text-decoration:none;color:inherit}
   color:var(--muted);
   font-size:.88rem;
   padding:35px 10px 0;
+}
+@media(max-width:980px){
+  .cards{grid-template-columns:repeat(2,minmax(0,1fr))}
 }
 @media(max-width:720px){
   .hero{padding:46px 16px 34px}
@@ -180,6 +189,27 @@ a{text-decoration:none;color:inherit}
         </div>
         <a class="btn" href="./roma/">
           <span>Abrir roteiro de Roma</span>
+          <span class="arrow">→</span>
+        </a>
+      </div>
+    </article>
+
+    <article class="card estrada">
+      <div class="card-content">
+        <div class="flag">🚗</div>
+        <h2 class="city">Estrada até Mônaco</h2>
+        <div class="date">10 a 13 de novembro de 2026</div>
+        <p class="desc">
+          Firenze no caminho, Museo Ferrari em Maranello, Modena,
+          noite em San Remo e trem até Mônaco.
+        </p>
+        <div class="meta">
+          <span class="chip">Modena</span>
+          <span class="chip">San Remo</span>
+          <span class="chip">Mônaco</span>
+        </div>
+        <a class="btn" href="./estrada/">
+          <span>Abrir roteiro da estrada</span>
           <span class="arrow">→</span>
         </a>
       </div>

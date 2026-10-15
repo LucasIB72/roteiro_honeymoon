@@ -1,0 +1,876 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Lua de mel de Roma a Modena, Maranello, San Remo e Monaco — versão Carro a combustão.">
+<title>Lua de Mel • Estrada Itália 10–13/11/2026 • Carro a combustão • ver02</title>
+<style>
+:root{
+ --bg:#f5f0e9;--paper:#fffdf9;--ink:#29231f;--muted:#746b64;
+ --terracotta:#9a4f37;--soft:#f4e6dd;--blue:#385d79;--blueSoft:#eaf2f7;
+ --gold:#ad813d;--green:#456853;--line:#ddd3ca;--shadow:0 12px 34px rgba(62,42,31,.09);
+ --ev:#257560;--ice:#8a5337;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;max-width:100%;overflow-x:hidden}
+body{margin:0;background:var(--bg);color:var(--ink);font:15.5px/1.58 system-ui,-apple-system,"Segoe UI",sans-serif;max-width:100%;overflow-x:hidden}
+a{color:var(--terracotta);text-decoration:none}a:hover{text-decoration:underline}
+.hero{padding:74px 20px 56px;background:linear-gradient(135deg,#55352c,#9a4f37 58%,#c77e5e);color:white}
+.hero.ev{background:linear-gradient(135deg,#244a42,#2c7764 58%,#66a08e)}
+.hero.ice{background:linear-gradient(135deg,#53382d,#8b573f 58%,#b77b5e)}
+.hero-inner,.wrap{max-width:1180px;margin:auto}
+.kicker{font-size:.8rem;font-weight:850;letter-spacing:.16em;text-transform:uppercase;opacity:.9}
+h1{font:700 clamp(2.55rem,7vw,5rem)/1 Georgia,serif;margin:.4rem 0 1rem}
+.hero p{max-width:900px;font-size:1.08rem;margin:.3rem 0}
+.ver{display:inline-block;margin-top:18px;padding:7px 12px;border:1px solid rgba(255,255,255,.5);border-radius:999px;font-weight:750}
+.wrap{padding:0 18px 60px}
+.summary-cards{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:-28px;position:relative;z-index:2}
+.summary-card{background:var(--paper);border:1px solid rgba(154,79,55,.1);border-radius:18px;padding:18px;box-shadow:var(--shadow)}
+.summary-card b{display:block;margin-bottom:4px}.summary-card .big{display:block;font:700 1.43rem Georgia,serif;color:var(--terracotta)}
+.hero.ev + .wrap .summary-card .big{color:var(--ev)}
+.note{margin:24px 0;padding:16px 19px;border-left:5px solid var(--gold);background:#fff9ee;border-radius:12px}
+.note.alert{border-left-color:#b04b4b;background:#fff3f3}.note.evnote{border-left-color:var(--ev);background:#eef8f4}
+nav{position:sticky;top:0;z-index:30;display:flex;gap:5px;overflow-x:auto;white-space:nowrap;background:rgba(255,253,249,.96);backdrop-filter:blur(10px);border:1px solid var(--line);padding:10px 12px;border-radius:14px;margin:24px 0;box-shadow:0 5px 18px rgba(55,38,31,.06);scrollbar-width:none}
+nav::-webkit-scrollbar{display:none}nav a{flex:0 0 auto;font-weight:750;padding:7px 9px;border-radius:8px;background:#f8efeb}
+section{padding:32px 0;border-top:1px solid rgba(116,107,100,.2)}section:first-of-type{border-top:0}
+h2{font:700 2rem Georgia,serif;margin:0 0 8px}.lead{color:var(--muted);max-width:930px}
+.table-wrap{overflow:auto;background:var(--paper);border:1px solid var(--line);border-radius:16px;box-shadow:var(--shadow);-webkit-overflow-scrolling:touch}
+table{width:100%;border-collapse:collapse;min-width:760px}th,td{padding:13px 15px;text-align:left;border-bottom:1px solid var(--line);vertical-align:top}
+th{background:#f1e4dd;text-transform:uppercase;font-size:.78rem;letter-spacing:.05em}tr:last-child td{border-bottom:0}
+.day{margin-top:28px}.day-head{display:flex;gap:16px;align-items:flex-start;margin-bottom:20px}.date{min-width:78px;background:var(--terracotta);color:white;border-radius:16px;padding:11px;text-align:center;font-weight:800;line-height:1}.date strong{display:block;font:700 2rem Georgia,serif}.day h3{font:700 1.8rem Georgia,serif;margin:0 0 4px}.day-sub{color:var(--muted)}
+.timeline{margin-left:18px;padding-left:28px;border-left:2px solid var(--line)}
+.event{position:relative;background:var(--paper);border:1px solid var(--line);border-radius:16px;padding:18px;margin:0 0 13px;box-shadow:0 5px 20px rgba(55,38,31,.04)}
+.event:before{content:"";position:absolute;width:13px;height:13px;border-radius:50%;background:var(--terracotta);left:-36px;top:23px;border:4px solid var(--bg)}
+.event-top{display:flex;justify-content:space-between;gap:10px;align-items:flex-start;flex-wrap:wrap}.time{font-weight:850;color:var(--terracotta)}
+.tag{font-size:.72rem;text-transform:uppercase;letter-spacing:.05em;font-weight:850;background:#f1ddd5;color:var(--terracotta);padding:4px 8px;border-radius:999px}
+.event h4{font-size:1.12rem;margin:5px 0 7px}.ticket{display:inline-block;margin:3px 0 10px;background:#edf5ef;color:var(--green);font-weight:800;border-radius:9px;padding:6px 10px}
+.attraction{padding:0;overflow:hidden}.attraction .event-top,.attraction>h4,.attraction>.ticket{margin-left:18px;margin-right:18px}.attraction .event-top{padding-top:18px}
+.attraction-media{display:grid;grid-template-columns:minmax(240px,34%) 1fr;border-top:1px solid var(--line);background:#fff}
+.attraction-photo{position:relative;min-height:245px;background:linear-gradient(135deg,#eadfda,#cbb6aa);overflow:hidden}
+.attraction-photo img{width:100%;height:100%;min-height:245px;object-fit:cover;display:block;opacity:0;transition:opacity .25s ease}.attraction-photo img.loaded{opacity:1}
+.photo-fallback{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;text-align:center;padding:20px;color:#705e55;font-weight:750}
+.photo-credit{position:absolute;left:7px;bottom:7px;background:rgba(28,23,21,.78);color:white;font-size:.67rem;padding:4px 7px;border-radius:7px;display:none}
+.attraction-copy{padding:16px 18px 18px}.attraction-copy p{margin:7px 0}.label{font-weight:850;color:var(--terracotta)}
+.hours-box{margin-bottom:10px;padding:9px 11px;background:#f0f5f7;border:1px solid #dbe5e9;border-radius:10px;color:#324d5c;font-size:.88rem}
+.expect-box{margin-top:10px;padding:10px 12px;background:#fcf3ef;border-left:4px solid var(--terracotta);border-radius:8px}
+.plan-note{margin-top:10px;padding-top:9px;border-top:1px dashed var(--line);color:var(--muted);font-size:.9rem}
+.history-box{margin:11px 0 0;padding:11px 12px;background:#f7f1e8;border:1px solid #e6d8c6;border-radius:10px;color:#4e433c}
+.history-title{font-weight:850;color:#865034;margin-bottom:5px}.history-box p{margin:0;line-height:1.58}
+.move{display:grid;grid-template-columns:minmax(0,1fr) 465px;gap:16px;align-items:stretch;margin:4px 0 13px;padding:11px 13px;background:var(--blueSoft);border-left:4px solid var(--blue);border-radius:12px}
+.move-main{display:grid;grid-template-columns:27px minmax(0,1fr);gap:8px;align-items:start}.move-icon{font-size:1.2rem;color:var(--blue);font-weight:900}
+.move-meta{font-size:.83rem;color:var(--muted);font-weight:650;margin-top:1px}.move-text{margin-top:4px}.mode{display:inline-block;background:#dbe8f1;color:#254d6a;border-radius:999px;padding:2px 7px;font-size:.75rem;font-weight:850;margin-right:4px}
+.move-map{display:flex;flex-direction:column;overflow:hidden;border-radius:14px;background:#edf3f7;border:1px solid #cfdae3;min-height:279px}.move-map iframe{display:block;width:100%;height:279px;border:0;background:#e6eef4}
+.move-map-footer{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:9px 11px;background:#f7fafc;border-top:1px solid #d9e3ea}.move-map-badge{font-size:.7rem;font-weight:850;text-transform:uppercase;color:#335a7a;background:#dbe8f1;border-radius:999px;padding:4px 8px}.move-map-link{font-size:.8rem;font-weight:800}.move-map-note{padding:8px 10px 10px;font-size:.75rem;color:#64737e;background:#f9fcfe;border-top:1px dashed #d9e3ea}
+.grid2{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}.info{background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:16px}.info h4{margin:0 0 5px}
+.ztl-grid{display:grid;gap:16px}.ztl-card{display:grid;grid-template-columns:minmax(0,1fr) 480px;background:var(--paper);border:1px solid var(--line);border-radius:17px;overflow:hidden;box-shadow:var(--shadow)}
+.ztl-copy{padding:18px}.ztl-copy h4{font-size:1.15rem;margin:0 0 7px}.ztl-map{background:#edf3f7}.ztl-map iframe{width:100%;height:290px;border:0;display:block}.map-caption{padding:8px 10px;background:#f7fafc;color:var(--muted);font-size:.76rem}
+.mapbtn{display:inline-flex;align-items:center;justify-content:center;margin:9px 7px 0 0;padding:8px 10px;border-radius:8px;background:#f0e4df;font-size:.8rem;font-weight:800;min-height:38px}
+.cost-chip{display:inline-block;padding:5px 9px;border-radius:999px;background:#eef6ef;color:#3e6650;font-weight:800;font-size:.8rem;margin:3px 3px 3px 0}
+.charge{border-left:5px solid var(--ev);background:#f2faf7}.fuel{border-left:5px solid var(--ice);background:#fbf4ef}
+.source-list li{margin-bottom:8px}.footer{text-align:center;color:var(--muted);padding:38px 0 10px}.small{font-size:.84rem;color:var(--muted)}
+@media(max-width:1180px){.move{grid-template-columns:minmax(0,1fr) 410px}.ztl-card{grid-template-columns:minmax(0,1fr) 410px}}
+@media(max-width:980px){.move,.ztl-card{grid-template-columns:1fr}.move-map iframe,.ztl-map iframe{height:250px}}
+@media(max-width:768px){
+ body{font-size:16px}.hero{padding:46px 16px 34px}.wrap{padding:0 12px 42px}.summary-cards{grid-template-columns:repeat(2,minmax(0,1fr));margin-top:-20px;gap:10px}.summary-card{padding:14px;border-radius:14px}
+ nav{margin:18px -12px 22px;border-left:0;border-right:0;border-radius:0}section{padding:24px 0}h2{font-size:1.7rem}.day-head{gap:11px}.date{min-width:63px}.day h3{font-size:1.46rem;line-height:1.15}
+ .timeline{margin-left:4px;padding-left:17px}.event:before{width:11px;height:11px;left:-25px;top:21px;border-width:3px}.grid2{grid-template-columns:1fr}.attraction-media{grid-template-columns:1fr}.attraction-photo{aspect-ratio:16/9;min-height:0}.attraction-photo img{min-height:0;aspect-ratio:16/9}
+ .move{grid-template-columns:1fr;gap:11px;padding:10px}.move-map iframe,.ztl-map iframe{height:230px}table{min-width:650px;font-size:.88rem}.mapbtn{min-height:44px}
+}
+@media(max-width:520px){.summary-cards{grid-template-columns:1fr}.hero h1{font-size:2.85rem}.day h3{font-size:1.3rem}}
+@media print{.move-map,.ztl-map{display:none}.move,.ztl-card{grid-template-columns:1fr}nav{display:none}.event,.move,.ztl-card{break-inside:avoid}}
+</style>
+</head>
+<body>
+<header class="hero ice">
+  <div class="hero-inner">
+    <div class="kicker">Lua de mel • Road trip Itália → Mônaco</div>
+    <h1>⛽ Roma → Modena → San Remo</h1>
+    <p>Roteiro de 10 a 13 de novembro de 2026: Firenze no caminho para Modena, Ferrari em Maranello, noite em San Remo e trem via Ventimiglia até Monaco.</p>
+    <span class="ver">Carro a combustão • ver02 • atualizado em 15/10/2026</span>
+  </div>
+</header>
+<main class="wrap">
+  <div class="summary-cards">
+    <div class="summary-card"><b>🗓️ Período</b><span class="big">10–13/11</span><div>4 dias de deslocamento/passeio</div></div>
+    <div class="summary-card"><b>🚗 Estrada</b><span class="big">≈ 830 km</span><div>inclui Maranello ida/volta</div></div>
+    <div class="summary-card"><b>🛣️ Pedágios</b><span class="big">≈ €65–67</span><div>orçamento Classe A</div></div>
+    <div class="summary-card"><b>⛽ Energia</b><span class="big">€91–106</span><div>gasolina estimada</div></div>
+  </div>
+
+  <div class="note"><b>Estratégia geral:</b> A versão a combustão prioriza evitar ZTL, estimativa de combustível e logística simples de abastecimento. A passagem por Firenze foi montada para <b>não entrar de carro na ZTL</b>: estacionar em Villa Costanza e usar o tram até o centro.</div>
+
+  <div class="note alert"><b>⚠️ Ponto mais importante antes de reservar o carro:</b> confirme o <b>local de devolução one-way em San Remo</b> e o horário da agência. Comparadores listam locadoras em San Remo (Hertz, Europcar, Maggiore, Free2Move Rent), mas não encontrei endereços oficiais confirmados de todas as redes. <b>Não leve o carro italiano até Mônaco:</b> devolver em outro país gera taxa internacional one-way que costuma passar de €200. O trecho San Remo → Mônaco segue de trem.</div>
+
+  <nav>
+    <a href="#resumo">Resumo</a><a href="#10">10/11</a><a href="#11">11/11</a><a href="#12">12/11</a><a href="#13">13/11</a>
+    <a href="#ztl">ZTL</a><a href="#pedagios">Pedágios</a><a href="#energia">Combustível</a><a href="#fontes">Fontes</a>
+  </nav>
+
+  <section id="resumo">
+    <h2>Visão geral</h2>
+    <p class="lead">O roteiro prioriza segurança com ZTL, estacionamento simples e folga suficiente para chegar a Modena ainda em 10/11. Os tempos de estrada são estimativas sem trânsito intenso.</p>
+    <div class="table-wrap"><table>
+      <thead><tr><th>Data</th><th>Rota</th><th>Plano</th><th>Ponto crítico</th></tr></thead>
+      <tbody>
+        <tr><td>10/11 • Ter</td><td>Roma → Firenze → Modena</td><td>Villa Costanza + centro de Firenze a pé</td><td>ZTL Firenze e passe da hospedagem em Modena</td></tr>
+        <tr><td>11/11 • Qua</td><td>Modena ↔ Maranello</td><td>Museo Ferrari + entorno</td><td>Não depender de acesso a ZTL</td></tr>
+        <tr><td>12/11 • Qui</td><td>Modena → San Remo</td><td>Estrada + Chiesa Russa, Casinò, Pigna e Via Matteotti</td><td>Devolver o carro em San Remo no horário da agência</td></tr>
+        <tr><td>13/11 • Sex</td><td>San Remo → Ventimiglia → Monaco</td><td>Regional + TER, sem madrugar</td><td>Reconfirmar horário transfronteiriço</td></tr>
+      </tbody>
+    </table></div>
+  </section>
+
+  
+<section class="day" id="10">
+  <div class="day-head"><div class="date"><strong>10</strong>NOV</div><div><h3>Terça • Roma → Firenze → Modena</h3><div class="day-sub">Dia de estrada com parada longa em Firenze sem entrar de carro na ZTL.</div></div></div>
+  <div class="timeline">
+    <article class="event">
+      <div class="event-top"><span class="time">06:45–07:30</span><span class="tag">Carro</span></div>
+      <h4>Retirada do carro em Roma</h4>
+      <p>Fotografe carroceria, rodas e para-brisa; confirme política de combustível/recarga, dispositivo de pedágio, franquia, assistência e local de devolução. <b>Antes de sair, envie a placa do carro ao anfitrião de Via Masone 12 em Modena</b>, pois a hospedagem fica dentro da ZTL.</p>
+      <p><b>Checklist combustão:</b> confirme se a devolução exige tanque cheio e qual combustível deve ser usado.</p>
+    </article>
+    
+    <div class="move">
+      <div class="move-main">
+        <div class="move-icon">↳</div>
+        <div>
+          <b>Roma → A1 sentido Firenze</b>
+          <div class="move-meta">≈ 270 km até Firenze • cerca de 2h40 sem paradas</div>
+          <div class="move-text"><span class="mode">🚗 Carro</span> Siga pela A1 / Autostrada del Sole. Não configure o centro histórico de Firenze como destino do carro.</div>
+        </div>
+      </div>
+      <div class="move-map">
+        <iframe loading="lazy" allowfullscreen referrerpolicy="no-referrer-when-downgrade"
+          src="https://www.google.com/maps?output=embed&f=d&source=s_d&saddr=Roma%2C+Italia&daddr=Parcheggio+Villa+Costanza%2C+Scandicci%2C+Firenze&dirflg=d&z=7" title="Mapa: Roma → A1 sentido Firenze"></iframe>
+        <div class="move-map-footer">
+          <span class="move-map-badge">Google Maps</span>
+          <a class="move-map-link" href="https://www.google.com/maps/dir/?api=1&origin=Roma%2C+Italia&destination=Parcheggio+Villa+Costanza%2C+Scandicci%2C+Firenze&travelmode=driving" target="_blank" rel="noopener">Abrir rota ↗</a>
+        </div>
+        <div class="move-map-note">O destino do carro deve ser Villa Costanza, não Piazza del Duomo.</div>
+      </div>
+    </div>
+    
+    
+      <article class="event fuel">
+        <div class="event-top"><span class="time">≈ 09:30</span><span class="tag">Parada</span></div>
+        <h4>⛽ Pausa opcional em área de serviço da A1</h4>
+        <p>Se necessário, faça uma parada curta para café/abastecimento antes de Firenze. Para o orçamento do roteiro usei gasolina a <b>€1,829/L</b> como referência atual; postos de autoestrada podem cobrar mais.</p>
+      </article>
+    
+    <article class="event">
+      <div class="event-top"><span class="time">≈ 10:45–11:15</span><span class="tag">Estacionamento</span></div>
+      <h4>Parcheggio Villa Costanza</h4>
+      <p>Fica conectado diretamente à A1 e evita completamente a ZTL de Firenze. É aberto 24 h. Para uma parada de 4–10 h, a tarifa atual é <b>€5 por carro</b>. O tram T1 leva cerca de <b>22 min</b> até Alamanni/Santa Maria Novella e custa <b>€2 por pessoa por trecho</b>.</p>
+      <p><b>Custo casal estimado:</b> €5 estacionamento + €8 tram ida/volta = <b>€13</b>.</p>
+    </article>
+    
+    <div class="move">
+      <div class="move-main">
+        <div class="move-icon">↳</div>
+        <div>
+          <b>Villa Costanza → Firenze SMN</b>
+          <div class="move-meta">≈ 22 min</div>
+          <div class="move-text"><span class="mode">🚋 Tram T1</span> Deixe o carro estacionado e use o tram T1. A partir de Santa Maria Novella, o restante é a pé.</div>
+        </div>
+      </div>
+      <div class="move-map">
+        <iframe loading="lazy" allowfullscreen referrerpolicy="no-referrer-when-downgrade"
+          src="https://www.google.com/maps?output=embed&f=d&source=s_d&saddr=Villa+Costanza%2C+Scandicci&daddr=Firenze+Santa+Maria+Novella&dirflg=r&z=12" title="Mapa: Villa Costanza → Firenze SMN"></iframe>
+        <div class="move-map-footer">
+          <span class="move-map-badge">Google Maps</span>
+          <a class="move-map-link" href="https://www.google.com/maps/dir/?api=1&origin=Villa+Costanza%2C+Scandicci&destination=Firenze+Santa+Maria+Novella&travelmode=transit" target="_blank" rel="noopener">Abrir rota ↗</a>
+        </div>
+        
+      </div>
+    </div>
+    
+    
+    <article class="event attraction">
+      <div class="event-top"><span class="time">11:45–12:30</span><span class="tag">Atração</span></div>
+      <h4>Cattedrale di Santa Maria del Fiore</h4>
+      <div class="ticket">Catedral: entrada gratuita</div>
+      <div class="attraction-media">
+        <div class="attraction-photo">
+          <img alt="Foto ilustrativa — Cattedrale di Santa Maria del Fiore" data-wiki="Cattedrale di Santa Maria del Fiore" loading="lazy" referrerpolicy="no-referrer">
+          <div class="photo-fallback">Carregando foto da atração…</div>
+          <a class="photo-credit" target="_blank" rel="noopener">Foto: Wikipedia/Wikimedia ↗</a>
+        </div>
+        <div class="attraction-copy">
+          <div class="hours-box">🕒 <strong>Funcionamento / janela:</strong> Seg–Sáb 10:15–15:45. Em 10/11/2026 o Campanile di Giotto estará fechado para manutenção (09–13/11).</div>
+          <p><span class="label">O que é:</span> A catedral de Firenze, coroada pela cúpula de Brunelleschi, é um dos grandes marcos do Renascimento.</p>
+          <div class="history-box">
+            <div class="history-title">🏛️ História e curiosidades</div>
+            <p>A construção da catedral começou em 1296 sob projeto de Arnolfo di Cambio, substituindo a antiga Santa Reparata. A obra atravessou gerações até a solução revolucionária de Filippo Brunelleschi para a enorme cúpula, concluída no século XV. A igreja foi consagrada em 1436. A fachada visível hoje é posterior, do século XIX, enquanto a cúpula permanece um dos feitos estruturais mais importantes da arquitetura europeia.</p>
+          </div>
+          <div class="expect-box"><span class="label">O que esperar ver:</span> Fachada em mármore, interior monumental e a cúpula de Brunelleschi. O Campanile estará fechado justamente na data da visita.</div>
+          <div class="plan-note"><b>No roteiro:</b> Manter a visita objetiva porque ainda há Piazza della Signoria, Ponte Vecchio, almoço e estrada até Modena.</div>
+        </div>
+      </div>
+    </article>
+    
+    
+    <div class="move">
+      <div class="move-main">
+        <div class="move-icon">↳</div>
+        <div>
+          <b>Duomo → Piazza della Signoria</b>
+          <div class="move-meta">≈ 600 m • 8 min</div>
+          <div class="move-text"><span class="mode">🚶 A pé</span> Trecho totalmente a pé pelo centro histórico.</div>
+        </div>
+      </div>
+      <div class="move-map">
+        <iframe loading="lazy" allowfullscreen referrerpolicy="no-referrer-when-downgrade"
+          src="https://www.google.com/maps?output=embed&f=d&source=s_d&saddr=Cattedrale+di+Santa+Maria+del+Fiore&daddr=Piazza+della+Signoria%2C+Firenze&dirflg=w&z=16" title="Mapa: Duomo → Piazza della Signoria"></iframe>
+        <div class="move-map-footer">
+          <span class="move-map-badge">Google Maps</span>
+          <a class="move-map-link" href="https://www.google.com/maps/dir/?api=1&origin=Cattedrale+di+Santa+Maria+del+Fiore&destination=Piazza+della+Signoria%2C+Firenze&travelmode=driving" target="_blank" rel="noopener">Abrir rota ↗</a>
+        </div>
+        
+      </div>
+    </div>
+    
+    
+    <article class="event attraction">
+      <div class="event-top"><span class="time">12:40–13:05</span><span class="tag">Atração</span></div>
+      <h4>Piazza della Signoria</h4>
+      <div class="ticket">Grátis</div>
+      <div class="attraction-media">
+        <div class="attraction-photo">
+          <img alt="Foto ilustrativa — Piazza della Signoria" data-wiki="Piazza della Signoria" loading="lazy" referrerpolicy="no-referrer">
+          <div class="photo-fallback">Carregando foto da atração…</div>
+          <a class="photo-credit" target="_blank" rel="noopener">Foto: Wikipedia/Wikimedia ↗</a>
+        </div>
+        <div class="attraction-copy">
+          <div class="hours-box">🕒 <strong>Funcionamento / janela:</strong> Praça pública, acesso livre.</div>
+          <p><span class="label">O que é:</span> Coração político de Firenze e espaço cívico diante do Palazzo Vecchio.</p>
+          <div class="history-box">
+            <div class="history-title">🏛️ História e curiosidades</div>
+            <p>A praça consolidou-se como centro político da República Florentina na Idade Média. O Palazzo Vecchio começou a ser erguido em 1299 e tornou-se sede do governo. Séculos depois, esculturas e a Loggia dei Lanzi transformaram a praça em uma espécie de museu a céu aberto. A presença de cópias e originais distribuídos pelo espaço registra diferentes fases da história política e artística florentina.</p>
+          </div>
+          <div class="expect-box"><span class="label">O que esperar ver:</span> Palazzo Vecchio, Loggia dei Lanzi, esculturas e uma das paisagens urbanas mais marcantes de Firenze.</div>
+          
+        </div>
+      </div>
+    </article>
+    
+    
+    <div class="move">
+      <div class="move-main">
+        <div class="move-icon">↳</div>
+        <div>
+          <b>Piazza della Signoria → Ponte Vecchio</b>
+          <div class="move-meta">≈ 500 m • 7 min</div>
+          <div class="move-text"><span class="mode">🚶 A pé</span> Caminhada curta pela Via Por Santa Maria.</div>
+        </div>
+      </div>
+      <div class="move-map">
+        <iframe loading="lazy" allowfullscreen referrerpolicy="no-referrer-when-downgrade"
+          src="https://www.google.com/maps?output=embed&f=d&source=s_d&saddr=Piazza+della+Signoria%2C+Firenze&daddr=Ponte+Vecchio%2C+Firenze&dirflg=w&z=17" title="Mapa: Piazza della Signoria → Ponte Vecchio"></iframe>
+        <div class="move-map-footer">
+          <span class="move-map-badge">Google Maps</span>
+          <a class="move-map-link" href="https://www.google.com/maps/dir/?api=1&origin=Piazza+della+Signoria%2C+Firenze&destination=Ponte+Vecchio%2C+Firenze&travelmode=driving" target="_blank" rel="noopener">Abrir rota ↗</a>
+        </div>
+        
+      </div>
+    </div>
+    
+    
+    <article class="event attraction">
+      <div class="event-top"><span class="time">13:10–13:30</span><span class="tag">Atração</span></div>
+      <h4>Ponte Vecchio</h4>
+      <div class="ticket">Grátis</div>
+      <div class="attraction-media">
+        <div class="attraction-photo">
+          <img alt="Foto ilustrativa — Ponte Vecchio" data-wiki="Ponte Vecchio" loading="lazy" referrerpolicy="no-referrer">
+          <div class="photo-fallback">Carregando foto da atração…</div>
+          <a class="photo-credit" target="_blank" rel="noopener">Foto: Wikipedia/Wikimedia ↗</a>
+        </div>
+        <div class="attraction-copy">
+          <div class="hours-box">🕒 <strong>Funcionamento / janela:</strong> Ponte pública, acesso livre.</div>
+          <p><span class="label">O que é:</span> Ponte medieval sobre o Arno conhecida pelas pequenas lojas construídas sobre sua estrutura.</p>
+          <div class="history-box">
+            <div class="history-title">🏛️ História e curiosidades</div>
+            <p>A ponte atual data de 1345 e substituiu travessias anteriores destruídas por enchentes. Desde o período dos Médici, suas lojas passaram a ser associadas sobretudo a ourives e joalheiros. Em 1565, Giorgio Vasari projetou o corredor elevado que atravessa a ponte para ligar os palácios do governo e a residência ducal. O Ponte Vecchio foi a única ponte histórica de Firenze a escapar da destruição durante a retirada alemã em 1944.</p>
+          </div>
+          <div class="expect-box"><span class="label">O que esperar ver:</span> Rio Arno, lojas históricas, vistas das margens e o corredor elevado de Vasari.</div>
+          
+        </div>
+      </div>
+    </article>
+    
+    <article class="event">
+      <div class="event-top"><span class="time">13:35–14:15</span><span class="tag">Almoço</span></div>
+      <h4>All'Antico Vinaio</h4>
+      <p>Parada prática para os famosos sanduíches de schiacciata, alinhada às preferências de vocês e bem próxima de Piazza della Signoria. Se houver fila excessiva, escolha outra casa de schiacciata no mesmo eixo para não comprometer a saída.</p>
+      <a class="mapbtn" href="https://www.google.com/maps/search/?api=1&query=All%27Antico+Vinaio%2C+Via+dei+Neri%2C+Firenze" target="_blank" rel="noopener">Abrir no Maps ↗</a>
+    </article>
+    
+    <div class="move">
+      <div class="move-main">
+        <div class="move-icon">↳</div>
+        <div>
+          <b>Centro de Firenze → Villa Costanza</b>
+          <div class="move-meta">≈ 22 min de tram + caminhada</div>
+          <div class="move-text"><span class="mode">🚋 Tram T1</span> Retorne para Santa Maria Novella/Alamanni e pegue o T1 até Villa Costanza.</div>
+        </div>
+      </div>
+      <div class="move-map">
+        <iframe loading="lazy" allowfullscreen referrerpolicy="no-referrer-when-downgrade"
+          src="https://www.google.com/maps?output=embed&f=d&source=s_d&saddr=Firenze+Santa+Maria+Novella&daddr=Parcheggio+Villa+Costanza%2C+Scandicci%2C+Firenze&dirflg=r&z=12" title="Mapa: Centro de Firenze → Villa Costanza"></iframe>
+        <div class="move-map-footer">
+          <span class="move-map-badge">Google Maps</span>
+          <a class="move-map-link" href="https://www.google.com/maps/dir/?api=1&origin=Firenze+Santa+Maria+Novella&destination=Parcheggio+Villa+Costanza%2C+Scandicci%2C+Firenze&travelmode=transit" target="_blank" rel="noopener">Abrir rota ↗</a>
+        </div>
+        
+      </div>
+    </div>
+    
+    
+    <div class="move">
+      <div class="move-main">
+        <div class="move-icon">↳</div>
+        <div>
+          <b>Villa Costanza → Modena</b>
+          <div class="move-meta">≈ 134–144 km • 1h25–1h40</div>
+          <div class="move-text"><span class="mode">🚗 Carro</span> Continue na A1 sentido Bologna/Milano e siga para Modena. O pedágio equivalente deste trecho é cerca de €10,30–10,90.</div>
+        </div>
+      </div>
+      <div class="move-map">
+        <iframe loading="lazy" allowfullscreen referrerpolicy="no-referrer-when-downgrade"
+          src="https://www.google.com/maps?output=embed&f=d&source=s_d&saddr=Parcheggio+Villa+Costanza%2C+Scandicci%2C+Firenze&daddr=Via+Masone+12%2C+Modena&dirflg=d&z=8" title="Mapa: Villa Costanza → Modena"></iframe>
+        <div class="move-map-footer">
+          <span class="move-map-badge">Google Maps</span>
+          <a class="move-map-link" href="https://www.google.com/maps/dir/?api=1&origin=Parcheggio+Villa+Costanza%2C+Scandicci%2C+Firenze&destination=Via+Masone+12%2C+Modena&travelmode=driving" target="_blank" rel="noopener">Abrir rota ↗</a>
+        </div>
+        <div class="move-map-note">Via Masone 12 fica dentro da ZTL: só siga até o endereço depois da confirmação do passe/placa.</div>
+      </div>
+    </div>
+    
+    <article class="event">
+      <div class="event-top"><span class="time">≈ 17:00</span><span class="tag">ZTL</span></div>
+      <h4>Chegada a Via Masone 12 — atenção máxima à ZTL</h4>
+      <p><b>Combustão:</b> o veículo não pode simplesmente entrar na ZTL. Envie a placa ao anfitrião no mesmo dia e espere a confirmação do passe antes de cruzar qualquer pórtico eletrônico.</p>
+      <p>Se o passe ainda não estiver confirmado, <b>não cruze o pórtico eletrônico</b>. Use estacionamento fora da ZTL (o anúncio da hospedagem cita Viale Martiri della Libertà, a poucos minutos a pé) e entre a pé.</p>
+    </article>
+  </div>
+</section>
+
+<section class="day" id="11">
+  <div class="day-head"><div class="date"><strong>11</strong>NOV</div><div><h3>Quarta • Modena ↔ Maranello</h3><div class="day-sub">Museo Ferrari e região da fábrica, usando estacionamento oficial e sem depender de acesso a ZTL.</div></div></div>
+  <div class="timeline">
+    <article class="event"><div class="event-top"><span class="time">08:45</span><span class="tag">Saída</span></div><h4>Saída de Modena</h4><p>Saia da hospedagem apenas pela rota permitida pelo passe da ZTL. O trajeto até Maranello é por vias ordinárias e <b>não tem pedágio</b>.</p></article>
+    
+    <div class="move">
+      <div class="move-main">
+        <div class="move-icon">↳</div>
+        <div>
+          <b>Modena → Museo Ferrari Maranello</b>
+          <div class="move-meta">≈ 18–20 km • 25–30 min</div>
+          <div class="move-text"><span class="mode">🚗 Carro</span> Siga para Via Alfredo Dino Ferrari 43 e use o estacionamento indicado na área do museu.</div>
+        </div>
+      </div>
+      <div class="move-map">
+        <iframe loading="lazy" allowfullscreen referrerpolicy="no-referrer-when-downgrade"
+          src="https://www.google.com/maps?output=embed&f=d&source=s_d&saddr=Via+Masone+12%2C+Modena&daddr=Museo+Ferrari%2C+Via+Alfredo+Dino+Ferrari+43%2C+Maranello&dirflg=d&z=11" title="Mapa: Modena → Museo Ferrari Maranello"></iframe>
+        <div class="move-map-footer">
+          <span class="move-map-badge">Google Maps</span>
+          <a class="move-map-link" href="https://www.google.com/maps/dir/?api=1&origin=Via+Masone+12%2C+Modena&destination=Museo+Ferrari%2C+Via+Alfredo+Dino+Ferrari+43%2C+Maranello&travelmode=driving" target="_blank" rel="noopener">Abrir rota ↗</a>
+        </div>
+        
+      </div>
+    </div>
+    
+    
+    <article class="event attraction">
+      <div class="event-top"><span class="time">09:30–12:00</span><span class="tag">Atração</span></div>
+      <h4>Museo Ferrari Maranello</h4>
+      <div class="ticket">€27 adulto • outubro–abril</div>
+      <div class="attraction-media">
+        <div class="attraction-photo">
+          <img alt="Foto ilustrativa — Museo Ferrari Maranello" data-wiki="Museo Ferrari" loading="lazy" referrerpolicy="no-referrer">
+          <div class="photo-fallback">Carregando foto da atração…</div>
+          <a class="photo-credit" target="_blank" rel="noopener">Foto: Wikipedia/Wikimedia ↗</a>
+        </div>
+        <div class="attraction-copy">
+          <div class="hours-box">🕒 <strong>Funcionamento / janela:</strong> Em 2026: 09:30–18:00 no período novembro–março.</div>
+          <p><span class="label">O que é:</span> Museu dedicado à história da Ferrari, aos carros de estrada, competição e Fórmula 1 em Maranello.</p>
+          <div class="history-box">
+            <div class="history-title">🏛️ História e curiosidades</div>
+            <p>A Ferrari como fabricante nasceu em 1947, mas a trajetória de Enzo Ferrari no automobilismo começou décadas antes. Maranello tornou-se a sede industrial e simbólica da marca e o museu nasceu para reunir carros, motores, troféus e exposições que contam a evolução técnica e esportiva do Cavallino Rampante. O acervo muda ao longo do tempo e costuma combinar modelos históricos, supercarros e carros de competição.</p>
+          </div>
+          <div class="expect-box"><span class="label">O que esperar ver:</span> Carros de rua, Fórmula 1, motores, troféus e exposições temáticas. Reserve cerca de 2 h a 2 h30 para visitar com calma.</div>
+          <div class="plan-note"><b>No roteiro:</b> O folheto oficial 2026 informa ingresso adulto de €27 em novembro.</div>
+        </div>
+      </div>
+    </article>
+    
+    <article class="event">
+      <div class="event-top"><span class="time">12:10–13:15</span><span class="tag">Almoço</span></div>
+      <h4>Almoço em Maranello</h4>
+      <p>Escolha uma opção próxima ao museu para não criar deslocamento desnecessário. Priorize massas, pizza, panini ou carne, mantendo o carro estacionado quando possível.</p>
+    </article>
+    <article class="event">
+      <div class="event-top"><span class="time">13:20–15:00</span><span class="tag">Passeio</span></div>
+      <h4>Strada della Storia Ferrari / entorno público da fábrica</h4>
+      <p>Faça o passeio apenas por áreas públicas, observando o portão histórico e o entorno da fábrica sem tentar entrar em acessos privados. O mapa turístico municipal identifica os principais pontos Ferrari e estacionamentos.</p>
+    </article>
+    <article class="event">
+      <div class="event-top"><span class="time">ZTL em Maranello</span><span class="tag">Importante</span></div>
+      <h4>Existe ZTL?</h4>
+      <p>Documentos municipais de monitoramento registram <b>0,1 km² de ZTL em 2022</b>, portanto não é correto dizer que Maranello não possui nenhuma ZTL. Entretanto, não encontrei um mapa legal/turístico municipal atualizado com perímetro e horários claramente publicados para 2026. Para a visita ao Museo Ferrari, a estratégia do roteiro é simples: <b>não entrar em qualquer rua sinalizada como ZTL e estacionar na área do museu</b>.</p>
+      <p><b>Combustão:</b> evite qualquer rua sinalizada como ZTL. A visita proposta usa o estacionamento do Museo Ferrari e não exige entrar em uma área restrita.</p>
+    </article>
+    
+    <div class="move">
+      <div class="move-main">
+        <div class="move-icon">↳</div>
+        <div>
+          <b>Maranello → Modena</b>
+          <div class="move-meta">≈ 18–20 km • 25–30 min</div>
+          <div class="move-text"><span class="mode">🚗 Carro</span> Retorno para Modena sem autoestrada. Reentre na ZTL de Via Masone somente conforme o passe da hospedagem.</div>
+        </div>
+      </div>
+      <div class="move-map">
+        <iframe loading="lazy" allowfullscreen referrerpolicy="no-referrer-when-downgrade"
+          src="https://www.google.com/maps?output=embed&f=d&source=s_d&saddr=Museo+Ferrari%2C+Maranello&daddr=Via+Masone+12%2C+Modena&dirflg=d&z=11" title="Mapa: Maranello → Modena"></iframe>
+        <div class="move-map-footer">
+          <span class="move-map-badge">Google Maps</span>
+          <a class="move-map-link" href="https://www.google.com/maps/dir/?api=1&origin=Museo+Ferrari%2C+Maranello&destination=Via+Masone+12%2C+Modena&travelmode=driving" target="_blank" rel="noopener">Abrir rota ↗</a>
+        </div>
+        
+      </div>
+    </div>
+    
+  </div>
+</section>
+
+<section class="day" id="12">
+  <div class="day-head"><div class="date"><strong>12</strong>NOV</div><div><h3>Quinta • Modena → Riviera dei Fiori → San Remo</h3><div class="day-sub">Dia longo de estrada, devolução do carro e tarde a pé por San Remo.</div></div></div>
+  <div class="timeline">
+    <article class="event"><div class="event-top"><span class="time">08:15–08:30</span><span class="tag">Check-out</span></div><h4>Saída de Modena</h4><p>Saia da ZTL pela rota autorizada. A rota rápida para San Remo usa A1, A21, A26 e A10; calcule cerca de <b>380–385 km e 3h40–3h55 sem paradas</b>, mas planeje cerca de 4h30 com descanso.</p></article>
+
+
+    <div class="move">
+      <div class="move-main">
+        <div class="move-icon">↳</div>
+        <div>
+          <b>Modena → A26 sentido Genova / Liguria</b>
+          <div class="move-meta">≈ 200–230 km até a região do Monferrato</div>
+          <div class="move-text"><span class="mode">🚗 Carro</span> Siga o navegador pela rota mais rápida do dia, normalmente A1 → A21 → A26, mantendo destino final em San Remo.</div>
+        </div>
+      </div>
+      <div class="move-map">
+        <iframe loading="lazy" allowfullscreen referrerpolicy="no-referrer-when-downgrade"
+          src="https://www.google.com/maps?output=embed&f=d&source=s_d&saddr=Modena%2C+Italia&daddr=Area+di+Servizio+Monferrato+Ovest+A26%2C+Italia&dirflg=d&z=7" title="Mapa: Modena → A26 sentido Genova / Liguria"></iframe>
+        <div class="move-map-footer">
+          <span class="move-map-badge">Google Maps</span>
+          <a class="move-map-link" href="https://www.google.com/maps/dir/?api=1&origin=Modena%2C+Italia&destination=Area+di+Servizio+Monferrato+Ovest+A26%2C+Italia&travelmode=driving" target="_blank" rel="noopener">Abrir rota ↗</a>
+        </div>
+
+      </div>
+    </div>
+
+    <article class='event fuel'><div class='event-top'><span class='time'>≈ meio do trajeto</span><span class='tag'>Parada</span></div><h4>⛽ Pausa / abastecimento</h4><p>Faça uma parada de 15–25 min em área de serviço da A21/A26. Se a devolução exigir tanque cheio, deixe o abastecimento final para perto de San Remo (por exemplo, saindo da A10 no casello de Sanremo), evitando pagar combustível adicional à locadora.</p></article>
+
+    <div class="move">
+      <div class="move-main">
+        <div class="move-icon">↳</div>
+        <div>
+          <b>A26 / Liguria → San Remo</b>
+          <div class="move-meta">≈ 150–180 km restantes • A26 até Genova Voltri e A10 sentido Ventimiglia</div>
+          <div class="move-text"><span class="mode">🚗 Carro</span> Na A10 (Autostrada dei Fiori), siga sentido Ventimiglia/Francia e saia no casello <b>Sanremo</b>. O pedágio total Modena→San Remo fica hoje em torno de <b>€35,10–36,20</b>, conforme rota/caselli.</div>
+        </div>
+      </div>
+      <div class="move-map">
+        <iframe loading="lazy" allowfullscreen referrerpolicy="no-referrer-when-downgrade"
+          src="https://www.google.com/maps?output=embed&f=d&source=s_d&saddr=Area+di+Servizio+Monferrato+Ovest+A26%2C+Italia&daddr=Sanremo%2C+Italia&dirflg=d&z=8" title="Mapa: A26 / Liguria → San Remo"></iframe>
+        <div class="move-map-footer">
+          <span class="move-map-badge">Google Maps</span>
+          <a class="move-map-link" href="https://www.google.com/maps/dir/?api=1&origin=Area+di+Servizio+Monferrato+Ovest+A26%2C+Italia&destination=Sanremo%2C+Italia&travelmode=driving" target="_blank" rel="noopener">Abrir rota ↗</a>
+        </div>
+        <div class="move-map-note">Não programe o destino para Via Matteotti ou para a Pigna: são áreas de pedestres controladas por câmeras.</div>
+      </div>
+    </div>
+
+    <article class="event">
+      <div class="event-top"><span class="time">≈ 12:45–13:30</span><span class="tag">⚠️ Logística crítica</span></div>
+      <h4>Chegada e devolução do carro em San Remo</h4>
+      <p><b>Reserve o carro já com devolução em San Remo.</b> Comparadores listam Hertz, Europcar, Maggiore e Free2Move Rent (Grandiauto, Corso Marconi 71) na cidade, mas confirme o endereço exato no site da própria locadora. Na Free2Move, por exemplo, a devolução só é aceita <b>dentro do horário de abertura</b>, sem entrega de chaves fora do expediente, e o atendimento é em dois turnos (pode fechar no almoço).</p>
+      <p><b>Plano A:</b> deixar as malas na hospedagem e devolver o carro logo na chegada, antes da pausa de almoço da agência. <b>Plano B:</b> se a agência estiver fechada, devolver na manhã de 13/11 antes do trem, desde que ela abra cedo o suficiente. <b>Evite</b> seguir de carro até Mônaco: além da taxa internacional one-way, o carro precisaria ser devolvido fora da Itália.</p>
+    </article>
+
+    <article class="event">
+      <div class="event-top"><span class="time">13:30–14:30</span><span class="tag">Almoço</span></div>
+      <h4>Almoço lígure no centro</h4>
+      <p>Boa hora para provar <b>sardenaira</b> (a “pizza” de San Remo, com tomate, anchova, azeitona e alho), <b>farinata</b> e focaccia, ou uma massa ao pesto. Fique entre o Corso Imperatrice e o centro para encaixar a tarde a pé.</p>
+    </article>
+
+    <article class="event attraction">
+      <div class="event-top"><span class="time">14:45–15:25</span><span class="tag">Atração</span></div>
+      <h4>Chiesa Russa Ortodossa (Cristo Salvatore)</h4>
+      <div class="ticket">≈ €7 com audioguia • jardins gratuitos (confirmar)</div>
+      <div class="attraction-media">
+        <div class="attraction-photo">
+          <img alt="Foto ilustrativa — Chiesa Russa Ortodossa de San Remo" data-wiki="Chiesa russa ortodossa (Sanremo)" loading="lazy" referrerpolicy="no-referrer">
+          <div class="photo-fallback">Carregando foto da atração…</div>
+          <a class="photo-credit" target="_blank" rel="noopener">Foto: Wikipedia/Wikimedia ↗</a>
+        </div>
+        <div class="attraction-copy">
+          <div class="hours-box">🕒 <strong>Funcionamento / janela:</strong> Não encontrei horário oficial de 2026; a igreja segue ativa para culto (sábado à noite e domingo de manhã). Em uma quinta-feira à tarde a visita tende a ser possível, mas confirme localmente.</div>
+          <p><span class="label">O que é:</span> Igreja ortodoxa russa de cúpulas em forma de bulbo, na Via Nuvoloni, a poucos passos do Corso Imperatrice e do Casinò.</p>
+          <div class="history-box">
+            <div class="history-title">🏛️ História e curiosidades</div>
+            <p>No fim do século XIX, San Remo virou destino de inverno da aristocracia russa, atraída pelo clima ameno. A imperatriz Maria Alexandrovna passou temporadas na cidade, e o Corso Imperatrice leva esse nome por causa dela. A igreja foi construída para essa comunidade e inaugurada em 1913, inspirada nas igrejas moscovitas do século XVII.</p>
+          </div>
+          <div class="expect-box"><span class="label">O que esperar ver:</span> Cúpulas coloridas em bulbo, fachada branca, ícones no interior e um pequeno jardim.</div>
+        </div>
+      </div>
+    </article>
+
+    <div class="move">
+      <div class="move-main">
+        <div class="move-icon">↳</div>
+        <div>
+          <b>Chiesa Russa → Casinò di Sanremo</b>
+          <div class="move-meta">≈ 300 m • 4 min</div>
+          <div class="move-text"><span class="mode">🚶 A pé</span> Caminhada curta pelo Corso Imperatrice / Corso degli Inglesi.</div>
+        </div>
+      </div>
+      <div class="move-map">
+        <iframe loading="lazy" allowfullscreen referrerpolicy="no-referrer-when-downgrade"
+          src="https://www.google.com/maps?output=embed&f=d&source=s_d&saddr=Chiesa+Russa+Ortodossa%2C+Via+Nuvoloni%2C+Sanremo&daddr=Casin%C3%B2+di+Sanremo&dirflg=w&z=16" title="Mapa: Chiesa Russa → Casinò di Sanremo"></iframe>
+        <div class="move-map-footer">
+          <span class="move-map-badge">Google Maps</span>
+          <a class="move-map-link" href="https://www.google.com/maps/dir/?api=1&origin=Chiesa+Russa+Ortodossa%2C+Via+Nuvoloni%2C+Sanremo&destination=Casin%C3%B2+di+Sanremo&travelmode=walking" target="_blank" rel="noopener">Abrir rota ↗</a>
+        </div>
+
+      </div>
+    </div>
+
+    <article class="event attraction">
+      <div class="event-top"><span class="time">15:30–16:00</span><span class="tag">Atração</span></div>
+      <h4>Casinò di Sanremo</h4>
+      <div class="ticket">Exterior grátis • salas de jogo exigem documento</div>
+      <div class="attraction-media">
+        <div class="attraction-photo">
+          <img alt="Foto ilustrativa — Casinò di Sanremo" data-wiki="Casinò di Sanremo" loading="lazy" referrerpolicy="no-referrer">
+          <div class="photo-fallback">Carregando foto da atração…</div>
+          <a class="photo-credit" target="_blank" rel="noopener">Foto: Wikipedia/Wikimedia ↗</a>
+        </div>
+        <div class="attraction-copy">
+          <div class="hours-box">🕒 <strong>Funcionamento / janela:</strong> Fachada e entorno com acesso livre. Para entrar nas salas de jogo, leve passaporte e confira o dress code.</div>
+          <p><span class="label">O que é:</span> Casino em estilo Liberty (Art Nouveau) que é símbolo da San Remo da Belle Époque.</p>
+          <div class="history-box">
+            <div class="history-title">🏛️ História e curiosidades</div>
+            <p>Inaugurado em 1905, o edifício foi projetado pelo arquiteto francês Eugène Ferret. Além do jogo, o Casinò foi palco de eventos culturais e sediou as primeiras edições do Festival de Sanremo, a partir de 1951, antes de o festival se mudar para o Teatro Ariston.</p>
+          </div>
+          <div class="expect-box"><span class="label">O que esperar ver:</span> Fachada branca Liberty, escadaria de entrada e o movimento elegante do Corso degli Inglesi.</div>
+          <div class="plan-note"><b>No roteiro:</b> Visita rápida pelo exterior; entrar para jogar é opcional.</div>
+        </div>
+      </div>
+    </article>
+
+    <div class="move">
+      <div class="move-main">
+        <div class="move-icon">↳</div>
+        <div>
+          <b>Casinò → La Pigna (Porta Santo Stefano)</b>
+          <div class="move-meta">≈ 800 m • 12 min + subida</div>
+          <div class="move-text"><span class="mode">🚶 A pé</span> Atravesse o centro até a Piazza Eroi Sanremesi e suba pelas vielas da Pigna. Ladeiras e escadarias íngremes: use tênis.</div>
+        </div>
+      </div>
+      <div class="move-map">
+        <iframe loading="lazy" allowfullscreen referrerpolicy="no-referrer-when-downgrade"
+          src="https://www.google.com/maps?output=embed&f=d&source=s_d&saddr=Casin%C3%B2+di+Sanremo&daddr=Giardini+Regina+Elena%2C+Sanremo&dirflg=w&z=16" title="Mapa: Casinò → La Pigna"></iframe>
+        <div class="move-map-footer">
+          <span class="move-map-badge">Google Maps</span>
+          <a class="move-map-link" href="https://www.google.com/maps/dir/?api=1&origin=Casin%C3%B2+di+Sanremo&destination=Giardini+Regina+Elena%2C+Sanremo&travelmode=walking" target="_blank" rel="noopener">Abrir rota ↗</a>
+        </div>
+
+      </div>
+    </div>
+
+    <article class="event attraction">
+      <div class="event-top"><span class="time">16:10–17:30</span><span class="tag">Atração</span></div>
+      <h4>La Pigna + Giardini Regina Elena (pôr do sol)</h4>
+      <div class="ticket">Grátis</div>
+      <div class="attraction-media">
+        <div class="attraction-photo">
+          <img alt="Foto ilustrativa — San Remo" data-wiki="Sanremo" loading="lazy" referrerpolicy="no-referrer">
+          <div class="photo-fallback">Carregando foto da atração…</div>
+          <a class="photo-credit" target="_blank" rel="noopener">Foto: Wikipedia/Wikimedia ↗</a>
+        </div>
+        <div class="attraction-copy">
+          <div class="hours-box">🕒 <strong>Funcionamento / janela:</strong> Bairro histórico de acesso livre. Em meados de novembro o sol se põe por volta das 17h, então chegue ao alto antes disso.</div>
+          <p><span class="label">O que é:</span> O núcleo medieval de San Remo, em forma de pinha, com vielas, arcos e escadarias que sobem até o Santuário da Madonna della Costa.</p>
+          <div class="history-box">
+            <div class="history-title">🏛️ História e curiosidades</div>
+            <p>A Pigna cresceu na colina a partir da Idade Média, com casas coladas umas nas outras e passagens cobertas que serviam de defesa contra ataques vindos do mar. O traçado concêntrico, que lembra uma pinha, deu nome ao bairro. No alto, os Giardini Regina Elena e o santuário oferecem a vista mais ampla da cidade e do porto.</p>
+          </div>
+          <div class="expect-box"><span class="label">O que esperar ver:</span> Vielas medievais, arcos sobre as ruas, pequenas praças e vista panorâmica da baía ao entardecer.</div>
+          <div class="plan-note"><b>No roteiro:</b> Subida curta, mas íngreme. Se o cansaço da estrada pesar, fique só na parte baixa da Pigna e siga direto para a Via Matteotti.</div>
+        </div>
+      </div>
+    </article>
+
+    <div class="move">
+      <div class="move-main">
+        <div class="move-icon">↳</div>
+        <div>
+          <b>La Pigna → Via Matteotti / Teatro Ariston</b>
+          <div class="move-meta">≈ 700 m • 10 min (descida)</div>
+          <div class="move-text"><span class="mode">🚶 A pé</span> Desça pela Piazza San Siro até a Via Matteotti, a rua de pedestres principal.</div>
+        </div>
+      </div>
+      <div class="move-map">
+        <iframe loading="lazy" allowfullscreen referrerpolicy="no-referrer-when-downgrade"
+          src="https://www.google.com/maps?output=embed&f=d&source=s_d&saddr=Giardini+Regina+Elena%2C+Sanremo&daddr=Teatro+Ariston%2C+Sanremo&dirflg=w&z=16" title="Mapa: La Pigna → Teatro Ariston"></iframe>
+        <div class="move-map-footer">
+          <span class="move-map-badge">Google Maps</span>
+          <a class="move-map-link" href="https://www.google.com/maps/dir/?api=1&origin=Giardini+Regina+Elena%2C+Sanremo&destination=Teatro+Ariston%2C+Sanremo&travelmode=walking" target="_blank" rel="noopener">Abrir rota ↗</a>
+        </div>
+
+      </div>
+    </div>
+
+    <article class="event attraction">
+      <div class="event-top"><span class="time">17:40–18:40</span><span class="tag">Passeio</span></div>
+      <h4>Via Matteotti e Teatro Ariston</h4>
+      <div class="ticket">Grátis (exterior)</div>
+      <div class="attraction-media">
+        <div class="attraction-photo">
+          <img alt="Foto ilustrativa — Teatro Ariston" data-wiki="Teatro Ariston" loading="lazy" referrerpolicy="no-referrer">
+          <div class="photo-fallback">Carregando foto da atração…</div>
+          <a class="photo-credit" target="_blank" rel="noopener">Foto: Wikipedia/Wikimedia ↗</a>
+        </div>
+        <div class="attraction-copy">
+          <div class="hours-box">🕒 <strong>Funcionamento / janela:</strong> Rua de pedestres com comércio aberto até o início da noite.</div>
+          <p><span class="label">O que é:</span> A principal rua de compras de San Remo, onde fica o Teatro Ariston, casa do Festival della Canzone Italiana.</p>
+          <div class="history-box">
+            <div class="history-title">🏛️ História e curiosidades</div>
+            <p>O Teatro Ariston foi inaugurado em 1963 e, desde 1977, recebe o Festival de Sanremo, o mais famoso concurso de música italiana. Em fevereiro, a Via Matteotti fica tomada por fãs e equipes de TV; em novembro, o clima é bem mais tranquilo.</p>
+          </div>
+          <div class="expect-box"><span class="label">O que esperar ver:</span> Fachada do Ariston, lojas, cafés e a vida da cidade no fim da tarde.</div>
+        </div>
+      </div>
+    </article>
+
+    <article class="event">
+      <div class="event-top"><span class="time">19:00–21:00</span><span class="tag">Jantar</span></div>
+      <h4>Porto Vecchio + reconhecimento da estação</h4>
+      <p>Jante na região do Porto Vecchio ou do centro. Aproveite para localizar a <b>estação de Sanremo</b>: as plataformas ficam em túnel, com longo corredor de acesso a partir da entrada. Conte 10–15 min a mais com malas no dia seguinte.</p>
+    </article>
+    <article class="event">
+      <div class="event-top"><span class="time">ZTL San Remo</span><span class="tag">Importante</span></div>
+      <h4>Centro de pedestres com câmeras</h4>
+      <p>Desde 2023, câmeras controlam as áreas de pedestres do centro: <b>Via Matteotti, Piazza Sardi, Piazza Bresca, Piazza San Siro, Via Corradi e Via De Benedetti</b>. O acesso é restrito a veículos autorizados, e foram milhares de multas nos primeiros meses de operação.</p>
+      <p><b>Combustão:</b> não siga o GPS para dentro dessas ruas. Pergunte à hospedagem onde parar para descarregar as malas e devolva o carro antes de passear.</p>
+    </article>
+  </div>
+</section>
+
+<section class="day" id="13">
+  <div class="day-head"><div class="date"><strong>13</strong>NOV</div><div><h3>Sexta • San Remo → Ventimiglia → Monaco</h3><div class="day-sub">Viagem curta de trem pela manhã, já sem depender do carro.</div></div></div>
+  <div class="timeline">
+    <article class="event"><div class="event-top"><span class="time">≈ 08:30–09:00</span><span class="tag">Saída</span></div><h4>Check-out e ida à estação</h4><p>Não é preciso madrugar: o trecho todo leva cerca de 1h–1h40 com a baldeação. Com malas, considere táxi até a estação e reserve tempo para o corredor de acesso às plataformas. Se a devolução do carro ficou para hoje, faça isso antes.</p></article>
+
+    <div class="move">
+      <div class="move-main">
+        <div class="move-icon">↳</div>
+        <div>
+          <b>Sanremo → Ventimiglia</b>
+          <div class="move-meta">≈ 15–20 min • cerca de 45 regionais diretos por dia</div>
+          <div class="move-text"><span class="mode">🚆 Trem regional</span> Trem regional Trenitalia direto até Ventimiglia. Com essa frequência, escolha o horário na véspera conforme a conexão com o TER.</div>
+        </div>
+      </div>
+      <div class="move-map">
+        <iframe loading="lazy" allowfullscreen referrerpolicy="no-referrer-when-downgrade"
+          src="https://www.google.com/maps?output=embed&f=d&source=s_d&saddr=Stazione+di+Sanremo&daddr=Ventimiglia+Stazione&dirflg=r&z=11" title="Mapa: Sanremo → Ventimiglia"></iframe>
+        <div class="move-map-footer">
+          <span class="move-map-badge">Google Maps</span>
+          <a class="move-map-link" href="https://www.google.com/maps/dir/?api=1&origin=Stazione+di+Sanremo&destination=Ventimiglia+Stazione&travelmode=transit" target="_blank" rel="noopener">Abrir rota ↗</a>
+        </div>
+        <div class="move-map-note">Confirme o horário no app Trenitalia na véspera; o quadro RFI atual vale até 12/12/2026.</div>
+      </div>
+    </div>
+
+    <article class="event"><div class="event-top"><span class="time">≈ 09:30</span><span class="tag">Baldeação</span></div><h4>Ventimiglia — troca Itália → França/Mônaco</h4><p>Siga a sinalização para o TER/ZOU! em direção a Monaco/Nice. Os bilhetes costumam ser separados (Trenitalia + SNCF), então deixe os dois prontos no celular. Prefira uma conexão com pelo menos 15–20 min de folga.</p></article>
+
+    <div class="move">
+      <div class="move-main">
+        <div class="move-icon">↳</div>
+        <div>
+          <b>Ventimiglia → Monaco-Monte-Carlo</b>
+          <div class="move-meta">≈ 30–32 min • TER direto, cerca de 30 partidas por dia</div>
+          <div class="move-text"><span class="mode">🚆 TER / ZOU!</span> Trecho direto passando por Menton e Roquebrune-Cap-Martin. O horário transfronteiriço deve ser reconfirmado perto da viagem.</div>
+        </div>
+      </div>
+      <div class="move-map">
+        <iframe loading="lazy" allowfullscreen referrerpolicy="no-referrer-when-downgrade"
+          src="https://www.google.com/maps?output=embed&f=d&source=s_d&saddr=Ventimiglia+Stazione&daddr=Monaco+Monte-Carlo&dirflg=r&z=10" title="Mapa: Ventimiglia → Monaco-Monte-Carlo"></iframe>
+        <div class="move-map-footer">
+          <span class="move-map-badge">Google Maps</span>
+          <a class="move-map-link" href="https://www.google.com/maps/dir/?api=1&origin=Ventimiglia+Stazione&destination=Monaco+Monte-Carlo&travelmode=transit" target="_blank" rel="noopener">Abrir rota ↗</a>
+        </div>
+
+      </div>
+    </div>
+
+    <article class="event"><div class="event-top"><span class="time">≈ 10:30</span><span class="tag">Chegada</span></div><h4>Chegada a Monaco</h4><p>Chegada no meio da manhã, ainda com quase o dia inteiro disponível. Como a hospedagem é somente a partir de 13/11, confirme antecipadamente a possibilidade de deixar as malas antes do check-in.</p></article>
+  </div>
+</section>
+
+  
+<section id="ztl">
+  <h2>ZTL — onde vocês precisam prestar atenção</h2>
+  <p class="lead">Os mapas abaixo servem para orientação. Em cidades italianas, o que vale juridicamente é a sinalização local e o mapa/regulamento municipal atualizado. Nunca atravesse um pórtico vermelho/câmera confiando apenas no GPS.</p>
+  <div class='note'><b>Firenze:</b> em 10/11/2026 (terça-feira) a ZTL diurna está ativa 07:30–20:00. O roteiro evita a zona por completo usando Villa Costanza.</div>
+  
+  
+  <div class="ztl-grid">
+    
+    <article class="ztl-card">
+      <div class="ztl-copy">
+        <h4>Firenze — ZTL do centro histórico</h4>
+        <p>Em 10/11, terça-feira, a ZTL está ativa 07:30–20:00. O plano evita o risco estacionando em Villa Costanza e usando o tram. Não programe o carro para Piazza del Duomo, Ponte Vecchio ou Piazza della Signoria.</p>
+        <div class='cost-chip'>Estratégia: não entrar</div>
+        <div><a class="mapbtn" href="https://www.feelflorence.it/sites/default/files/2025-07/ZTL%20MAP.pdf" target="_blank" rel="noopener">Mapa oficial ZTL (PDF) ↗</a> <a class="mapbtn" href="https://www.feelflorence.it/en/editorial-staff/car-florence-ztl" target="_blank" rel="noopener">Regras oficiais ↗</a></div>
+      </div>
+      <div class="ztl-map">
+        <iframe loading="lazy" allowfullscreen referrerpolicy="no-referrer-when-downgrade"
+          src="https://www.google.com/maps?output=embed&q=Centro+storico+Firenze%2C+Italia&z=13" title="Firenze — ZTL do centro histórico"></iframe>
+        <div class="map-caption">Mapa de orientação. Para limites legais da ZTL, use o mapa/regulamento oficial indicado no card.</div>
+      </div>
+    </article>
+    
+    
+    <article class="ztl-card">
+      <div class="ztl-copy">
+        <h4>Modena — hospedagem dentro da ZTL</h4>
+        <p>Via Masone 12 está dentro da ZTL. O anfitrião informa que a placa deve ser comunicada no dia da chegada para emissão do passe. As câmeras municipais operam 24 h e checam as placas.</p>
+        <div class='cost-chip'>Enviar placa antes de entrar</div>
+        <div><a class="mapbtn" href="https://www.comune.modena.it/argomenti/ztl" target="_blank" rel="noopener">Mapa/lista oficial de acessos ZTL ↗</a> <a class="mapbtn" href="https://www.google.com/maps/search/?api=1&query=Via+Masone+12+Modena" target="_blank" rel="noopener">Abrir Via Masone 12 ↗</a></div>
+      </div>
+      <div class="ztl-map">
+        <iframe loading="lazy" allowfullscreen referrerpolicy="no-referrer-when-downgrade"
+          src="https://www.google.com/maps?output=embed&q=Via+Masone+12%2C+Modena&z=15" title="Modena — hospedagem dentro da ZTL"></iframe>
+        <div class="map-caption">Mapa de orientação. Para limites legais da ZTL, use o mapa/regulamento oficial indicado no card.</div>
+      </div>
+    </article>
+    
+    
+    <article class="ztl-card">
+      <div class="ztl-copy">
+        <h4>Maranello — cuidado, mas rota do museu não exige ZTL</h4>
+        <p>O monitoramento municipal de 2022 registra 0,1 km² de ZTL. Não encontrei um mapa legal atualizado de 2026 com perímetro/horários. Por isso o roteiro não faz nenhuma afirmação de acesso livre: vá direto ao Museo Ferrari e use os estacionamentos indicados no mapa turístico municipal.</p>
+        <div class='cost-chip'>Rota proposta: fora de áreas restritas</div>
+        <div><a class="mapbtn" href="https://www.comune.maranello.mo.it/come-fare-per/guida-al-territorio/territorio/CartinaMaranelloA3.pdf" target="_blank" rel="noopener">Mapa turístico oficial de Maranello ↗</a> <a class="mapbtn" href="https://www.google.com/maps/search/?api=1&query=Museo+Ferrari+Maranello" target="_blank" rel="noopener">Museo Ferrari no Maps ↗</a></div>
+      </div>
+      <div class="ztl-map">
+        <iframe loading="lazy" allowfullscreen referrerpolicy="no-referrer-when-downgrade"
+          src="https://www.google.com/maps?output=embed&q=Museo+Ferrari+Maranello&z=14" title="Maranello — cuidado, mas rota do museu não exige ZTL"></iframe>
+        <div class="map-caption">Mapa de orientação. Para limites legais da ZTL, use o mapa/regulamento oficial indicado no card.</div>
+      </div>
+    </article>
+    
+    
+    <article class="ztl-card">
+      <div class="ztl-copy">
+        <h4>San Remo — áreas de pedestres do centro</h4>
+        <p>Câmeras controlam Via Matteotti, Piazza Sardi, Piazza Bresca, Piazza San Siro, Via Corradi e Via De Benedetti. A autorização municipal é restrita a veículos autorizados; carga e descarga têm janela própria pela manhã (exceto na Via Matteotti). A Pigna é um labirinto de vielas e escadarias, impróprio para carro.</p>
+        <div class='cost-chip'>Estratégia: devolver o carro e andar a pé</div>
+        <div><a class="mapbtn" href="https://www.comune.sanremo.im.it/" target="_blank" rel="noopener">Comune di Sanremo ↗</a> <a class="mapbtn" href="https://www.riviera24.it/2022/06/sanremo-nel-centro-arriva-il-sistema-di-controllo-dei-varchi-elettronici-764839/" target="_blank" rel="noopener">Varchi eletrônicos (Riviera24) ↗</a></div>
+      </div>
+      <div class="ztl-map">
+        <iframe loading="lazy" allowfullscreen referrerpolicy="no-referrer-when-downgrade"
+          src="https://www.google.com/maps?output=embed&q=Via+Matteotti%2C+Sanremo&z=15" title="San Remo — áreas de pedestres do centro"></iframe>
+        <div class="map-caption">Mapa de orientação. Para limites legais da ZTL, use o mapa/regulamento oficial indicado no card.</div>
+      </div>
+    </article>
+    
+  </div>
+</section>
+
+  
+<section id="pedagios">
+  <h2>Pedágios — orçamento da viagem</h2>
+  <p class="lead">Na Itália, as autoestradas desse roteiro usam pedágio por trecho/casello. Os valores abaixo são para automóvel Classe A e devem ser tratados como orçamento, pois o valor final depende do ponto exato de entrada/saída e da rota do navegador.</p>
+  <div class="table-wrap"><table>
+    <thead><tr><th>Trecho</th><th>Autoestradas</th><th>Pedágio estimado</th><th>Observação</th></tr></thead>
+    <tbody>
+      <tr><td>Roma → Firenze</td><td>A1</td><td>≈ €20,00</td><td>Villa Costanza é acessível diretamente pela A1; não é necessário dirigir ao centro.</td></tr>
+      <tr><td>Firenze → Modena</td><td>A1</td><td>≈ €10,30–10,90</td><td>O valor varia entre calculadores conforme o casello/rota considerada.</td></tr>
+      <tr><td>Modena ↔ Maranello</td><td>Vias locais</td><td>€0</td><td>Não há necessidade de autoestrada no trajeto proposto.</td></tr>
+      <tr><td>Modena → San Remo</td><td>A1 + A21 + A26 + A10</td><td>≈ €35,10–36,20</td><td>Varia com a rota e o casello escolhido; a A10 (Autostrada dei Fiori) é um dos trechos mais caros por km.</td></tr>
+      <tr><td><b>Total estimado</b></td><td>—</td><td><b>≈ €65–67</b></td><td>Para todo o trecho rodoviário do roteiro.</td></tr>
+    </tbody>
+  </table></div>
+  <div class="note"><b>Dica de locadora:</b> pergunte se o carro vem com Telepass/dispositivo de pedágio e como a cobrança é repassada. Se não vier, use as faixas de pagamento normal/cartão e evite entrar por engano em faixa exclusiva Telepass.</div>
+</section>
+
+  
+<section id="energia">
+  <h2>⛽ Planejamento de combustível — carro a combustão</h2>
+  <p class="lead">O total rodoviário é de cerca de 830 km incluindo o bate-volta Modena–Maranello. O orçamento abaixo é uma estimativa, não um valor garantido.</p>
+  <div class="grid2">
+    <div class="info"><h4>Consumo adotado</h4><p><b>6,0–7,0 L/100 km</b>, compatível com um carro compacto/médio em uso misto de autoestrada e trechos urbanos.</p></div>
+    <div class="info"><h4>Preço de referência</h4><p><b>€1,829/L</b> para gasolina como referência atual de calculador de pedágio. Postos em autoestrada podem ser mais caros.</p></div>
+  </div>
+  <div class="note fuel"><b>Estimativa:</b> 49,8–58,1 L para ~830 km → aproximadamente <b>€91–106 de gasolina</b>. Somando os pedágios (~€65–67), o orçamento rodoviário fica em torno de <b>€156–173</b>, sem estacionamento e sem eventuais taxas da locadora.</div>
+  <div class="note"><b>Devolução:</b> se o contrato exigir tanque cheio, abasteça perto do ponto de entrega e guarde o recibo. Evite abastecer dentro da autoestrada se houver um posto confiável próximo à devolução com preço melhor.</div>
+</section>
+
+  
+<section id="fontes">
+  <h2>Fontes e conferências</h2>
+  <p class="lead">Pesquisa realizada em 16/09/2026; trecho San Remo/Mônaco revisado em 15/10/2026. ZTL, horários ferroviários, tarifas e recarga são informações sujeitas a alteração; reconfirme os pontos críticos na semana da viagem.</p>
+  <ul class="source-list"><li><a href="https://www.feelflorence.it/en/editorial-staff/car-florence-ztl" target="_blank" rel="noopener">ZTL Firenze — portal oficial FeelFlorence</a></li>
+<li><a href="https://www.feelflorence.it/sites/default/files/2025-07/ZTL%20MAP.pdf" target="_blank" rel="noopener">Mapa oficial da ZTL de Firenze (PDF)</a></li>
+<li><a href="https://parcheggiovillacostanza.it/it/" target="_blank" rel="noopener">Villa Costanza — estacionamento e tram</a></li>
+<li><a href="https://tickets.duomo.firenze.it/en/support/service" target="_blank" rel="noopener">Duomo Firenze — horários oficiais</a></li>
+<li><a href="https://www.comune.modena.it/argomenti/ztl" target="_blank" rel="noopener">Comune di Modena — ZTL</a></li>
+<li><a href="https://www.comune.modena.it/amministrazione/documenti-e-dati/modulistica/mobilita-e-trasporti/veicoli-elettrici" target="_blank" rel="noopener">Comune di Modena — veículos elétricos</a></li>
+<li><a href="https://www.comune.maranello.mo.it/come-fare-per/guida-al-territorio/territorio/CartinaMaranelloA3.pdf" target="_blank" rel="noopener">Comune di Maranello — mapa turístico / estacionamentos</a></li>
+<li><a href="https://cdn.ferrari.com/cms/network/media/pdf/Depliant%20Musei%20EN_2026_ok%20-%20Interattivo.pdf" target="_blank" rel="noopener">Musei Ferrari — folheto oficial 2026</a></li>
+<li><a href="https://www.riviera24.it/2022/06/sanremo-nel-centro-arriva-il-sistema-di-controllo-dei-varchi-elettronici-764839/" target="_blank" rel="noopener">Riviera24 — varchi eletrônicos no centro de San Remo</a></li>
+<li><a href="https://www.sanremonews.it/2023/10/08/leggi-notizia/argomenti/altre-notizie/articolo/sanremo-ztl-in-centro-dallaccensione-delle-telecamere-sono-partite-oltre-3500-multe.html" target="_blank" rel="noopener">Sanremonews — ZTL do centro e multas</a></li>
+<li><a href="https://www.italia.it/it/liguria/sanremo/chiesa-russa-ortodossa" target="_blank" rel="noopener">Italia.it — Chiesa Russa Ortodossa de San Remo</a></li>
+<li><a href="https://freeto-x.it/metodi-di-pagamento/pagamento-con-carta-di-credito/" target="_blank" rel="noopener">Free To X — tarifas de recarga com cartão</a></li>
+<li><a href="https://www.orario-treni.it/orari-treni/sanremo/ventimiglia" target="_blank" rel="noopener">Horários de trem Sanremo → Ventimiglia</a></li>
+<li><a href="https://www.sncf-connect.com/it-it/treno/orari/ventimiglia/monaco" target="_blank" rel="noopener">SNCF Connect — Ventimiglia → Monaco</a></li>
+<li><a href="https://calcolopercorso.it/it/distanza/Roma/Firenze" target="_blank" rel="noopener">Calculador Roma → Firenze (pedágio)</a></li>
+<li><a href="https://calcolopercorso.it/it/distanza/Firenze/Modena" target="_blank" rel="noopener">Calculador Firenze → Modena (pedágio)</a></li>
+<li><a href="https://calcolopercorso.it/it/distanza/Modena/Sanremo" target="_blank" rel="noopener">Calculador Modena → San Remo (pedágio)</a></li>
+<li><a href="https://www.unipolmove.it/calcola-pedaggio/Modena/Sanremo/" target="_blank" rel="noopener">UnipolMove — pedágio Modena → San Remo</a></li>
+<li><a href="https://www.free2move.com/it-IT/car-rental-agencies/free-2-move-rent-grandiauto-sanremo" target="_blank" rel="noopener">Free2Move Rent San Remo — referência para devolução</a></li></ul>
+</section>
+
+
+  <div class="footer">Lua de Mel Europa 2026 • Carro a combustão • ver02</div>
+</main>
+
+<script>
+document.querySelectorAll('img[data-wiki]').forEach(async img => {
+  const fallback = img.parentElement.querySelector('.photo-fallback');
+  const credit = img.parentElement.querySelector('.photo-credit');
+  try {
+    const r = await fetch('https://it.wikipedia.org/api/rest_v1/page/summary/' + encodeURIComponent(img.dataset.wiki));
+    const d = await r.json();
+    if (d.thumbnail && d.thumbnail.source) {
+      img.src = d.thumbnail.source;
+      img.onload = () => {
+        img.classList.add('loaded');
+        if (fallback) fallback.style.display='none';
+        if (credit) {
+          credit.href = (d.content_urls && d.content_urls.desktop && d.content_urls.desktop.page) || '#';
+          credit.style.display='block';
+        }
+      };
+    }
+  } catch(e) {}
+});
+</script>
+</body>
+</html>
